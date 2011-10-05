@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+ 
+<title>A jQuery Drag-and-Drop Number Cards Game</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="stylesheets/card.css">
+ 
+
+<script src="javascripts/card.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+ 
+<div id="content">
+ 
+  <div id="cardPile"> </div>
+  <div id="cardSlots"> </div>
+ 
+  <div id="successMessage">
+    <h2>You did it!</h2>
+    <button onclick="init()">Play Again</button>
+  </div>
+ 
+</div>
+ 
+</body>
+</html>

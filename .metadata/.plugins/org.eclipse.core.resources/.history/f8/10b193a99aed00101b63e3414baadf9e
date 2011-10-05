@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+ 
+<title>A jQuery Drag-and-drop</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/fieldlist.css">
+ 
+
+
+</head>
+<body>
+ <a href="#"  OnClick="init('sent from DoAction');" >  Click to Load Fields</a> 
+<div id="content">
+ 
+  <div id="parField">  </div>
+  <div id="sfdcField"> </div>
+ 
+ 
+ 
+</div>
+
+ </body>
+</html>
+

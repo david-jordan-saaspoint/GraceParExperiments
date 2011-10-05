@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ParUserName:</b>
+  <%= @pardb.par_un %>
+</p>
+
+<p>
+  <b>ParPassword:</b>
+  <%= @pardb.par_pw %>
+  
+</p>
+<% form_tag  do %>
+<%= label :fieldname %><br />
+    <%= text_field :fieldname %>
+  <p> Worksite Name:
+	<%= text_field_tag 'worksite', @worksite %>
+   <p> Country:
+	<%= text_field_tag 'country', @country %>
+		   
+ <% end %>
+<td><%= link_to "Disp sc4 data",  :controller =>'welcome', :action => 'find_by_wn' , :wn =>@worksite, :wgc =>@country %></td>

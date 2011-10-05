@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;twitter/SortableLists/app/views/welcome/fieldlist.html&apos; to &apos;fieldlist.html.erb&apos;" description="Rename resource &apos;fieldlist.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="SortableLists/app/views/welcome/fieldlist.html" name="fieldlist.html.erb" stamp="1317630163319" updateReferences="true"/>
+</session>

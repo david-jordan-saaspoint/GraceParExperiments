@@ -1,0 +1,2 @@
+class SfFields < ActiveRecord::Base
+end

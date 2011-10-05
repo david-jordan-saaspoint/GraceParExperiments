@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ParUserName:</b>
+  <%= @pardb.par_un %>
+</p>
+
+<p>
+  <b>ParPassword:</b>
+  <%= @pardb.par_pw %>
+  
+</p>
+<p> 
+	<li> Enter Worksite Name for query: </li>
+	<,li> Enter Country               : </li>
+</p>
+<td><%= link_to "Disp sc4 data",  :controller =>'welcome', :action => 'find_by_wn' , :wn =>'Ikea', :wgc =>'Stockholm' %></td>

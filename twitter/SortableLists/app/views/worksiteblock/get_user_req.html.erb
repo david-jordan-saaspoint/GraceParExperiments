@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Counter</th>
+    <th>Selected one</th>
+    
+   
+  </tr>
+  <% i =0 %>
+  <% @mapped_hash.each do |arr| %>
+  <% i= i+1 %>
+  <tr>
+  	<td><%= i  %></td>
+    <td><%= arr %></td>
+    
+ <% end %>
+ </table>
+ 
+<p> data added to SObject </p>

@@ -1,0 +1,29 @@
+<%= form_for(@sfdc) do |f| %>
+  <% if @sfdc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sfdc.errors.count, "error") %> prohibited this sfdc from being saved:</h2>
+
+      <ul>
+      <% @sfdc.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fieldname %><br />
+    <%= f.text_field :fieldname %>
+  </div>
+  <div class="field">
+    <%= f.label :fieldtype %><br />
+    <%= f.text_field :fieldtype %>
+  </div>
+  <div class="field">
+    <%= f.label :orgId %><br />
+    <%= f.text_field :orgId %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

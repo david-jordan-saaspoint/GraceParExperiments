@@ -1,0 +1,1715 @@
+/!\ FAILSAFE /!\  Tue Sep 13 14:51:48 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 14:52:47 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:01:25 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:03:06 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:03:17 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:04:03 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:04:21 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:16:44 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:32:15 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:32:22 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:32:26 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Tue Sep 13 15:34:33 +0100 2011
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/dependencies.rb:182:in `require'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    ./script/server:3
+
+Using ActiveSalesforce connection
+Establishing new connection for ['https://www.salesforce.com/services/Soap/u/20.0', 'grace@par-dev.com, ''
+Created new connection for ['https://www.salesforce.com/services/Soap/u/20.0', 'grace@par-dev.com', ''] in 3.88205981254578 seconds
+   Created one-to-one relationship 'master_record' from Salesforce::Contact to Salesforce::Contact using master_record_id
+   Created one-to-one relationship 'account' from Salesforce::Contact to Salesforce::Account using account_id
+   Created one-to-one relationship 'reports_to' from Salesforce::Contact to Salesforce::Contact using reports_to_id
+   Created one-to-one relationship 'owner' from Salesforce::Contact to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Contact to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Contact to Salesforce::User using last_modified_by_id
+   Creating ActiveRecord stub for the referenced entity 'AccountContactRole'
+   Created one-to-many relationship 'account_contact_roles' from Salesforce::Contact to Salesforce::AccountContactRole using contact_id
+   Creating ActiveRecord stub for the referenced entity 'ActivityHistory'
+   Created one-to-many relationship 'activity_histories' from Salesforce::Contact to Salesforce::ActivityHistory using who_id
+   Creating ActiveRecord stub for the referenced entity 'CampaignMember'
+   Created one-to-many relationship 'campaign_members' from Salesforce::Contact to Salesforce::CampaignMember using contact_id
+   Creating ActiveRecord stub for the referenced entity 'CaseContactRole'
+   Created one-to-many relationship 'case_contact_roles' from Salesforce::Contact to Salesforce::CaseContactRole using contact_id
+   Created one-to-many relationship 'case_team_members' from Salesforce::Contact to Salesforce::CaseTeamMember using member_id
+   Creating ActiveRecord stub for the referenced entity 'CaseTeamTemplateMember'
+   Created one-to-many relationship 'case_team_template_members' from Salesforce::Contact to Salesforce::CaseTeamTemplateMember using member_id
+   Creating ActiveRecord stub for the referenced entity 'ContactHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Contact to Salesforce::ContactHistory using contact_id
+   Creating ActiveRecord stub for the referenced entity 'ContactShare'
+   Created one-to-many relationship 'shares' from Salesforce::Contact to Salesforce::ContactShare using contact_id
+   Creating ActiveRecord stub for the referenced entity 'ContractContactRole'
+   Created one-to-many relationship 'contract_contact_roles' from Salesforce::Contact to Salesforce::ContractContactRole using contact_id
+   Creating ActiveRecord stub for the referenced entity 'EmailStatus'
+   Created one-to-many relationship 'email_statuses' from Salesforce::Contact to Salesforce::EmailStatus using who_id
+   Creating ActiveRecord stub for the referenced entity 'Event'
+   Created one-to-many relationship 'events' from Salesforce::Contact to Salesforce::Event using who_id
+   Creating ActiveRecord stub for the referenced entity 'EventAttendee'
+   Created one-to-many relationship 'event_attendees' from Salesforce::Contact to Salesforce::EventAttendee using attendee_id
+   Creating ActiveRecord stub for the referenced entity 'Note'
+   Created one-to-many relationship 'notes' from Salesforce::Contact to Salesforce::Note using parent_id
+   Creating ActiveRecord stub for the referenced entity 'NoteAndAttachment'
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Contact to Salesforce::NoteAndAttachment using parent_id
+   Creating ActiveRecord stub for the referenced entity 'OpenActivity'
+   Created one-to-many relationship 'open_activities' from Salesforce::Contact to Salesforce::OpenActivity using who_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityContactRole'
+   Created one-to-many relationship 'opportunity_contact_roles' from Salesforce::Contact to Salesforce::OpportunityContactRole using contact_id
+   Creating ActiveRecord stub for the referenced entity 'ProcessInstance'
+   Created one-to-many relationship 'process_instances' from Salesforce::Contact to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Contact to Salesforce::Task using who_id
+
+Using ActiveSalesforce connection
+Establishing new connection for ['https://www.salesforce.com/services/Soap/u/20.0', 'grace@par-dev.com, ''
+Created new connection for ['https://www.salesforce.com/services/Soap/u/20.0', 'grace@par-dev.com', ''] in 1.47592997550964 seconds
+
+
+Processing ParController#index (for 127.0.0.1 at 2011-09-13 15:39:35) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: display and search):
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#display (for 127.0.0.1 at 2011-09-13 15:39:59) [GET]
+Rendering par/display
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/display]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 15:40:08) [GET]
+Rendering par/search
+Completed in 35ms (View: 34, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 15:44:11) [GET]
+Rendering par/search
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 15:46:09) [GET]
+Rendering par/search
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x111b47208>) on line #8 of app/views/par/search.html.erb:
+5: 	except the contact E-mail address. </p>
+6: 	
+7: <p>
+8:     <%= f.label :Worksite_Name %><br />
+9:     <%= f.text_field :name %>
+10:   </p>
+11:   <p>
+
+    app/views/par/search.html.erb:8
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 15:47:20) [GET]
+Rendering par/search
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x1117d2488>) on line #7 of app/views/par/search.html.erb:
+4: 	 </p>
+5: 	
+6:   <p>
+7:     <%= f.label :Worksite_Name %><br />
+8:     <%= f.text_field :name %>
+9:   </p>
+10:   <p>
+
+    app/views/par/search.html.erb:7
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 15:48:10) [GET]
+Rendering par/search
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #8 of app/views/par/search.html.erb:
+5: 	except the contact E-mail address. </p>
+6: 	
+7:   <p>
+8:     <%= label :Worksite_Name %><br />
+9:     <%= text_field :name %>
+10:   </p>
+11:   <p>
+
+    app/views/par/search.html.erb:8:in `label'
+    app/views/par/search.html.erb:8
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (62.3ms)
+Rendered rescues/_request_and_response (0.1ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 15:59:27) [GET]
+Rendering par/search
+ERROR: compiling _run_erb_app47views47par47search46html46erb RAISED compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:15: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47par47search46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>PAR Search </h1>\n<p>Enter search criteria</p>\n<p>Enter your PAR search criteria below and click 'Search' to perform the search. \n\tNote that you may use the wildcard character '*' in your search criteria in all fields \n\texcept the contact E-mail address. </p>\n\t\n  % form_tag :action => 'get_data' do %>\n  <p> Worksite Name:\n\t"
+
+
+
+
+
+
+
+; @output_buffer.concat(( text_field_tag 'name', @name ).to_s); @output_buffer.concat "\n   <p> City:\n\t"
+
+; @output_buffer.concat(( text_field_tag 'city', @city ).to_s); @output_buffer.concat "\n\t\t   \n "
+
+;  end ; @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/saaspointpair/samples/project1/app/views/par/search.html.erb:15:in `compile!'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:61:in `compile'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:28:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/template.rb:205:in `render_template'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/base.rb:265:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1252:in `render_for_file'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1328:in `default_render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `send'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:606:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:391:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:386:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:15: syntax error, unexpected kENSURE, expecting $end) on line #15 of app/views/par/search.html.erb:
+12: 		   
+13:  <% end %>
+
+    app/views/par/search.html.erb:15:in `compile!'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:05:52) [GET]
+Rendering par/search
+ERROR: compiling _run_erb_app47views47par47search46html46erb RAISED compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:17: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47par47search46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>PAR Search </h1>\n<p>Enter search criteria</p>\n<p>Enter your PAR search criteria below and click 'Search' to perform the search. \n\tNote that you may use the wildcard character '*' in your search criteria in all fields \n\texcept the contact E-mail address. </p>\n\t\n  % form_tag :action => 'search' do %>\n  <p> Worksite Name:\n\t"
+
+
+
+
+
+
+
+; @output_buffer.concat(( text_field_tag 'name', @name ).to_s); @output_buffer.concat "\n   <p> City:\n\t"
+
+; @output_buffer.concat(( text_field_tag 'city', @city ).to_s); @output_buffer.concat "\n\t\t   \n "
+
+;  end ; @output_buffer.concat "\n \n \n"
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/saaspointpair/samples/project1/app/views/par/search.html.erb:17:in `compile!'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:61:in `compile'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:28:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/template.rb:205:in `render_template'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/base.rb:265:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1252:in `render_for_file'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1328:in `default_render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `send'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:606:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:391:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:386:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:17: syntax error, unexpected kENSURE, expecting $end) on line #17 of app/views/par/search.html.erb:
+14:  
+15:  
+
+    app/views/par/search.html.erb:17:in `compile!'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:06:28) [GET]
+Rendering par/search
+ERROR: compiling _run_erb_app47views47par47search46html46erb RAISED compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:17: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47par47search46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>PAR Search </h1>\n<p>Enter search criteria</p>\n<p>Enter your PAR search criteria below and click 'Search' to perform the search. \n\tNote that you may use the wildcard character '*' in your search criteria in all fields \n\texcept the contact E-mail address. </p>\n\t\n  % form_tag :action => 'search' do %>\n  <p> Worksite Name:\n\t"
+
+
+
+
+
+
+
+; @output_buffer.concat(( text_field_tag 'name', @name ).to_s); @output_buffer.concat "\n   <p> City:\n\t"
+
+; @output_buffer.concat(( text_field_tag 'city', @city ).to_s); @output_buffer.concat "\n\t\t   \n "
+
+;  end ; @output_buffer.concat "\n \n \n"
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/saaspointpair/samples/project1/app/views/par/search.html.erb:17:in `compile!'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:61:in `compile'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:28:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/template.rb:205:in `render_template'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/base.rb:265:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1252:in `render_for_file'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1328:in `default_render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `send'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:606:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:391:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:386:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:17: syntax error, unexpected kENSURE, expecting $end) on line #17 of app/views/par/search.html.erb:
+14:  
+15:  
+
+    app/views/par/search.html.erb:17:in `compile!'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:07:36) [GET]
+Rendering par/search
+ERROR: compiling _run_erb_app47views47par47search46html46erb RAISED compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:14: syntax error, unexpected kEND, expecting $end
+; end ; @output_buffer.concat "\n \n \n"
+     ^
+Function body:           def _run_erb_app47views47par47search46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>PAR Search </h1>\n<p>Enter search criteria</p>\n<p>Enter your PAR search criteria below and click 'Search' to perform the search. \n\tNote that you may use the wildcard character '*' in your search criteria in all fields \n\texcept the contact E-mail address. </p>\n\t\n  % form_tag :action => 'search' do %>\n  <p> Worksite Name:\n\t"
+
+
+
+
+
+
+
+; @output_buffer.concat(( text_field_tag 'name', @name ).to_s); @output_buffer.concat "\n   <p> City:\n\t"
+
+; @output_buffer.concat(( text_field_tag 'city', @city ).to_s); @output_buffer.concat "\n\t\t   \n "
+
+;  end ; @output_buffer.concat "\n "
+; end ; @output_buffer.concat "\n \n \n"
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/saaspointpair/samples/project1/app/views/par/search.html.erb:14:in `compile!'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:61:in `compile'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:28:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/template.rb:205:in `render_template'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/base.rb:265:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1252:in `render_for_file'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1328:in `default_render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `send'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:606:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:391:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:386:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:14: syntax error, unexpected kEND, expecting $end
+; end ; @output_buffer.concat "\n \n \n"
+     ^) on line #14 of app/views/par/search.html.erb:
+11: 	<%= text_field_tag 'city', @city %>
+12: 		   
+13:  <% end %>
+14:  <%end %>
+15:  
+16:  
+
+    app/views/par/search.html.erb:14:in `compile!'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:07:56) [GET]
+Rendering par/search
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:08:15) [GET]
+Rendering par/search
+ERROR: compiling _run_erb_app47views47par47search46html46erb RAISED compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:17: syntax error, unexpected kENSURE, expecting kEND
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:19: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47par47search46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>PAR Search </h1>\n<p>Enter search criteria</p>\n<p>Enter your PAR search criteria below and click 'Search' to perform the search. \n\tNote that you may use the wildcard character '*' in your search criteria in all fields \n\texcept the contact E-mail address. </p>\n\t\n  "
+
+
+
+
+
+;  form_tag :action => 'search' do ; @output_buffer.concat "\n  <p> Worksite Name:\n\t"
+
+; @output_buffer.concat(( text_field_tag 'name', @name ).to_s); @output_buffer.concat "\n   <p> City:\n\t"
+
+; @output_buffer.concat(( text_field_tag 'city', @city ).to_s); @output_buffer.concat "\n\t\t   \n \n \n \n"
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/saaspointpair/samples/project1/app/views/par/search.html.erb:19:in `compile!'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:61:in `compile'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/renderable.rb:28:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/template.rb:205:in `render_template'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_view/base.rb:265:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1252:in `render_for_file'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1328:in `default_render'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `send'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/filters.rb:606:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:391:in `process'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/base.rb:386:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+/Users/saaspointpair/.rvm/gems/ruby-1.8.7-p352/gems/rails-2.3.14/lib/commands/server.rb:111
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+/Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:17: syntax error, unexpected kENSURE, expecting kEND
+/Users/saaspointpair/samples/project1/app/views/par/search.html.erb:19: syntax error, unexpected $end, expecting kEND) on line #17 of app/views/par/search.html.erb:
+14:  
+15:  
+
+    app/views/par/search.html.erb:19:in `compile!'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (63.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:08:33) [GET]
+Rendering par/search
+Completed in 139ms (View: 138, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:10:24) [GET]
+Rendering par/search
+
+ActionView::TemplateError (undefined method `submit' for #<ActionView::Base:0x111a89b68>) on line #14 of app/views/par/search.html.erb:
+11: 	<%= text_field_tag 'city', @city %>
+12: 	
+13: 	<% end %>
+14: 	<%= submit 'Update' %>
+15: 
+16: <%= link_to 'back', :controller => "par", :action => "display" %
+17: 		   
+
+    app/views/par/search.html.erb:14
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (60.4ms)
+Rendered rescues/_request_and_response (0.1ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:10:41) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:15:40) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:16:02) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:16:26) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:17:13) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:17:41) [GET]
+Rendering par/search
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:18:23) [GET]
+Rendering par/search
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:18:58) [GET]
+Rendering par/search
+Completed in 38ms (View: 37, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:19:42) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:20:07) [GET]
+Rendering par/search
+
+ActionView::TemplateError (undefined method `lable_tag' for #<ActionView::Base:0x111b12800>) on line #10 of app/views/par/search.html.erb:
+7:   <% form_tag :action => 'search' do %>
+8:   <p> <%= label_tag 'Worksite Name' %>
+9: 	<%= text_field_tag 'name', @name %>
+10:    <p> <%= lable_tag 'City'    %>    
+11: 	<%= text_field_tag 'city', @city %>
+12: 	
+13: 	<% end %>
+
+    app/views/par/search.html.erb:10
+    app/views/par/search.html.erb:7
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/saaspointpair/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:20:29) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:20:56) [GET]
+Rendering par/search
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:21:11) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:22:41) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:26:41) [GET]
+Rendering par/search
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:27:01) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]
+
+Using ActiveSalesforce connection
+
+
+Processing ParController#search (for 127.0.0.1 at 2011-09-13 16:27:15) [GET]
+Rendering par/search
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/par/search]

@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Fieldname</th>
+    <th>Fieldtpe</th>
+    <th>Orgid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @resp_data_array.each do |arr| %>
+  <tr>
+    <td><%= arr.  %></td>
+    <td><%= arr. %></td>
+    <td><%= arr. %></td>
+ <% end %>
+ 
+ <% end %>
+</table>
+ 
+

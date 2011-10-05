@@ -1,0 +1,23 @@
+<h1>PAR Search </h1>
+<p>Enter search criteria</p>
+<p>Enter your PAR search criteria below and click 'Search' to perform the search. 
+	Note that you may use the wildcard character '*' in your search criteria in all fields 
+	except the contact E-mail address. </p>
+	
+  <% form_tag :action => 'search' do %>
+  <p> <%= label_tag 'Worksite Name' %>
+	  <%= text_field_tag 'name', @name %>
+  </p>
+   <p> <%= label_tag 'City'    %>    
+	   <%= text_field_tag 'city', @city %>
+   </p>
+	
+  <% end %>
+
+   <%= submit_tag 'Search' %>
+ 
+   <%= submit_tag 'Cancel', :controller => "par", :action => "display" %>
+		   
+ 
+ 
+ 

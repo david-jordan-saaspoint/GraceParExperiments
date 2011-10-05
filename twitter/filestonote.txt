@@ -1,0 +1,15 @@
+lib/forcedotcom.rb - the custom Omniauth strategy
+config/initializers/omniauth.rb - add your consumer key and consumer secret here
+lib/accounts.rb - the Httparty class which performs a rest call
+app/controllers/session_controller.rb - the create method handles the oauth callback
+config/routes.rb - includes callback routing
+config/environment.rb - includes env variable to set REST API version number
+rails/server - I have updated this to support HTTPS. You will need to generate your own
+keys and drop them in the lib/certs dir. 
+script/rails
+environment.rb
+
+Remote access
+Consumer Key	3MVG9QDx8IX8nP5SZh4eVqHyA0V.FsDc_RWvWL.6DUJVUrLLumMSOecJZ_1Io5y8Hs86kFXHYi9goW4Hycmof
+Consumer Secret	
+892547349198510318

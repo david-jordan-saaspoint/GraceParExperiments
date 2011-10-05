@@ -1,0 +1,22 @@
+<h1>Listing SalesForce Fields</h1>
+
+<table>
+  <tr>
+    <th>SFDC Fields</th>
+    <th>Field Data Type</th>
+    <th>Org ID</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @xmltags.each do |xmltag| %>
+  <tr>
+    <td><%= sf_field.sfdcfield %></td>
+    <td><%= sf_field.fieldDatatype %></td>
+    <td><%= sf_field.fieldDatatype %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />

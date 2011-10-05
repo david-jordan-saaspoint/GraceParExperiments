@@ -1,0 +1,59 @@
+body {
+	font: 12pt Verdana, Helvetica, sans-serif;
+	width: 34em;
+}
+
+.title {
+	font-size: 14pt;
+	margin: 0.15em;
+}
+
+#availablePAR, #selected , {
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 16.5em;
+}
+
+ul {
+	list-style: none none;
+	font-size: 11pt;
+	margin: 0.2em;
+	padding: 0.2em;
+}
+
+li {
+	border: 1px solid #000000;
+	margin: 0.2em;	
+	padding: 0.2em;
+}
+
+li.fixed {
+	font-size: 12pt;
+}
+
+li.sortable {
+	cursor: move;
+ }
+ 
+#availableList li.fixed {
+	color: #bc2c2c;
+}
+
+#selectedList li.fixed {
+	color: #2cbc2c;
+}
+
+#availableList li.sortable {
+	background-color: #bcc2dc;
+}
+
+#selectedList li.sortable {
+	background-color: #bcc3cc;
+}
+
+#feedback, pre {
+	clear: both;
+	font-size: 8pt;
+}
+  

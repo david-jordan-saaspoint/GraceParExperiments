@@ -1,0 +1,13 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
+#   Mayor.create(:name => 'Daley', :city => cities.first)
+
+sf_field = Sf_field.create(:sfdcfield => 'Name', :orgId => '123', :fieldDatatype =>'String')
+xmltag = Xmltag.create(:parfieldkey => 'BlockBaseWorksite.parId', :sfdckey => 'PAR121__parId__c')
+xmltag = Xmltag.create(:parfieldkey => 'BlockCRMOrganization/CompanyNumber', :sfdckey => 'AccountNumber')
+xmltag = Xmltag.create(:parfieldkey => 'BlockBaseWorksite/Status/Text', :sfdckey => 'PAR121__Status__c')
+xmltag = Xmltag.create(:parfieldkey => 'BlockBaseWorksite/Status/Code', :sfdckey => 'PAR121__StatusCode__c')

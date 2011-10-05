@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ParUserName:</b>
+  <%= @pardb.par_un %>
+</p>
+
+<p>
+  <b>ParPassword:</b>
+  <%= @pardb.par_pw %>
+  
+</p>
+<td><%= link_to 'Show', sfdctable %></td>

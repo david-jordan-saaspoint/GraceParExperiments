@@ -1,0 +1,5 @@
+body {
+	font:12pt Verdana, Helvetica, sans-serif;
+	width:34em;
+
+}

@@ -1,0 +1,8 @@
+<h2>Welcome to PAR Database access  </h2>
+<p> <pre><%= @message %></pre></p>
+
+
+<%= link_to 'SFDC Fields', sfdctables_path %>
+
+<%= link_to 'Select Fields', :controller =>'welcome' , :action => 'fieldlist'%>
+

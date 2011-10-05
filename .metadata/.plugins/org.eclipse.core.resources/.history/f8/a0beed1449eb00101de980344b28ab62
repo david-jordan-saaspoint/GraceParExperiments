@@ -1,0 +1,46 @@
+<h1>Listing sfdctables</h1>
+
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+	<script src="javascripts/lists.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+
+<table>
+  <tr>
+    <th>Fieldname</th>
+    <th>Fieldtpe</th>
+    <th>Orgid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sfdctables.each do |sfdctable| %>
+  <tr>
+    <td><%= sfdctable.fieldname %></td>
+    <td><%= sfdctable.fieldtpe %></td>
+    <td><%= sfdctable.orgId %></td>
+    
+  <td>  <a href="#" id="alert" message= "from the view" >  viewalertscreen </a> </td>
+  
+   <td>  <a href="#"  OnClick="DoAction('parameter');" >  Click </a> </td>
+    <td>  <a href="#"  OnClick="DoAction('#sfdctable.fieldname');" >  Click Again</a> </td>
+    
+    <td><%= link_to 'Show', sfdctable %></td>
+    <td><%= link_to 'Edit', edit_sfdctable_path(sfdctable) %></td>
+    <td><%= link_to 'Destroy', sfdctable, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+<br>
+
+<%= link_to 'New Sfdctable', new_sfdctable_path %>
+<br>
+<%= link_to 'Welcome Screen', :controller=> 'welcome', :action => 'index'%>

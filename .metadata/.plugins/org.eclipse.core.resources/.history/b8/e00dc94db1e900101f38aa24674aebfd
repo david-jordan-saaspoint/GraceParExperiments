@@ -1,0 +1,82 @@
+<h1>Listing faqs</h1>
+<ul id = "faqs">
+<% @faqs.each do |faq| %>
+  <% content_tag_for :li, faq do %>
+  <span  class="handle">[drag]</span>
+    <%= link_to h(faq.question), faq %>
+<% end %>
+<% end %>
+</ul>
+<%= sortable_element("faqs", :url=>sort_faqs_path, :handle => "handle") %>
+
+
+
+	<div id="drag_demo_new"
+	<p><%= link_to 'New Faq', new_faq_path %></p>
+	<span  class="handle">[drag]</span>
+	</div>
+	<script type="text/javascript">
+    new Draggable('drag_demo_new');
+    </script>
+
+
+<div id="drag_demo_1" style="width:100px; height:100px; background:#7baaed; border:1px solid #333;"></div>
+  <script type="text/javascript">
+    new Draggable('drag_demo_1');
+  </script>
+  
+
+<div id="drag_demo_2" style="width:100px; height:100px; background:#fff85d; border:1px solid #333;"></div>
+  <script type="text/javascript">
+    new Draggable('drag_demo_2', { revert: true, snap: [40, 40] });
+  </script>
+
+  
+<div id="drag_demo_3" style="width:80px; height:80px; cursor:move; background:#88da5d; border:1px solid #333;"></div>
+  <script type="text/javascript">
+    new Draggable('drag_demo_3', { scroll: window });
+  </script>
+ 
+<div class="selected fields" id="droppable_container">
+<ul id = "faqs">
+<% @faqs.each do |faq| %>
+
+ <% content_tag_for :li, faq do %>
+ <div id=xx   class="draggable"</div>
+  <span  class="handle">[drag]</span>
+  <%= link_to h(faq.question), faq %>
+  <% end %>
+  
+ <script type="text/javascript">
+  new Draggable(xx);
+ </script>
+
+<% end %>
+</ul>
+
+</div>
+<div class="demo" id="droppable_container">
+  <div id="draggable_demo" class="draggable">
+    Drag me!
+  </div>
+  
+  <div id="droppable_demo">
+    Drop here!
+  </div>
+</div>
+
+<script type="text/javascript">
+  new Draggable('draggable_demo', { 
+    revert: true 
+  });
+  
+  Droppables.add('droppable_demo', { 
+    accept: 'draggable',
+    hoverclass: 'hover',
+    onDrop: function(dragged,droped) { $('droppable_demo').highlight(); 
+     alert('Dropped onto: ' + dropped.id); }
+  });
+</script>
+
+
+

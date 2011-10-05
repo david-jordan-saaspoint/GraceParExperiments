@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ParUserName:</b>
+  <%= @pardb.par_un %>
+</p>
+
+<p>
+  <b>ParPassword:</b>
+  <%= @pardbe.par_pw %>
+</p>

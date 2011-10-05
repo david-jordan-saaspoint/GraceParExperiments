@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Counter</th>
+    <th>Rest_Sc4 Choice</th>
+    
+   
+  </tr>
+  <% @mapped_data.each do |arr| %>
+  <tr>
+  	<td><%= arr.counter  %></td>
+    <td><%= arr  %></td>
+    
+ 
+ <% end %>
+</table>
+ 
+

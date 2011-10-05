@@ -1,0 +1,8 @@
+<script type="text/javascript"charset="UTF-8">  
+      $(function () {  
+        $('#alert').click(function () {  
+          alert('Hello, world!');  
+          return false;  
+        })  
+      });  
+    </script>  

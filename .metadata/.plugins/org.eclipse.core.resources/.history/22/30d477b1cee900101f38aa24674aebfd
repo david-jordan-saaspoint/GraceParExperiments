@@ -1,0 +1,23 @@
+<h1>Listing SalesForce Fields</h1>
+
+<table>
+  <tr>
+    <th>SFDC Fields</th>
+    <th>Field Data Type</th>
+    <th>Org ID</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @xmltags.each do |xmltag| %>
+  <tr>
+    <td><%= xmltag.sfdckey %></td>
+    <td><%= xmltag.parfieldkey %></td>
+    <td><%= link_to 'Show', xmltag %></td>
+    <td><%= link_to 'Edit', edit_xmltag_path(xmltag) %></td>
+    <td><%= link_to 'Destroy', xmltag, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

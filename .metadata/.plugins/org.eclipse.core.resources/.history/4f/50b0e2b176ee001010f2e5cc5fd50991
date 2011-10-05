@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Counter</th>
+    <th>Selected one</th>
+    
+   
+  </tr>
+  <% i =0 %>
+  <% @result_array.each do |arr| %>
+  <% i= i+1 %>
+  <tr>
+  	<td><%= i  %></td>
+    <td><%= arr %></td>
+    
+ <% end %>
+</table>

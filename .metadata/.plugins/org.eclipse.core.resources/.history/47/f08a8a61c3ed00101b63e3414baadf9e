@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Fieldname</th>
+    <th>Fieldtpe</th>
+    <th>Orgid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @mapped_data.each do |arr| %>
+  <tr>
+    <td><%= arr.Name  %></td>
+    <td><%= arr.CompanyNumber %></td>
+    <td><%= arr.parId %></td>
+
+ 
+ <% end %>
+</table>
+ 
+

@@ -1,0 +1,15 @@
+class CreateSfdCfields < ActiveRecord::Migration
+  def self.up
+    create_table :sfd_cfields do |t|
+      t.string :sfdcfield
+      t.string :orgId
+      t.string :fieldDatatype
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :sfd_cfields
+  end
+end

@@ -1,0 +1,73 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/saaspointpair/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/salesforce/contacts" for 127.0.0.1 at 2011-09-13 17:33:11 +0100
+
+ActionController::RoutingError (No route matches "/salesforce/contacts"):
+  
+
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-09-13 17:33:16 +0100
+  Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 0ms
+
+Errno::ENOENT (No such file or directory - /Users/saaspointpair/samples/dbdc/config/databasedotcom.yml):
+  app/controllers/users_controller.rb:6:in `index'
+
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2011-09-13 17:33:37 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"index"}
+Completed 500 Internal Server Error in 0ms
+
+Errno::ENOENT (No such file or directory - /Users/saaspointpair/samples/dbdc/config/databasedotcom.yml):
+  app/controllers/users_controller.rb:41:in `load_user'
+
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/users/show" for 127.0.0.1 at 2011-09-13 17:34:01 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+Completed 500 Internal Server Error in 0ms
+
+Errno::ENOENT (No such file or directory - /Users/saaspointpair/samples/dbdc/config/databasedotcom.yml):
+  app/controllers/users_controller.rb:41:in `load_user'
+
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.8ms)
+
+
+Started GET "/users/show" for 127.0.0.1 at 2011-09-13 17:35:19 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+Completed 500 Internal Server Error in 0ms
+
+Errno::ENOENT (No such file or directory - /Users/saaspointpair/samples/dbdc/config/databasedotcom.yml):
+  app/controllers/users_controller.rb:41:in `load_user'
+
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.6ms)
+
+
+Started GET "/users/show" for 127.0.0.1 at 2011-09-13 17:35:24 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+Completed 500 Internal Server Error in 0ms
+
+Errno::ENOENT (No such file or directory - /Users/saaspointpair/samples/dbdc/config/databasedotcom.yml):
+  app/controllers/users_controller.rb:41:in `load_user'
+
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/saaspointpair/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)

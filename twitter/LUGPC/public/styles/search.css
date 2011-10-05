@@ -1,0 +1,38 @@
+body {
+  background-color: #d8ffd8;
+  font: 12pt Verdana, Helvetica, sans-serif;
+}
+
+p, div, ul, li {
+  margin: 0.1em 0.25em;
+  padding: 0;
+}
+
+input {
+  font-family: 'Courier New', Courier, monospace;
+  width: 35ex;
+}
+
+.title {
+  font-size: 14pt;
+}
+
+.search {
+  margin: 1.0em 0.25em;
+}
+
+.autocomplete {
+  background-color: #d8f8d8;
+  border: 1px solid #4c4c4c;
+  width: 40ex;
+}
+
+.autocomplete ul li {
+  font-size: 10pt;
+  list-style-type: none;
+  margin: 0.25em;
+}
+
+.autocomplete ul li:hover {
+  background-color: #e8f8e8;
+}

@@ -1,0 +1,2 @@
+lass IndexController < ApplicationController
+end

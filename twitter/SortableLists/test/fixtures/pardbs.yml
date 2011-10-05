@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sfdc_id: MyString
+  par_un: MyString
+  par_pw: MyString
+  orgId: 
+
+two:
+  sfdc_id: MyString
+  par_un: MyString
+  par_pw: MyString
+  orgId: 

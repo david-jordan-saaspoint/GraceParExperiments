@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  startdate: 2011-09-12
+  complete: false
+
+two:
+  name: MyString
+  startdate: 2011-09-12
+  complete: false

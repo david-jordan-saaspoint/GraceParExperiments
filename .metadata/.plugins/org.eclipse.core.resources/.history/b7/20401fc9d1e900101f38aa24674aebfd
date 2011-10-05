@@ -1,0 +1,27 @@
+<h1>Listing sfdcs</h1>
+
+<table>
+  <tr>
+    <th>Fieldname</th>
+    <th>Fieldtype</th>
+    <th>Orgid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sfdcs.each do |sfdc| %>
+  <tr>
+    <td><%= sfdc.fieldname %></td>
+    <td><%= sfdc.fieldtype %></td>
+    <td><%= sfdc.orgId %></td>
+    <td><%= link_to 'Show', sfdc %></td>
+    <td><%= link_to 'Edit', edit_sfdc_path(sfdc) %></td>
+    <td><%= link_to 'Destroy', sfdc, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sfdc', new_sfdc_path %>

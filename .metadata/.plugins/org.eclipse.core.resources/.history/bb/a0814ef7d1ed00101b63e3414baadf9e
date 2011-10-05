@@ -1,0 +1,14 @@
+class CreateRestSc4s < ActiveRecord::Migration
+  def self.up
+    create_table :rest_sc4s do |t|
+      t.string :id
+      t.string :parId
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :rest_sc4s
+  end
+end
