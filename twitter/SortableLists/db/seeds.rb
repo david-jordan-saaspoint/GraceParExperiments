@@ -22,8 +22,8 @@ Selectedfield.delete_all
 selectedfield = Selectedfield.create(:parField => 'WorksiteBlock/BlockBaseWorksite/Name', :sfdcField => 'Name', :orgId =>'123')
 selectedfield = Selectedfield.create(:parField => 'WorksiteBlock/BlockBaseWorksite.parId', :sfdcField => 'PAR121__parId__c', :orgId =>'123')
 selectedfield = Selectedfield.create(:parField => 'WorksiteBlock/BlockCRMOrganization/CompanyNumber', :sfdcField => 'AccountNumber', :orgId =>'123')
-selectedfield = Selectedfield.create(:parField => 'WorksiteBlock/BlockBaseWorksite/Status/Text', :sfdcField => 'PAR121__Status__c', :orgId =>'123')
-selectedfield = Selectedfield.create(:parField => 'WorksiteBlock/BlockBaseWorksite/Status/Code', :sfdcField => 'PAR121__StatusCode__c', :orgId =>'123')
+
+
 selectedfield = Selectedfield.create(:parField => 'WorksiteBlock/BlockBaseWorksite/Name', :sfdcField => 'Name', :orgId =>'456')
 selectedfield = Selectedfield.create(:parField => 'WorksiteBlock/BlockBaseWorksite.parId', :sfdcField => 'PAR121__parId__c', :orgId =>'456')
 selectedfield = Selectedfield.create(:parField => 'WorksiteBlock/BlockCRMOrganization/CompanyNumber', :sfdcField => 'AccountNumber', :orgId =>'456')

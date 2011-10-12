@@ -23,7 +23,8 @@ class WelcomeController < ApplicationController
   end
   
   def paruser
-      @pardb = Pardb.find(params[:id])
+      @id = params[:id]
+      @pardb = Pardb.find_by_sfdc_id(@id)
       @un = @pardb.par_un
       @pw = @pardb.par_pw
   end

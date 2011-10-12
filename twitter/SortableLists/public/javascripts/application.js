@@ -19,16 +19,45 @@ $( init );
 //selected = new Hash();
 var selected = new Object();
 
+
 function stripEscapes(st)
 {
 	var retVal="";
 	for (i=0; i<st.length; i++)
   	{
-  		if(st[i]!="\"" && st[i]!="\[" && st[i]!="\]" && st[i]!=" " && st[i]!="}")
+  		if(st[i]!="\"" && st[i]!="\[" && st[i]!="\]" && st[i]!=" " && st[i]!="}" && st[i]!="{")
   		retVal = retVal + st[i];
   	}
   	return retVal;
 }
+
+function checkDuplicates(arr1, arr2) 
+{
+	for (var i = 0; i<arr1.length; i++) {
+	var arrlen = arr2.length;
+	for (var j = 0; j<arrlen; j++) {
+		if (arr1[i] == arr2[j]) {
+			arr2 = arr2.slice(0, j).concat(arr2.slice(j+1, arrlen));
+		}
+	}
+  }
+   return arr2;     
+}
+function replaceDuplicates(arr1, arr2,arr3) 
+{	
+	var value= '';
+	for (var i = 0; i<arr1.length; i++) {
+		var arrlen = arr2.length;
+		for (var j = 0; j<arrlen; j++) {
+			if (arr1[i] == arr2[j]) {
+			value = arr3[i] + " -> " + arr2[j];
+			arr2[j] = value;
+		}
+	}
+  }
+   return arr2;     
+}
+
 
 function init(par, sfdc, selectedfields) {
   // assign the parameters into javascript arrays 
@@ -38,7 +67,7 @@ function init(par, sfdc, selectedfields) {
   var initselected = stripEscapes(selectedfields);
   
   
-  // Hide the success message
+  // Hide the success message and convert rails variables into JS variables
   $('#successMessage').hide();
   var parf = new Array();
   parf = parstr.split(",") ;
@@ -49,9 +78,7 @@ function init(par, sfdc, selectedfields) {
   var initsel = new Array();
   initsel = initselected.split(",");
   
- for(var index in initselected) {
-  //document.write( index + " : " + initselected[index] + "<br />");
-}
+ 
   $('#parField').html("PAR Fields");
   $('#sfdcField').html("SFDC Fields" );
   $('#selField').html("Selected Fields");
@@ -59,19 +86,31 @@ function init(par, sfdc, selectedfields) {
   // Create the par field list
   //parf = ["Name", "PAR121__parId__c", "AccountNumber", "PAR121__Status__c", "PAR121__StstusCode__c"];
   //document.write(parf.toString());
+  // converting ruby hash as javascript hash and assigning into handledrop varibale
   var hash_selected = new Object();
   var key = '';
   var value = '';
+  var keys = new Array();
+  var values = new Array();
+  //keys will hold SFDC fields and values will hold PAR fields from the selected list
+ // alert("starting");
   for (var i =0; i<initsel.length; i++) {
   	key = initsel[i].split(":")[0];
   	value =initsel[i].split(":")[1];
   	hash_selected[key] = value;
+  	selected[key] = value;
+  	keys.push(key);
+  	values.push(value);
+  	//.write(keys);
   }
-  
- //alert("starting");
+  // handle the selected fields in the available list
+   parf = checkDuplicates(values,parf);
+   sfdcf = replaceDuplicates(keys,sfdcf, values); 
+ 
+  //Dsiplay the drag and drop columns
   
   for ( var i=0; i<parf.length; i++ ) {
-    $('<div>' + parf[i] + '</div>').data( 'number', parf[i] ).attr( 'id', 'parfield'+parf[i] ).appendTo( '#parField' ).draggable( {
+      $('<div>' + parf[i] + '</div>').data( 'number', parf[i] ).attr( 'id', 'parfield'+parf[i] ).appendTo( '#parField' ).draggable( {
      // containment: '#content',
       stack: '#parField div',
       cursor: 'move',
@@ -83,6 +122,7 @@ function init(par, sfdc, selectedfields) {
   // Create the sfdc field list
  // var sfdcf = ["WorksiteBlock/BlockBaseWorksite/Name", "WorksiteBlock/BlockBaseWorksite.parId", "WorksiteBlock/BlockCRMOrganization/CompanyNumber"];
  // alert(sfdcf);
+  var addfield= '';
   for ( var i=0; i<sfdcf.length; i++ ) {
     $('<div>' + sfdcf[i] + '</div>').data( 'number', sfdcf[i] ).attr( 'id', 'sfdcfield'+sfdcf[i]  ).appendTo( '#sfdcField' ).droppable( {
       accept: '#parField div',
@@ -90,10 +130,10 @@ function init(par, sfdc, selectedfields) {
       drop: handleFieldDrop
     } );
   }
-   for (key in hash_selected) {
+//   for (key in hash_selected) {
   	
-  	$('<div>' + hash_selected[key] + '</div>').data('number', hash_selected[key] ).attr('id','selfield'+ hash_selected[key] ).appendTo('#selField')
-  }
+//  	$('<div>' + hash_selected[key] + '</div>').data('number', hash_selected[key] ).attr('id','selfield'+ hash_selected[key] ).appendTo('#selField')
+//  }
    
   
   

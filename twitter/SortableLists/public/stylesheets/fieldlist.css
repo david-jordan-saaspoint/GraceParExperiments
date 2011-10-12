@@ -91,7 +91,7 @@ h1, h2, h3, h4 {
 #sfdcField div, #parField div , #selField div{
   float: left;
   width: 380px;
-  height: 20px;
+  height: 40px;
   padding: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
