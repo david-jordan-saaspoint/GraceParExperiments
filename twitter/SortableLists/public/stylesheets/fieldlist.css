@@ -16,11 +16,11 @@ h1, h2, h3, h4 {
 /* Main content area */
  
 #content {
-  margin: 80px 70px;
+  /*margin: 80px 70px;*/
   text-align: center;
   -moz-user-select: none;
   -webkit-user-select: none;
-  user-select: none;
+  -user-select: none;
 }
  
 /* Header/footer boxes */
@@ -28,7 +28,7 @@ h1, h2, h3, h4 {
 .wideBox {
   clear: both;
   text-align: center;
-  margin: 70px;
+  /*margin: 70px;*/r
   padding: 10px;
   background: #ebedf2;
   border: 1px solid #333;
@@ -40,14 +40,32 @@ h1, h2, h3, h4 {
   color: #666;
   
 }
- 
+#button  {
+  	float:left;
+   	margin:0 7px 0 0;
+    background-color:#6299c5;
+    border:1px solid #6299c5;
+    color:#fff;
+    font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    font-size:20px;
+    line-height:130%;
+    text-decoration:line-through;
+    font-weight:bold;
+    color:#565656;
+    cursor:pointer;
+    padding:10px 15px 10px 7px;
+}
 /* Slots for final SFDC field positions */
  
 #sfdcField {
-  margin:500px;
-  background: #ddf;
+  margin:10px;
+  background: #aa9;
 }
- 
+
+#selField {
+  margin:10px;
+  background: #aa2;
+}
 /* The initial position of parFields */
  
 #parField {
@@ -55,7 +73,7 @@ h1, h2, h3, h4 {
   background: #ffd;
 }
  
-#sfdcField, #parField {
+#sfdcField, #parField, #selField {
   width: 400px;
   height: 910px;
   padding: 20px;
@@ -70,22 +88,22 @@ h1, h2, h3, h4 {
  
 /* Individual cards and slots */
  
-#sfdcField div, #parField div {
+#sfdcField div, #parField div , #selField div{
   float: left;
-  width: 350px;
-  height: 40px;
+  width: 380px;
+  height: 20px;
   padding: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border-radius: 10px;
+  border-radius: 2px;
   margin: 0 0 0 10px;
   background: #fff;
 }
  
-#sfdcField div:first-child, #parField div:first-child {
+#sfdcField div:first-child, #parField div:first-child, #selField div:first-child {
   margin: 0 0 0 10px;
 }
  

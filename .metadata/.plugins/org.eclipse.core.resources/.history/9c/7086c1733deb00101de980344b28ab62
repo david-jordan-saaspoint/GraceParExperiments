@@ -1,6 +1,0 @@
-<h2>Welcome to PAR Database access  </h2>
-<p> <pre><%= @message %></pre></p>
-
-<%= link_to 'Show', @sfdctable %> |
-<%= link_to 'Back', sfdctables_path %>
-

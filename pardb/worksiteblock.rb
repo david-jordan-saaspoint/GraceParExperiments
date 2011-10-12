@@ -42,15 +42,16 @@ class CallbackWorksiteBlock
        
     db = SQLite3::Database.new("selectedfields.database")
     db.results_as_hash=true
+    
    #  Xmltag.find_by_sql ["SELECT parfieldkey from xmltags where sfdckey in ('Name', 'AccountNumber')" ] do |row|
     db.execute("SELECT sfdcField, parField from selectedfields where orgId = ? ", orgId) do |row|
-       query_result= row['parField']
-      sfdckey = row['sfdcField']
+      p query_result= row['parField']
+      p sfdckey = row['sfdcField']
  
    
      # fetch the value for the selected fields from the xml file
       doc.xpath(query_result).each do |node|
-         mapped_hash[sfdckey] = node.children.to_s 
+      mapped_hash[sfdckey] = node.children.to_s 
       end    
      
     end
@@ -67,5 +68,5 @@ class CallbackWorksiteBlock
    end
 end
 #callbackSecond = CallbackWorksiteBlock.new
-#callbackSecond.find_by_wsb("1:201237946", "123")
+#callbackSecond.find_by_wsb("1:200686583", "123")
 #callbackFirst.get_search_criteria

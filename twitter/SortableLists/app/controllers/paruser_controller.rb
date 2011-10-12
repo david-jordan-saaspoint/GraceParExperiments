@@ -3,22 +3,24 @@ require 'httparty'
 
 require 'open-uri'
 class ParuserController < ApplicationController
+  include Databasedotcom::Rails::Controller
   include HTTParty
   include Nokogiri
   format :xml
-
- # @un, @pw = 'aviord4@utveckling', 'K5MeMmPP'
-  #http_basic_authenticate_with :name => USER, :password => PASSWORD, :except => :index
+  
+  
   before_filter :authentication_check
-  basic_auth 'aviord4@utveckling', 'K5MeMmPP'
-
+  
+#  @un, @pw = 'aviord4@utveckling', 'K5MeMmPP'
   def authentication_check
-    authenticate_or_request_with_http_basic do |un,pw|
-    @auth = {:username => @un, :password => @pw}
-    basic_auth = @auth
-    end  
+    p "$$$$$ in authentication check of paruser controller $$$$$$$$$$$"
+    self.class.basic_auth 'aviord4@utveckling', 'K5MeMmPP'
   end
+  
+  
   def dispcountry
+    p "$$$$$ in dispcountry of paruser controller $$$$$$$$$$$"
+    
     theUrl = 'http://obo.par.se/itb/doc/UserConfig.xml' 
     resp = self.class.get(theUrl)
     resp_hash = resp.parsed_response

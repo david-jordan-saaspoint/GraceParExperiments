@@ -1,6 +1,0 @@
-<h1>Editing sfdc</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @sfdc %> |
-<%= link_to 'Back', sfdcs_path %>

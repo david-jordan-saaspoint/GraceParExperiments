@@ -1,2 +1,0 @@
-<h1>Welcome to PAR Database access application</h1>
-<p> <pre><%= @message %></pre></p>

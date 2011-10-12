@@ -11,7 +11,7 @@ class CallbackRestsc4
   basic_auth 'aviord4@utveckling', 'K5MeMmPP'
   
   #initialize method is not presently used
-  def initialize(u, p)
+  def initialize(u,p)
     @auth = {:username => u, :password => p}
     basic_auth = @auth
     @orgId= "123"
@@ -51,7 +51,7 @@ class CallbackRestsc4
     
     resp = self.class.get(theUrl, :query => {:worksiteName => wn, :worksiteGeneralCity => wgc})
     resp_hash = resp.parsed_response
-  p  resp_data_array = resp_hash["S_W_4"]["WorksiteSearchResult"]["Hit"]
+    resp_data_array = resp_hash["S_W_4"]["WorksiteSearchResult"]["Hit"]
     
     # calls extract xml data method to extract the relevant fields from the output
     extract_xml_data resp_data_array

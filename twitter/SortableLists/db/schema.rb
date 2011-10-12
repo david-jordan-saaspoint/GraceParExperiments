@@ -10,12 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111003152326) do
+ActiveRecord::Schema.define(:version => 20111005153014) do
 
   create_table "pardbs", :force => true do |t|
     t.string   "sfdc_id"
     t.string   "par_un"
     t.string   "par_pw"
+    t.string   "orgId"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "partables", :force => true do |t|
+    t.string   "fieldname"
     t.string   "orgId"
     t.datetime "created_at"
     t.datetime "updated_at"

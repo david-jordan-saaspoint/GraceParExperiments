@@ -21,7 +21,7 @@ module InsertSObject
       accounthash = Hash.new
       accounthash['Name']= mapped_hash['Name']
       accounthash['AccountNumber'] = mapped_hash['AccountNumber']
-      client.upsert(Account, "par121__parId__c", "#{parId}", accounthash)
+      client.upsert(Account, "par121__parId__c", "#{parId}",mapped_hash)
      # client.upsert(Account, "par121__parId__c", "01-09898", accounthash) 
      rescue Exception
        p "error #{$!}"

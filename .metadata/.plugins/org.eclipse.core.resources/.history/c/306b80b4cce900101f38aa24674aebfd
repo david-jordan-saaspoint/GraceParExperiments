@@ -1,2 +1,0 @@
-class SfdCfields < ActiveRecord::Base
-end

@@ -1,2 +1,0 @@
-class RestSc4 < ActiveRecord::Base
-end

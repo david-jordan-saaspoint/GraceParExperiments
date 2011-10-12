@@ -1,24 +1,18 @@
-class WorksiteblockController < ApplicationController
-   
   require 'rubygems'
   require 'httparty'
   require 'nokogiri'
   require 'open-uri'
-  require 'insertsobject'
-
+  
+class WorksiteblockController < ApplicationController
+  include Databasedotcom::Rails::Controller 
   include HTTParty
   include Nokogiri
-
-  #@un, @pw = 'aviord4@utveckling', 'K5MeMmPP'
-  #http_basic_authenticate_with :name => USER, :password => PASSWORD, :except => :index
+  
   before_filter :authentication_check
-  basic_auth 'aviord4@utveckling', 'K5MeMmPP'
-
+#  @un, @pw = 'aviord4@utveckling', 'K5MeMmPP'
   def authentication_check
-    authenticate_or_request_with_http_basic do |un,pw|
-    @auth = {:username => @un, :password => @pw}
-    basic_auth = @auth
-    end  
+    p "$$$$$ in authentication check of worksite controller $$$$$$$$$$$"
+   self.class.basic_auth 'aviord4@utveckling', 'K5MeMmPP'
   end
   
       #searches the database for data based on search criteria
@@ -41,30 +35,6 @@ class WorksiteblockController < ApplicationController
     
    end 
 
-
-# Method not in use. Just for checking   
-   def find_by_wsb
-    parId= params[:par]
-    result_array = Array.new
-    mapped_hash= Hash.new
-    theUrl = 'https://obo.par.se/itb/doc/WorksiteBlock.xml' 
-    resp = self.class.get(theUrl, :query => {:worksiteId => parId})
-    resp_hash = resp.parsed_response
-   # resp_data_array = resp_hash["WorksiteBlock"]["BlockBaseWorksite"]["Status"]
-    resp_data_name = resp_hash["WorksiteBlock"]["BlockBaseWorksite"]["Name"]
-    resp_data_name
-    resp_data_companynumber = resp_hash["WorksiteBlock"]["BlockCRMOrganization"]["CompanyNumber"]
-    resp_data_companynumber
-    # calls extract xml data method to extract the relevant fields from the output
-    #extract_xml_data resp_data_array
-    @result_array = resp_data_name, resp_data_companynumber, parId
-       #call mapper module to map the fileds to account sobject
-   # mapped_hash = Mapper.mapping_fields(result_array)
-    
-    # call insertsobject.rb to insert the mapped hashes into the S Object
-    # InsertSObject.createclientobject(mapped_hash, parId)
-  end
-
     # checks for user requirement
    def get_user_req
      user_choice = params[:id]
@@ -79,22 +49,20 @@ class WorksiteblockController < ApplicationController
      xmlfile='check.xml'
      f = File.read(xmlfile)
      doc=Nokogiri::XML(f)
-     db = SQLite3::Database.new("selectedfield.database")
-     db.results_as_hash=true
-     #  Xmltag.find_by_sql ["SELECT parfieldkey from xmltags where sfdckey in ('Name', 'AccountNumber')" ] do |row|
-     Selectedfield.find(:all) do |row|
-     #db.execute("SELECT sfdcField, parField from Selectedfield where orgId = ? ", orgId) do |row|
-        query_result= row['parField']
-        sfdckey = row['sfdcField']
-     
+    
+        Selectedfield.find(:all,:select => "sfdcField, parField"). each do |field|
+          query_result = field.parField
+          sfdckey = field.sfdcField    
         # fetch the value for the selected fields from the xml file
         doc.xpath(query_result).each do |node|
-            @mapped_hash[sfdckey] = node.children.to_s 
-        end    
+        @mapped_hash[sfdckey] = node.children.to_s 
+         end  
        end
-      db.close
      # call insertsobject.rb to insert the mapped hashes into the S Object
-     InsertSObject.createclientobject(@mapped_hash, selected_par)
+     #InsertSObject.createclientobject(@mapped_hash, selected_par)
+     
+     Account.upsert("par121__parId__c", "#{selected_par}", @mapped_hash)
+     
    end
 
 

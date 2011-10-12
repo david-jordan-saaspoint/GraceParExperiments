@@ -1,2 +1,0 @@
-class Sfdc < ActiveRecord::Base
-end
