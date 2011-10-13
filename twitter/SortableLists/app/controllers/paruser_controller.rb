@@ -20,8 +20,6 @@ class ParuserController < ApplicationController
   
   def dispcountry
     @authentication_details = params[:authen]
-    p "$$$$$ in dispcountry of paruser controller $$$$$$$$$$$"
-    
     theUrl = 'http://obo.par.se/itb/doc/UserConfig.xml' 
     resp = self.class.get(theUrl)
     resp_hash = resp.parsed_response

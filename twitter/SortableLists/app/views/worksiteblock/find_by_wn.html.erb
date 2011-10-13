@@ -7,8 +7,8 @@
     <th>Name</th>
     <th>Company Number</th>
     <th>Par ID</th>
+    <th> <%= link_to  'Select All', :controller => 'worksiteblock', :action => 'get_user_req', :orgId => @orgId, :mapped_data => @par_idset %></th>
     
-   
   </tr>
   <% i =0 %>
   
@@ -20,8 +20,10 @@
     <td><%= arr[1]  %></td>
     <td><%= arr[2]  %></td>
     <td><%=hidden_field_tag 'orgId',  @orgId%></td>
-    <td><%= link_to  'Select', :controller => 'worksiteblock', :action => 'get_user_req', :id=>i, :parId =>arr[2] , :orgId => @orgId %></td> 
+    
+    <td><%= link_to  'Select', :controller => 'worksiteblock', :action => 'get_user_req',  :id=>i, :par =>arr[2] , :orgId => @orgId %></td> 
  <% end %>
+   
 </table>
  
 

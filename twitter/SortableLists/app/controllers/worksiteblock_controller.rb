@@ -25,24 +25,40 @@ class WorksiteblockController < ApplicationController
       resp_hash = resp.parsed_response
       resp_data_array = resp_hash["S_W_4"]["WorksiteSearchResult"]["Hit"]
       @mapped_data = Array.new
+      @par_idset = Array.new
       counter =0
       resp_array = resp_data_array.each do |ele|  
         resp_array = ele
       # can we create this table here? 
+        @par_idset << resp_array["parId"]
         @mapped_data[counter] =resp_array["Name"], resp_array["CompanyNumber"], resp_array["parId"]
         counter += 1
         end
     
    end 
 
-    # checks for user requirement
-   def get_user_req
-     user_choice = params[:id]
-     selected_par = params[:parId]
+    # checks for user requirement single or multiple
+ def get_user_req
      orgId = params[:orgId]
-     @mapped_hash = Hash.new
-     
+ 
+     query_selected = Selectedfield.find(:all, :select => "sfdcField, parField", :conditions => "orgId = '#{orgId}'")
      theUrl = 'https://obo.par.se/itb/doc/WorksiteBlock.xml' 
+     if params[:id]
+        user_choice = params[:id]
+        selected_par = params[:par]
+        upsert_record(selected_par, query_selected, theUrl)
+     else
+        mapped_data = params[:mapped_data]
+        mapped_data.each do |rec|
+          selected_par = rec
+          upsert_record(selected_par, query_selected, theUrl)
+        end
+      end
+  end
+  
+  # This is a helper method for get_user_req to loop through multiple reqs
+   def upsert_record(selected_par, query_selected, theUrl)
+     @mapped_hash = Hash.new
      resp = self.class.get(theUrl, :query => {:worksiteId => selected_par}).body
      xml_file = open("check.xml", 'w')
      xml_file.write(resp)
@@ -50,8 +66,8 @@ class WorksiteblockController < ApplicationController
      xmlfile='check.xml'
      f = File.read(xmlfile)
      doc=Nokogiri::XML(f)
-    
-        Selectedfield.find(:all,:select => "sfdcField, parField", :conditions => "orgId = #{orgId}"). each do |field|
+        
+          query_selected.each do |field|
           query_result = field.parField
           sfdckey = field.sfdcField    
         # fetch the value for the selected fields from the xml file
@@ -63,7 +79,6 @@ class WorksiteblockController < ApplicationController
      #InsertSObject.createclientobject(@mapped_hash, selected_par)
      
      Account.upsert("par121__parId__c", "#{selected_par}", @mapped_hash)
-     
    end
 
 

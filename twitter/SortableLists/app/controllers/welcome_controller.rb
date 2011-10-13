@@ -73,7 +73,7 @@ class WelcomeController < ApplicationController
      # To do: Persist data here - first delete all the records for the org and re insert the selected ones
     Selectedfield.delete_all(:orgId => @orgId)
     @form_params.each do |val| 
-      selectedfield = Selectedfield.create(:parField => val[1], :sfdcField => val[0], :orgId =>@orgId)
+      selectedfield = Selectedfield.create(:parField => val[0], :sfdcField => val[1], :orgId =>@orgId)
     end
     p "inserted into selected table" 
     p "form_params", @form_params

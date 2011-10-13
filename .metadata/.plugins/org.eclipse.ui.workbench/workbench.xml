@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="39" version="2.0">
+<workbench progressCount="21" version="2.0">
 <workbenchAdvisor/>
 <window height="964" width="1032" x="1362" y="258">
 <fastViewData fastViewLocation="1024"/>
@@ -25,12 +25,12 @@
 <coolItem id="com.aptana.editor.xml" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.aptana.editor.html" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.aptana.editor.text" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.aptana.editor.js" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.js" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.aptana.editor.css" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.aptana.editor.yaml" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.aptana.editor.ruby" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="com.aptana.editor.erb.html" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.ruby" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.erb.html" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -39,56 +39,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-<part id="7"/>
-<part id="8"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor id="com.aptana.editor.js" name="application.js" partName="application.js" path="/Users/saaspointpair/samples/twitter/SortableLists/public/javascripts/application.js" title="application.js" tooltip="twitter/SortableLists/public/javascripts/application.js" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/twitter/SortableLists/public/javascripts/application.js"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4016" selectionTopPixel="1983"/>
-</editor>
-<editor id="com.aptana.editor.ruby" name="welcome_controller.rb" partName="welcome_controller.rb" title="welcome_controller.rb" tooltip="/Users/saaspointpair/samples/twitter/SortableLists/app/controllers/welcome_controller.rb" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/Users/saaspointpair/samples/twitter/SortableLists/app/controllers/welcome_controller.rb"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="679" selectionTopPixel="307"/>
-</editor>
-<editor id="com.aptana.editor.erb.html" name="fieldlist.html.erb" partName="fieldlist.html.erb" path="/Users/saaspointpair/samples/twitter/SortableLists/app/views/welcome/fieldlist.html.erb" title="fieldlist.html.erb" tooltip="twitter/SortableLists/app/views/welcome/fieldlist.html.erb" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/twitter/SortableLists/app/views/welcome/fieldlist.html.erb"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="835" selectionTopPixel="30"/>
-</editor>
-<editor id="com.aptana.editor.ruby" name="seeds.rb" partName="seeds.rb" path="/Users/saaspointpair/samples/twitter/SortableLists/db/seeds.rb" title="seeds.rb" tooltip="twitter/SortableLists/db/seeds.rb" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/twitter/SortableLists/db/seeds.rb"/>
-<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="928" selectionTopPixel="50"/>
-</editor>
-<editor id="com.aptana.editor.css" name="fieldlist.css" partName="fieldlist.css" path="/Users/saaspointpair/samples/twitter/SortableLists/public/stylesheets/fieldlist.css" title="fieldlist.css" tooltip="twitter/SortableLists/public/stylesheets/fieldlist.css" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/twitter/SortableLists/public/stylesheets/fieldlist.css"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2252" selectionTopPixel="1527"/>
-</editor>
-<editor id="com.aptana.editor.ruby" name="worksiteblock_controller.rb" partName="worksiteblock_controller.rb" path="/Users/saaspointpair/samples/twitter/SortableLists/app/controllers/worksiteblock_controller.rb" title="worksiteblock_controller.rb" tooltip="twitter/SortableLists/app/controllers/worksiteblock_controller.rb" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/twitter/SortableLists/app/controllers/worksiteblock_controller.rb"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="564" selectionTopPixel="136"/>
-</editor>
-<editor activePart="true" focus="true" id="com.aptana.editor.erb.html" name="find_by_wn.html.erb" partName="find_by_wn.html.erb" path="/Users/saaspointpair/samples/twitter/SortableLists/app/views/worksiteblock/find_by_wn.html.erb" title="find_by_wn.html.erb" tooltip="twitter/SortableLists/app/views/worksiteblock/find_by_wn.html.erb" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/twitter/SortableLists/app/views/worksiteblock/find_by_wn.html.erb"/>
-<editorState selectionHorizontalPixel="344" selectionLength="0" selectionOffset="555" selectionTopPixel="0"/>
-</editor>
-<editor id="com.aptana.editor.erb.html" name="index.html.erb" partName="index.html.erb" path="/Users/saaspointpair/samples/twitter/SortableLists/app/views/welcome/index.html.erb" title="index.html.erb" tooltip="twitter/SortableLists/app/views/welcome/index.html.erb" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/twitter/SortableLists/app/views/welcome/index.html.erb"/>
-<editorState selectionHorizontalPixel="0" selectionLength="43" selectionOffset="43" selectionTopPixel="0"/>
-</editor>
-<editor id="com.aptana.editor.erb.html" name="paruser.html.erb" partName="paruser.html.erb" path="/Users/saaspointpair/samples/twitter/SortableLists/app/views/welcome/paruser.html.erb" title="paruser.html.erb" tooltip="twitter/SortableLists/app/views/welcome/paruser.html.erb" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/twitter/SortableLists/app/views/welcome/paruser.html.erb"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="109" selectionTopPixel="0"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
@@ -111,8 +65,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>&#x0A;<category IMemento.internal.id="Errors (1 item)"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -126,17 +78,10 @@
 </view>
 <view id="com.aptana.explorer.view" partName="App Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" GitChangedFilesFilterEnabled="" activeProject="twitter">
-<project name="demo">
-<selection>
-<element path="/twitter"/>
+<project name="demo">&#x0A;<selection>&#x0A;<element path="/twitter"/>
 </selection>
 </project>
-<project name="twitter">
-<expanded>
-<element path="/twitter/SortableLists"/>
-</expanded>
-<selection>
-<element path="/twitter"/>
+<project name="twitter">&#x0A;<selection>&#x0A;<element path="/twitter"/>
 </selection>
 </project>
 </viewState>
@@ -145,7 +90,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.aptana.editor.erb.html" activePerspective="com.aptana.ui.WebPerspective">
+<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.aptana.ui.WebPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor descriptor="org.eclipse.jdt.ui.JavaPerspective" id="&lt;Java&gt;" label="&lt;Java&gt;"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -269,12 +214,12 @@
 <new_wizard_action id="org.radrails.rails.ui.projectWizard"/>
 <perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="com.aptana.explorer.view"/>
-<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="com.aptana.terminal.views.terminal"/>
 <view id="com.aptana.terminal.views.terminal:132f73c4f56"/>
+<view id="com.aptana.explorer.view"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="com.aptana.samples.ui.SamplesView"/>
 <fastViewBars/>
@@ -340,175 +285,12 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.ruby" uri="file:/Users/saaspointpair/samples/twitter/SortableLists/app/controllers/welcome_controller.rb"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/twitter/SortableLists/app/controllers/worksiteblock_controller.rb"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" path="/twitter/SortableLists/app/views/worksiteblock/find_by_wn.html.erb"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" path="/twitter/SortableLists/app/views/welcome/paruser.html.erb"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" path="/twitter/SortableLists/app/views/welcome/index.html.erb"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" path="/twitter/SortableLists/app/views/paruser/dispcountry.html.erb"/>
-</editors>
-<item historyLabel="welcome_controller.rb" index="0">
-<position info="not_deleted" x="679" y="0"/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="1833" y="0"/>
-</item>
-<item historyLabel="welcome_controller.rb" index="0">
-<position info="not_deleted" x="679" y="0"/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="1833" y="0"/>
-</item>
-<item historyLabel="welcome_controller.rb" index="0">
-<position info="not_deleted" x="679" y="0"/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="1833" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="588" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="588" y="0"/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="587" y="0"/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="587" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="index.html.erb" index="4">
-<position info="not_deleted" x="42" y="0"/>
-</item>
-<item historyLabel="welcome_controller.rb" index="0">
-<position info="not_deleted" x="679" y="0"/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="welcome_controller.rb" index="0">
-<position info="not_deleted" x="679" y="0"/>
-</item>
-<item historyLabel="dispcountry.html.erb" index="5">
-<position/>
-</item>
-<item historyLabel="index.html.erb" index="4">
-<position info="not_deleted" x="43" y="43"/>
-</item>
-<item historyLabel="dispcountry.html.erb" index="5">
-<position info="not_deleted" x="100" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="77" y="0"/>
-</item>
-<item historyLabel="index.html.erb" index="4">
-<position info="not_deleted" x="43" y="43"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="77" y="0"/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="587" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="587" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="540" y="0"/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="587" y="0"/>
-</item>
-<item historyLabel="welcome_controller.rb" index="0">
-<position info="not_deleted" x="679" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="532" y="0"/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="1428" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="212" y="0"/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="1428" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="426" y="0"/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="564" y="0"/>
-</item>
-<item historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="426" y="0"/>
-</item>
-<item historyLabel="worksiteblock_controller.rb" index="1">
-<position info="not_deleted" x="564" y="0"/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="welcome_controller.rb" index="0">
-<position info="not_deleted" x="679" y="0"/>
-</item>
-<item historyLabel="paruser.html.erb" index="3">
-<position info="not_deleted" x="109" y="0"/>
-</item>
-<item active="true" historyLabel="find_by_wn.html.erb" index="2">
-<position info="not_deleted" x="426" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1f514e8"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -516,22 +298,15 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="terminalArea"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="paruser.html.erb" tooltip="twitter/SortableLists/app/views/welcome/paruser.html.erb">
-<persistable path="/twitter/SortableLists/app/views/welcome/paruser.html.erb"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="find_by_wn.html.erb" tooltip="twitter/sortablelists/app/views/worksiteblock/find_by_wn.html.erb">
+<persistable path="/twitter/sortablelists/app/views/worksiteblock/find_by_wn.html.erb"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="dispcountry.html.erb" tooltip="twitter/SortableLists/app/views/paruser/dispcountry.html.erb">
-<persistable path="/twitter/SortableLists/app/views/paruser/dispcountry.html.erb"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="index.html.erb" tooltip="twitter/SortableLists/app/views/welcome/index.html.erb">
-<persistable path="/twitter/SortableLists/app/views/welcome/index.html.erb"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="paruser_controller.rb" tooltip="twitter/SortableLists/app/controllers/paruser_controller.rb">
-<persistable path="/twitter/SortableLists/app/controllers/paruser_controller.rb"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="worksiteblock_controller.rb" tooltip="twitter/sortablelists/app/controllers/worksiteblock_controller.rb">
+<persistable path="/twitter/sortablelists/app/controllers/worksiteblock_controller.rb"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="find_by_wn.html.erb" tooltip="twitter/SortableLists/app/views/worksiteblock/find_by_wn.html.erb">
 <persistable path="/twitter/SortableLists/app/views/worksiteblock/find_by_wn.html.erb"/>
@@ -539,32 +314,38 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="worksiteblock_controller.rb" tooltip="twitter/SortableLists/app/controllers/worksiteblock_controller.rb">
 <persistable path="/twitter/SortableLists/app/controllers/worksiteblock_controller.rb"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="schema.rb" tooltip="twitter/SortableLists/db/schema.rb">
-<persistable path="/twitter/SortableLists/db/schema.rb"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="find_by_wsb.html.erb" tooltip="twitter/SortableLists/app/views/worksiteblock/find_by_wsb.html.erb">
+<persistable path="/twitter/SortableLists/app/views/worksiteblock/find_by_wsb.html.erb"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.css" name="lists.css" tooltip="twitter/SortableLists/public/stylesheets/lists.css">
-<persistable path="/twitter/SortableLists/public/stylesheets/lists.css"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="get_user_req.html.erb" tooltip="twitter/SortableLists/app/views/worksiteblock/get_user_req.html.erb">
+<persistable path="/twitter/SortableLists/app/views/worksiteblock/get_user_req.html.erb"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.css" name="fieldlist.css" tooltip="twitter/SortableLists/public/stylesheets/fieldlist.css">
-<persistable path="/twitter/SortableLists/public/stylesheets/fieldlist.css"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.xml" name="check.xml" tooltip="twitter/SortableLists/check.xml">
+<persistable path="/twitter/SortableLists/check.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="routes.rb" tooltip="twitter/SortableLists/config/routes.rb">
-<persistable path="/twitter/SortableLists/config/routes.rb"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="sfdctables_controller.rb" tooltip="twitter/sortablelists/app/controllers/sfdctables_controller.rb">
+<persistable path="/twitter/sortablelists/app/controllers/sfdctables_controller.rb"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="seeds.rb" tooltip="twitter/SortableLists/db/seeds.rb">
-<persistable path="/twitter/SortableLists/db/seeds.rb"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="selectedfield.html.erb" tooltip="twitter/SortableLists/app/views/welcome/selectedfield.html.erb">
+<persistable path="/twitter/SortableLists/app/views/welcome/selectedfield.html.erb"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="development.sqlite3" tooltip="twitter/SortableLists/db/development.sqlite3">
-<persistable path="/twitter/SortableLists/db/development.sqlite3"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="get_user_req.html.erb" tooltip="twitter/sortablelists/app/views/worksiteblock/get_user_req.html.erb">
+<persistable path="/twitter/sortablelists/app/views/worksiteblock/get_user_req.html.erb"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="partable.rb" tooltip="twitter/SortableLists/app/models/partable.rb">
-<persistable path="/twitter/SortableLists/app/models/partable.rb"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="index.html.erb" tooltip="twitter/sortablelists/app/views/welcome/index.html.erb">
+<persistable path="/twitter/sortablelists/app/views/welcome/index.html.erb"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="application.html.erb" tooltip="twitter/SortableLists/app/views/layouts/application.html.erb">
-<persistable path="/twitter/SortableLists/app/views/layouts/application.html.erb"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.js" name="application.js" tooltip="twitter/sortablelists/public/javascripts/application.js">
+<persistable path="/twitter/sortablelists/public/javascripts/application.js"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="welcome_controller.rb" tooltip="twitter/SortableLists/app/controllers/welcome_controller.rb">
-<persistable path="/twitter/SortableLists/app/controllers/welcome_controller.rb"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="paruser_controller.rb" tooltip="twitter/SortableLists/app/controllers/paruser_controller.rb">
+<persistable path="/twitter/SortableLists/app/controllers/paruser_controller.rb"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="application_controller.rb" tooltip="twitter/sortablelists/app/controllers/application_controller.rb">
+<persistable path="/twitter/sortablelists/app/controllers/application_controller.rb"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.erb.html" name="paruser.html.erb" tooltip="twitter/sortablelists/app/views/welcome/paruser.html.erb">
+<persistable path="/twitter/sortablelists/app/views/welcome/paruser.html.erb"/>
 </file>
 </mruList>
 </workbench>

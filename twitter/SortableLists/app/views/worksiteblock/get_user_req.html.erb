@@ -5,6 +5,7 @@
     
    
   </tr>
+  <%=hidden_field_tag 'orgId',  @orgId%>
   <% i =0 %>
   <% @mapped_hash.each do |arr| %>
   <% i= i+1 %>
@@ -18,6 +19,6 @@
 <p> data added to SObject </p>
 <%= link_to 'SFDC Fields', sfdctables_path %>
  <a href="#"  OnClick="DoAction('<%= @sfdctables %>');"  >  DoA arg</a>
-<%= link_to 'Select Fields', welcome_fieldlist_path%>
-<a href="#"  OnClick="DoAction('sent from DoAction');" >  Doa </a> 
-<td><%= link_to 'Paruser', paruser_dispcountry_path %></td>
+<%= link_to 'Select Fields', welcome_fieldlist_path(:orgId =>@orgId)%>
+<%= link_to 'Selected Fields', welcome_selectedfield_path%>
+<td><%= link_to 'Welcome Screen', welcome_index_path %></td>

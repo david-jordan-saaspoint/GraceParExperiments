@@ -103,6 +103,37 @@ h1, h2, h3, h4 {
   background: #fff;
 }
 
+#selField{
+  width: 40px;
+  height: 910px;
+  padding: 10px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+ 
+/* Individual cards and slots */
+ 
+#selField div{
+  float: left;
+  width: 5px;
+  height: 20px;
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 2px;
+  margin: 0 0 0 10px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+
  
 #sfdcField div:first-child, #parField div:first-child, #notDroppable div:first-child {
   margin: 0 0 0 10px;

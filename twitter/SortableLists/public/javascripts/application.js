@@ -50,7 +50,7 @@ function replaceDuplicates(arr1, arr2,arr3)
 		var arrlen = arr2.length;
 		for (var j = 0; j<arrlen; j++) {
 			if (arr1[i] == arr2[j]) {
-			value = arr3[i] + " -> " + arr2[j];
+			value = arr3[i] + " : " + arr2[j];
 			arr2[j] = value;
 		}
 	}
@@ -59,7 +59,7 @@ function replaceDuplicates(arr1, arr2,arr3)
 }
 
 
-function init(par, sfdc, selectedfields) {
+function init(sfdc, par, selectedfields) {
   // assign the parameters into javascript arrays 
   
   var parstr = stripEscapes(par);
@@ -79,7 +79,7 @@ function init(par, sfdc, selectedfields) {
   initsel = initselected.split(",");
   
  
-//  $('#parField').html("PAR Fields");
+ // $('#parField').html(selectedfields);
 //  $('#sfdcField').html("Available SFDC Fields" );
   
 	
@@ -92,7 +92,7 @@ function init(par, sfdc, selectedfields) {
   var value = '';
   var keys = new Array();
   var values = new Array();
-  //keys will hold SFDC fields and values will hold PAR fields from the selected list
+  //keys will hold PAR fields and values will hold SFDC fields from the selected list
  // alert("starting");
   for (var i =0; i<initsel.length; i++) {
   	key = initsel[i].split(":")[0];
@@ -103,14 +103,15 @@ function init(par, sfdc, selectedfields) {
   	values.push(value);
   	//.write(keys);
   }
-  // handle the selected fields in the available list
-   parf = checkDuplicates(values,parf);
-   sfdcf = replaceDuplicates(keys,sfdcf, values); 
+  // handle the selected fields in the available list. copy sfdcf into sfdcf_orig for deselect option
+   parf = checkDuplicates(keys,parf);
+   sfdcf_orig = sfdcf
+   sfdcf = replaceDuplicates(values,sfdcf, keys); 
  
   //Dsiplay the drag and drop columns
   
   for ( var i=0; i<parf.length; i++ ) {
-      $('<div>' + parf[i] + '</div>').data( 'number', parf[i] ).attr( 'id', 'parfield'+parf[i] ).appendTo( '#parField' ).draggable( {
+      $('<div>' + parf[i] + '</div>').data( 'number', parf[i] ).attr( 'id', 'parfield'+i ).appendTo( '#parField' ).draggable( {
      // containment: '#content',
       stack: '#parField div',
       cursor: 'move',
@@ -123,16 +124,19 @@ function init(par, sfdc, selectedfields) {
  // var sfdcf = ["WorksiteBlock/BlockBaseWorksite/Name", "WorksiteBlock/BlockBaseWorksite.parId", "WorksiteBlock/BlockCRMOrganization/CompanyNumber"];
  // alert(sfdcf);
  
-  for ( var i=0; i<sfdcf.length; i++ ) {
-  	if (sfdcf[i].indexOf('->') == -1) {
-  	  $('<div>' + sfdcf[i] + '</div>').data( 'number', sfdcf[i] ).attr( 'id', 'sfdcfield'+sfdcf[i]  ).appendTo( '#sfdcField' ).droppable( {
+  for ( var i=j =0; i<sfdcf.length; i++ ) {
+  	if (sfdcf[i].indexOf(':') == -1) {
+  	  $('<div>' + sfdcf[i] + '</div>').data( 'number', sfdcf[i] ).attr( 'id', 'droppable'+i ).appendTo( '#sfdcField' ).droppable( {
       	accept: '#parField div',
       	hoverClass: 'hovered',
       	drop: handleFieldDrop
     	} );
    	 }
    else {
-   		$('<div>' + sfdcf[i] + '</div>').data( 'number', sfdcf[i] ).attr( 'id', 'sfdcfield'+sfdcf[i]  ).appendTo( '#notDroppable' )
+   	    j++;
+   		$('<div>' + sfdcf[i] + '</div>').data( 'number', sfdcf[i] ).attr( 'id', 'notDroppable'+j  ).appendTo( '#notDroppable' )
+   		
+   		$('<div id="button"> "try me" </div>').data( 'number', 'select' ).attr( 'id', 'selField' + j ).appendTo('#selField')  
      }
   }
 //   for (key in hash_selected) {
@@ -142,9 +146,10 @@ function init(par, sfdc, selectedfields) {
   
 function handleFieldDrop( event, ui ) {
   var sfdc_pos = $(this).data( 'number' );
+ 
   var par_pos = ui.draggable.data( 'number' );
-  selected[sfdc_pos] = par_pos;  
-//  alert( "Drag stopped!: (" + selected[par_pos]+ '  '+ [par_pos] +  ")\n");
+  selected[par_pos] = sfdc_pos;  
+  alert( "Drag stopped!: (" + selected[par_pos]+ '  '+ [par_pos] +  ")\n");
   
   $(this).droppable( 'disable' );
   ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
@@ -164,7 +169,6 @@ function doSaveAs(){
 	 theRequestPost['field_mapping'] = selected;
 	//theRequestPost = selected;
 	try{
-		
 		//alert(selected);
      	//$.post('http://10.3.0.192:8080/Listener/foo','hello');
       	$.post('/welcome/selectedfieldPersist', theRequestPost,  mySuccess);
@@ -176,6 +180,70 @@ function doSaveAs(){
     {
     	alert("EXCEPTION "+e);
     }
-      
-
+  
  }
+ 
+function deselect(arg1){
+	
+	i = arg1;
+	 
+}
+function removeElement(arg1) {
+	//remove the button
+  var d = document.getElementById('selField');
+  var olddiv = document.getElementById('selField'+arg1);
+  d.removeChild(olddiv);
+  
+ // remove nondroppable element
+  var label = sfdcField = parField = '';
+  var d = document.getElementById('notDroppable');
+  var olddiv = document.getElementById('notDroppable'+arg1);
+  label = document.getElementById('notDroppable'+ arg1).innerHTML
+  parField = label.split(":")[0];
+  sfdcField = label.split(":")[1];
+  d.removeChild(olddiv);
+  
+  //remove from save button array
+  
+  newselected ={};
+  for (var key in selected){
+  	//a = delete selected(parField);
+  	alert(parField)
+   	if (key == parField) {
+   		alert(key)
+   	}
+   	else
+   	{
+   		newselected[key] = selected[key];
+  		alert("added")
+  	}
+  }
+  selected = newselected;
+  //for (var key in selected)
+  //	 alert(key + ":" +selected[key]);
+  //add div in sfdcfield and parfield
+  addElementDroppable(sfdcField);
+  addElementPar(parField);
+
+}
+
+function addElementDroppable(eleName ) {
+	
+	$('<div>' + eleName + '</div>').data( 'number', eleName ).attr( 'id', 'droppable'+ eleName  ).appendTo( '#sfdcField' ).droppable( {
+      	accept: '#parField div',
+      	hoverClass: 'hovered',
+      	drop: handleFieldDrop
+    	} );
+	
+}
+
+function addElementPar(eleName) {
+	 $('<div>' + eleName + '</div>').data( 'number', eleName ).attr( 'id', 'parfield'+eleName ).appendTo( '#parField' ).draggable( {
+     // containment: '#content',
+      stack: '#parField div',
+      cursor: 'move',
+      revert: true,
+      drop: handleFieldDrop
+    });
+}
+
