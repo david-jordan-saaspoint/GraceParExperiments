@@ -9,9 +9,7 @@ class WelcomeController < ApplicationController
   @authenticated = false
  include HTTParty
  #This has to be from the sessions data
- 
-  @orgId = "123"
-#  before_filter :authentication_check, :except => :index
+ #  before_filter :authentication_check, :except => :index
   @un, @pw = 'aviord4@utveckling', 'K5MeMmPP'
   respond_to :js, :only =>[:selectedfield]
   
@@ -19,19 +17,24 @@ class WelcomeController < ApplicationController
   
   def index
      # this needs to come from sessions details in html header
-     @message = params[:sfdcid]
+     @message = Hash.new
+     @message["orgId"] = "123"
+     @message["sfdc_id"] = "005U0000000YmtlIAC"
+    
+     # @message = params[:sfdcid]
   end
   
   def paruser
-      @id = params[:id]
-      @pardb = Pardb.find_by_sfdc_id(@id)
+      @sfdc_id = params[:sfdc_id]
+      @orgId = params[:orgId]
+      @pardb = Pardb.find_by_sfdc_id(@sfdc_id)
       @un = @pardb.par_un
       @pw = @pardb.par_pw
   end
  
   def fieldlist
       # select all records from Sfdctable, Partable and Selectedfields table for the org
-      @orgId= '123'
+      @orgId= params[:orgId]
       @fieldlist = Array.new
       @sfdctables = Sfdctable.find_all_by_orgId(@orgId)
       #@sfdctables = Sfdctable.find(:all, :select => 'fieldname')
@@ -70,7 +73,7 @@ class WelcomeController < ApplicationController
      # To do: Persist data here - first delete all the records for the org and re insert the selected ones
     Selectedfield.delete_all(:orgId => @orgId)
     @form_params.each do |val| 
-      selectedfield = Selectedfield.create(:parField => val[0], :sfdcField => val[1], :orgId =>@orgId)
+      selectedfield = Selectedfield.create(:parField => val[1], :sfdcField => val[0], :orgId =>@orgId)
     end
     p "inserted into selected table" 
     p "form_params", @form_params

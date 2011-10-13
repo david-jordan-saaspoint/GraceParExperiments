@@ -19,6 +19,7 @@
 	<%= text_field_tag :worksite %>
    <p> Country:
 	<%= text_field_tag :country %>
+	<p><%=hidden_field_tag 'orgId',  @orgId%> </p>
 	<%= submit_tag 'Find Records'%>
 		   
  <% end %>

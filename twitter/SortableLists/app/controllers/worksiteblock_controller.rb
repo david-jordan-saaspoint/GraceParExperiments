@@ -17,7 +17,7 @@ class WorksiteblockController < ApplicationController
   
       #searches the database for data based on search criteria
   def find_by_wn
-    
+      @orgId = params[:orgId]
       wn = params[:worksite].capitalize
       wgc = params[:country].capitalize
       theUrl = 'https://obo.par.se/itb/doc/S-W-4.xml' 
@@ -38,9 +38,10 @@ class WorksiteblockController < ApplicationController
     # checks for user requirement
    def get_user_req
      user_choice = params[:id]
-     selected_par = params[:par]
+     selected_par = params[:parId]
+     orgId = params[:orgId]
      @mapped_hash = Hash.new
-     orgId= user_choice
+     
      theUrl = 'https://obo.par.se/itb/doc/WorksiteBlock.xml' 
      resp = self.class.get(theUrl, :query => {:worksiteId => selected_par}).body
      xml_file = open("check.xml", 'w')
@@ -50,7 +51,7 @@ class WorksiteblockController < ApplicationController
      f = File.read(xmlfile)
      doc=Nokogiri::XML(f)
     
-        Selectedfield.find(:all,:select => "sfdcField, parField"). each do |field|
+        Selectedfield.find(:all,:select => "sfdcField, parField", :conditions => "orgId = #{orgId}"). each do |field|
           query_result = field.parField
           sfdckey = field.sfdcField    
         # fetch the value for the selected fields from the xml file

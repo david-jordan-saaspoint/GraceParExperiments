@@ -1,5 +1,5 @@
 <h2> The countries you have access to </h2>
-
+<%=hidden_field_tag '@message',  @authentication_details%>
 <table>
   <tr>
      <th>Countries</th>
@@ -18,4 +18,4 @@
  <% end %>
  </table>
  
-<td><%= link_to 'Paruser', welcome_paruser_path(:id =>'005U0000000YmtlIAC') %></td>
+<td><%= link_to 'Paruser', welcome_paruser_path(:sfdc_id =>@authentication_details["sfdc_id"], :orgId => @authentication_details["orgId"]) %></td>

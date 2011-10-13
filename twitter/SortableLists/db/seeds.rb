@@ -15,7 +15,7 @@ sfdctable = Sfdctable.create(:fieldname => 'PAR121__Status__c', :orgId =>'123', 
 sfdctable = Sfdctable.create(:fieldname => 'PAR121__StatusCode__c', :orgId =>'123', :fieldtpe =>'String')
 
 Pardb.delete_all
-paruser = Pardb.create(:sfdc_id => '005U0000000YmtlIAC', :par_un => 'aviord4@utveckling', :par_pw => 'K5MeMmPP', :orgId =>'1234')
+paruser = Pardb.create(:sfdc_id => '005U0000000YmtlIAC', :par_un => 'aviord4@utveckling', :par_pw => 'K5MeMmPP', :orgId =>'123')
 paruser = Pardb.create(:sfdc_id => '111111', :par_un => 'demo@par', :par_pw => 'K5MeMmPP', :orgId =>'1111')
 
 Selectedfield.delete_all

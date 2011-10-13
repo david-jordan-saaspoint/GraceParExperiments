@@ -79,9 +79,9 @@ function init(par, sfdc, selectedfields) {
   initsel = initselected.split(",");
   
  
-  $('#parField').html("PAR Fields");
-  $('#sfdcField').html("SFDC Fields" );
-  $('#selField').html("Selected Fields");
+//  $('#parField').html("PAR Fields");
+//  $('#sfdcField').html("Available SFDC Fields" );
+  
 	
   // Create the par field list
   //parf = ["Name", "PAR121__parId__c", "AccountNumber", "PAR121__Status__c", "PAR121__StstusCode__c"];
@@ -122,27 +122,28 @@ function init(par, sfdc, selectedfields) {
   // Create the sfdc field list
  // var sfdcf = ["WorksiteBlock/BlockBaseWorksite/Name", "WorksiteBlock/BlockBaseWorksite.parId", "WorksiteBlock/BlockCRMOrganization/CompanyNumber"];
  // alert(sfdcf);
-  var addfield= '';
+ 
   for ( var i=0; i<sfdcf.length; i++ ) {
-    $('<div>' + sfdcf[i] + '</div>').data( 'number', sfdcf[i] ).attr( 'id', 'sfdcfield'+sfdcf[i]  ).appendTo( '#sfdcField' ).droppable( {
-      accept: '#parField div',
-      hoverClass: 'hovered',
-      drop: handleFieldDrop
-    } );
+  	if (sfdcf[i].indexOf('->') == -1) {
+  	  $('<div>' + sfdcf[i] + '</div>').data( 'number', sfdcf[i] ).attr( 'id', 'sfdcfield'+sfdcf[i]  ).appendTo( '#sfdcField' ).droppable( {
+      	accept: '#parField div',
+      	hoverClass: 'hovered',
+      	drop: handleFieldDrop
+    	} );
+   	 }
+   else {
+   		$('<div>' + sfdcf[i] + '</div>').data( 'number', sfdcf[i] ).attr( 'id', 'sfdcfield'+sfdcf[i]  ).appendTo( '#notDroppable' )
+     }
   }
 //   for (key in hash_selected) {
-  	
 //  	$('<div>' + hash_selected[key] + '</div>').data('number', hash_selected[key] ).attr('id','selfield'+ hash_selected[key] ).appendTo('#selField')
 //  }
-   
-  
-  
 }
   
 function handleFieldDrop( event, ui ) {
   var sfdc_pos = $(this).data( 'number' );
   var par_pos = ui.draggable.data( 'number' );
-  selected[par_pos] = sfdc_pos;  
+  selected[sfdc_pos] = par_pos;  
 //  alert( "Drag stopped!: (" + selected[par_pos]+ '  '+ [par_pos] +  ")\n");
   
   $(this).droppable( 'disable' );

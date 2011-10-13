@@ -1,5 +1,6 @@
 <h1>Choice of Records from Rest Sc4 </h1>
 <h2> Click to choose records </h2>
+
 <table>
   <tr>
     <th>Counter</th>
@@ -10,6 +11,7 @@
    
   </tr>
   <% i =0 %>
+  
   <% @mapped_data.each do |arr| %>
   <% i= i+1 %>
   <tr>
@@ -17,7 +19,8 @@
     <td><%= arr[0]  %></td>
     <td><%= arr[1]  %></td>
     <td><%= arr[2]  %></td>
-    <td><%= link_to  'Select', :controller => 'worksiteblock', :action => 'get_user_req', :id=>i, :par =>arr[2] %></td> 
+    <td><%=hidden_field_tag 'orgId',  @orgId%></td>
+    <td><%= link_to  'Select', :controller => 'worksiteblock', :action => 'get_user_req', :id=>i, :parId =>arr[2] , :orgId => @orgId %></td> 
  <% end %>
 </table>
  
