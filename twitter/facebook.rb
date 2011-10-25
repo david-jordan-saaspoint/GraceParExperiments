@@ -7,21 +7,21 @@ url = 'https://graph.facebook.com/danielramamoorthy?metadata=1n'
 url1 = 'https://graph.facebook.com/graceram/picture'
 
 response = RestClient.get(url)
-puts response.body
+#puts response.body
 response = RestClient.get(url1)
-puts response.body
+#puts response.body
 
 url2 = 'https://graph.facebook.com/danielramamoorthy'
 response = RestClient.get(url2)
-puts response.body
+#puts response.body
 
-url3 = 'https://graph.facebook.com/search?until=yesterday&q=orange'
+url3 = 'https://graph.facebook.com/search?until=yesterday&q=starbucks'
 response = RestClient.get(url3)
 puts response.body
 
 url4 = 'https://graph.facebook.com/search?since=yesterday&q=orange'
 response = RestClient.get(url4)
-puts response.body
+#puts response.body
 
 #ç/danielramamoorthy/picture
 #https://graph.facebook.com/danielramamoorthy/likes?limit=3&access_token=

@@ -2,7 +2,8 @@ class CreateSfdctables < ActiveRecord::Migration
   def self.up
     create_table :sfdctables do |t|
       t.string :fieldname
-      t.string :fieldtpe
+      t.string :fieldtype
+      t.string :fieldlabel
       t.string :orgId
 
       t.timestamps

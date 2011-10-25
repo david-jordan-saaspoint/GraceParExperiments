@@ -10,7 +10,8 @@
 <table>
   <tr>
     <th>Fieldname</th>
-    <th>Fieldtpe</th>
+    <th>Fieldlabel</th>
+    <th>Fieldtype</th>
     <th>Orgid</th>
     <th></th>
     <th></th>
@@ -21,17 +22,16 @@
 <% @sfdctables.each do |sfdctable| %>
   <tr>
     <td><%= sfdctable.fieldname %></td>
-    <td><%= sfdctable.fieldtpe %></td>
+     <td><%= sfdctable.fieldlabel %></td> 
+    <td><%= sfdctable.fieldtype %></td>
+      
     <td><%= sfdctable.orgId %></td>
     
-  <td>  <a href="#" id="alert" message= "from the view" >  viewalert </a> </td>
-  
-   <td>  <a href="#"  OnClick="DoAction('sent from DoAction');" >  Click </a> </td>
-    <td>  <a href="#"  OnClick="DoAction('<%= sfdctable.fieldname %>');"  >  ClickAgain</a> </td>
-    
+        
     <td><%= link_to 'Show', sfdctable %></td>
     <td><%= link_to 'Edit', edit_sfdctable_path(sfdctable) %></td>
     <td><%= link_to 'Destroy', sfdctable, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td> <a href="#"  OnClick="DoAction('<%= sfdctable.fieldname %>');"  >  ClickAgain</a> </td>
   </tr>
 <% end %>
 </table>
@@ -41,7 +41,11 @@
 
 
 <br>
-
+<a href="#" id="alert" message= "from the view" >  viewalert </a> 
+  
+<a href="#"  OnClick="DoAction('sent from DoAction');" >  Click </a> 
+  
 <%= link_to 'New Sfdctable', new_sfdctable_path %>
 <br>
 <%= link_to 'Welcome Screen', :controller=> 'welcome', :action => 'index'%>
+<p> <%= will_paginate @sfdctables %>

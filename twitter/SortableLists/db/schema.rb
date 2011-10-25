@@ -38,7 +38,8 @@ ActiveRecord::Schema.define(:version => 20111005153014) do
 
   create_table "sfdctables", :force => true do |t|
     t.string   "fieldname"
-    t.string   "fieldtpe"
+    t.string   "fieldtype"
+    t.string   "fieldlabel"
     t.string   "orgId"
     t.datetime "created_at"
     t.datetime "updated_at"

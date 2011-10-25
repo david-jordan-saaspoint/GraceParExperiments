@@ -1,29 +1,82 @@
 <h1>Choice of Records from Rest Sc4 </h1>
 <h2> Click to choose records </h2>
+<% form_tag  :controller => 'worksiteblock', :action => 'get_user_req' do %>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script src="/javascripts/selectall.js" type="text/javascript" charset="utf-8"></script>
 <table>
   <tr>
-    <th>Counter</th>
+    <th>Accounts</th>
     <th>Name</th>
     <th>Company Number</th>
     <th>Par ID</th>
-    <th> <%= link_to  'Select All', :controller => 'worksiteblock', :action => 'get_user_req', :orgId => @orgId, :mapped_data => @par_idset %></th>
-    
+    <th> All Accounts<%= check_box_tag 'accountsall' , 'toggle', false, :onclick => "toggleAll('accountselect');return true;" %></th>  
   </tr>
+   <%= hidden_field_tag :mapped_data, :value => "xxxx"%>
   <% i =0 %>
-  
-  <% @mapped_data.each do |arr| %>
+ 
+  <% @mapped_data.each do |acc| %>
   <% i= i+1 %>
   <tr>
   	<td><%= i  %></td>
-    <td><%= arr[0]  %></td>
-    <td><%= arr[1]  %></td>
-    <td><%= arr[2]  %></td>
-    <td><%=hidden_field_tag 'orgId',  @orgId%></td>
+    <td><%= acc["Name"]  %></td>
+    <td><%= acc["CompanyNumber"]  %></td>
     
-    <td><%= link_to  'Select', :controller => 'worksiteblock', :action => 'get_user_req',  :id=>i, :par =>arr[2] , :orgId => @orgId %></td> 
- <% end %>
+    <td> <%=acc["parId"] %> <%= check_box_tag  "par_idset[#{i}]" , "#{acc['parId']}", false, :id=>"par_idset_#{i}", :class => 'accountselect' %>   </td>
+    
    
+    <td> <%= link_to  'Show Contacts', :par => "#{acc['parId']}"  %></th>
+   </tr>
+   
+   <tr><td colspan=10><div id="contact_details<%="#{i}"%>">
+   	
+ 
+  <% if (params[:par]  && params[:par] == "#{acc['parId']}") %>
+  
+  <tr>
+  	<th></th>
+    <th>Contacts</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Status</th>
+    <th>Subscribed</th>
+    <th>Par ID</th>
+    <th> All<%= check_box_tag 'contactsall' , 'toggle', false, :onclick => "toggleAll('contactselect');return true;" %></th>
+    <th><%= submit_tag "Select Contacts" %></th>
+    
+  </tr>
+  
+  <% j =0 %>
+  
+  <% @mapped_contacts.each do |arr| %>
+  <% j= j+1 %>
+  <tr>
+  	<td>     </td>
+  	<td>Contact <%= j  %></td>
+  	<td><%= arr["FirstName"]  %></td>
+    <td><%= arr["LastName"]  %></td>
+    <td><%= arr["Status"]  %></td>
+    <td><%= arr["Subscribed"]  %></td>
+    <td> <%=arr["parId"] %> </td>
+   
+    <% session[:companyId] = "#{acc['CompanyNumber']}" %>
+    <td><%= check_box_tag  "par_contactset[#{j}]" , "#{arr['parId']}", false, :id=>"par_contactset_#{j}", :class => 'contactselect' %>   </td>
+ <% end %>   	
+  </table>
+  
+  <% end %>  
+</div></td></tr> 
+   
+ 
+   
+<% end %>
 </table>
+<%= submit_tag "Submit" %>
+<% end %>
+   
+
+
+
  
 

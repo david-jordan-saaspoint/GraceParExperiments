@@ -11,15 +11,19 @@ class ParuserController < ApplicationController
   
   before_filter :authentication_check
   
+   
+  
 #  @un, @pw = 'aviord4@utveckling', 'K5MeMmPP'
   def authentication_check
+    @un = session[:un]
+    @pw = session[:pw]
     p "$$$$$ in authentication check of paruser controller $$$$$$$$$$$"
-    self.class.basic_auth 'aviord4@utveckling', 'K5MeMmPP'
+    self.class.basic_auth @un, @pw
   end
   
   
   def dispcountry
-    @authentication_details = params[:authen]
+    @authentication = params[:authentication]
     theUrl = 'http://obo.par.se/itb/doc/UserConfig.xml' 
     resp = self.class.get(theUrl)
     resp_hash = resp.parsed_response

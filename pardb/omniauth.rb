@@ -7,8 +7,8 @@ client = Databasedotcom:: Client.new :client_id => "3MVG9QDx8IX8nP5SZh4eVqHyA0V.
 client.authenticate :username => "grace@par-dev.com", :password => "Saaspoint12VmnWWoESfynbRW4RqG754SXD"
 
 account_class = client.materialize("Account")
- Account.find_by_Name("GenePoint")
-  p client.client_id
+p Account.find_by_Name("GenePoint")
+   client.client_id
 #  client.debugging = true
 
 # write a new account with the details
@@ -22,7 +22,7 @@ account_class = client.materialize("Account")
 
 begin
 #p account.save
-client.upsert(Account, "par121__parId__c", "01-09898", {"Name" => "ABCxxrr"})
+#client.upsert(Account, "par121__parId__c", "01-09898", {"Name" => "ABCxxrr"})
 
 rescue
    p "error #{$!}"

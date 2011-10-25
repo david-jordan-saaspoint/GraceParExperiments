@@ -2,7 +2,7 @@ class SfdctablesController < ApplicationController
   # GET /sfdctables
   # GET /sfdctables.xml
   def index
-    @sfdctables = Sfdctable.all
+    @sfdctables = Sfdctable.paginate :page=>params[:page], :order=>'created_at desc', :per_page =>20
      
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +80,6 @@ class SfdctablesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
 end

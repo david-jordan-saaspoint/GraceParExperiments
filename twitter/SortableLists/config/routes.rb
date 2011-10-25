@@ -1,6 +1,7 @@
 SortableLists::Application.routes.draw do
-  
  
+  resources :tasks, :collection => {:complete => :put}
+
    get "welcome/index"
   get "welcome/fieldlist"
   
@@ -9,15 +10,14 @@ SortableLists::Application.routes.draw do
   match "welcome/paruser"
   match "paruser/dispcountry"
   match "worksiteblock/find_by_wn"
-  match "worksiteblock/get_user_req"
+  match "worksiteblock/get_user_req" 
   match "welcome/selectedfield"
- 
+  match "worksiteblock/get_contacts"
  
   resources :sfdctables
   resources :pardbs
+  
  
-  
-  
  
 
   # The priority is based upon order of creation:

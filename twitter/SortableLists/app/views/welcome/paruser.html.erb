@@ -2,12 +2,12 @@
 
 <p>
   <b>ParUserName:</b>
-  <%= @pardb.par_un %>
+  <%= session[:un]%>
 </p>
 
 <p>
   <b>ParPassword:</b>
-  <%= @pardb.par_pw %>
+  <%= session[:pw] %>
   
  
 </p>
@@ -19,7 +19,7 @@
 	<%= text_field_tag :worksite %>
    <p> Country:
 	<%= text_field_tag :country %>
-	<p><%=hidden_field_tag 'orgId',  @orgId%> </p>
+	
 	<%= submit_tag 'Find Records'%>
 		   
  <% end %>

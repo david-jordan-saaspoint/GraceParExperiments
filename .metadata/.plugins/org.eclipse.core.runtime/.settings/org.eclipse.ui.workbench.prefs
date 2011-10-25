@@ -1,8 +1,9 @@
-#Mon Sep 12 17:12:12 IST 2011
+#Tue Oct 18 17:06:16 IST 2011
 perspectives=<Java>
 com.vectrace.mercurialeclipse.ui.colorsandfonts.removedBackgroundColor=66,14,9
 com.vectrace.mercurialeclipse.ui.colorsandfonts.conflictForegroundColor=248,248,248
 com.vectrace.mercurialeclipse.ui.colorsandfonts.deletedBackgroundColor=66,14,9
+//org.eclipse.ui.commands/state/com.aptana.explorer.commands.toggleAppExplorer/org.eclipse.ui.commands.toggleState=false
 HYPERLINK_COLOR=84,143,160
 ACTIVE_HYPERLINK_COLOR=84,143,160
 hyperlinkColor=84,143,160
@@ -21,4 +22,5 @@ org.eclipse.egit.ui.UncommittedChangeForegroundColor=248,248,248
 com.vectrace.mercurialeclipse.ui.colorsandfonts.changedForegroundColor=248,248,248
 com.vectrace.mercurialeclipse.ui.colorsandfonts.addedForegroundColor=248,248,248
 com.vectrace.mercurialeclipse.ui.colorsandfonts.unknownBackgroundColor=20,20,20
+//org.eclipse.ui.commands/state/com.aptana.editor.common.commands.toggleOutline/org.eclipse.ui.commands.toggleState=false
 com.vectrace.mercurialeclipse.ui.colorsandfonts.changedBackgroundColor=74,65,13

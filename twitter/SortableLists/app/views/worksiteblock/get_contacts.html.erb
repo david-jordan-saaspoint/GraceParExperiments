@@ -1,0 +1,34 @@
+<table>
+  <tr>
+    <th>Counter</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Par ID</th>
+    <th>Status</th>
+    <th>Subscribed</th>
+       
+    <th> <%= link_to  'Select All', :controller => 'worksiteblock', :action => 'get_user_req', :mapped_data => @par_idset %> </th>
+    
+  </tr>
+  <% i =0 %>
+  
+  <% @mapped_contacts.each do |arr| %>
+  <% i= i+1 %>
+  <tr>
+  	<td><%= i  %></td>
+    <td><%= arr[0]  %></td>
+    <td><%= arr[1]  %></td>
+    
+    <td><%= arr[2]  %></td>
+    <td><%= arr[3]  %></td>
+    <td> <%=arr[4] %> <%= check_box_tag  "par_idset[#{i}]" , "#{arr[2]}", false, :id=>"par_idset_#{i}" %>   </td>
+ <% end %>   	
+   
+    
+    
+ 
+
+   
+</table>
+ <%= submit_tag "Submit" %>
+
