@@ -1,6 +1,0 @@
-sf_field = Sf_field.create(:sfdcfield => 'Name', :orgId => '123', :fieldDatatype =>'String')
-sf_field = Sf_field.create(:sfdcfield => 'PAR121__parId__c', :orgId => '123', :fieldDatatype =>'String')
-
-sf_field = Sf_field.create(:sfdcfield => 'AccountNumber', :orgId =>'123', :fieldDatatype =>'String')
-sf_field = Sf_field.create(:sfdcfield => 'PAR121__Status__c', :orgId =>'123', :fieldDatatype =>'String')
-sf_field = Sf_field.create(:sfdcfield => 'PAR121__StatusCode__c', :orgId =>'123', :fieldDatatype =>'String')
