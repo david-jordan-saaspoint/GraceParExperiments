@@ -1,4 +1,4 @@
-<h1> Selecetd Fields for the OrgId <%= @orgId %></h1>
+<h1> Selected Fields for the OrgId <%= @orgId %></h1>
 <table>
   <tr>
     <th>SFDC Field</th>
@@ -9,12 +9,12 @@
  
 <% @selectedfields.each do |selectedfield| %>
   <tr>
-    <td><%= selectedfield.sfdcField %></td>
-    <td><%= selectedfield.parField %></td>
-    <td><%= selectedfield.orgId %></td>
+    <td><%= selectedfield.sfdcfield %></td>
+    <td><%= selectedfield.parfield %></td>
+    <td><%= selectedfield.orgid %></td>
     
   </tr>
 <% end %>
 </table>
-<%= link_to 'Welcome Screen', :controller=> 'welcome', :action => 'index'%>
+<p><%= link_to 'Welcome Screen', :controller=> 'welcome', :action => 'index'%></p>
 

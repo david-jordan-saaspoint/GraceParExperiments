@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fieldname:</b>
+  <%= @sfdctable.fieldname %>
+</p>
+
+<p>
+  <b>Fieldtpe:</b>
+  <%= @sfdctable.fieldtype %>
+</p>
+
+<p>
+  <b>Orgid:</b>
+  <%= @sfdctable.orgId %>
+</p>
+
+
+<%= link_to 'Edit', edit_sfdctable_path(@sfdctable) %> |
+<%= link_to 'Back', sfdctables_path %>

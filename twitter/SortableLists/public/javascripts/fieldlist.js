@@ -227,18 +227,24 @@ function removeElement(arg1) {
 
 function addElementDroppable(eleName, k ) {	
 	var add_to = "";
-	 n=26;
-	if (k < 25) {
+	 
+	if (k < 15) {
 		add_to = '#sfdcField';
 	}
-	else if(k < 50)
+	else if(k < 30)
 	{
 		add_to = '#sfdc2Field'
 	}
-	else if(k <75)
+	else if(k <45)
 		{ add_to = '#sfdc3Field'
 	}
-		else{ add_to = '#sfdc4Field'
+	else if(k <60)
+		{ add_to = '#sfdc4Field'
+	}
+	else if(k <75)
+		{ add_to = '#sfdc5Field'
+	}
+		else{ add_to = '#sfdc6Field'
 	}
 	
 		

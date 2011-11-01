@@ -1,5 +1,5 @@
 
- function toggleAll(name)
+ function toggleAll(name, leng)
 {
   boxes = document.getElementsByClassName(name);
   for (i = 0; i < boxes.length; i++)
@@ -14,3 +14,4 @@ function setAll(name,state)
     if (!boxes[i].disabled)
    		{	boxes[i].checked = state ; }
 }
+

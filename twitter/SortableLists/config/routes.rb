@@ -2,18 +2,21 @@ SortableLists::Application.routes.draw do
  
   resources :tasks, :collection => {:complete => :put}
 
-   get "welcome/index"
+  get "welcome/index"
   get "welcome/fieldlist"
   
   match "welcome/selectedfieldPersist"
   match  "welcome/fieldlist"  
-  match "welcome/paruser"
+  match "worksiteblock/paruser"
   match "paruser/dispcountry"
   match "worksiteblock/find_by_wn"
   match "worksiteblock/get_user_req" 
   match "welcome/selectedfield"
   match "worksiteblock/get_contacts"
- 
+  match "worksiteblock/show_more_records"
+  match "worksiteblock/show_more_details"
+  match "worksiteblock/show_contacts"
+# match "/updated" => redirect("https://na12.salesforce.com/001/o"), :as => :update
   resources :sfdctables
   resources :pardbs
   

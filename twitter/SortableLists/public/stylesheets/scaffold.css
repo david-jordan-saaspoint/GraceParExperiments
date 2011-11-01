@@ -2,14 +2,27 @@ body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+  font-size:   12px;
+  line-height: 12px;
 }
+
+label {
+	display: block;
+	margin-bottom: -1em;
+}
+
+input {
+	display: block;
+	position: relative;
+	left: 7em;
+	top: -0.5em;
+}
+
 
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
+  font-size: 10px;
 }
 
 a { color: #000; }
