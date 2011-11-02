@@ -1,0 +1,133 @@
+<WorksiteBlock xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://obo.par.se/itb/schema/WorksiteBlock.xsd">
+<BlockBaseWorksite dbId="201237946" parId="1:201237946" systemId="1">
+<Status>
+<Code>ST50</Code>
+<Text>Reklamspärrad enhet</Text>
+</Status>
+<Name>Inter IKEA Investments AB</Name>
+<PostalAddress>
+<Address>Hangövägen 25 Hus 8</Address>
+<Zipcode>115 41</Zipcode>
+<City>STOCKHOLM</City>
+<Country>SVERIGE</Country>
+</PostalAddress>
+</BlockBaseWorksite>
+<BlockBaseCommunication dbId="201237946" parId="1:201237946" systemId="1">
+<VisitAddress>
+<Address>Hangövägen 25 Hus 8</Address>
+<Zipcode>115 41</Zipcode>
+<City>STOCKHOLM</City>
+<Country>SVERIGE</Country>
+</VisitAddress>
+<Phone>08-55117680</Phone>
+</BlockBaseCommunication>
+<BlockCRMBusiness dbId="201237946" parId="1:201237946" systemId="1">
+<MainBusiness>
+<Code>HG64202</Code>
+<Text>Holding i icke-finansiella koncerner</Text>
+</MainBusiness>
+<Businesses>
+<Business>
+<Code>OV113</Code>
+<Text>Företag av stor ekonomisk betydelse</Text>
+</Business>
+<Business>
+<Code>SN4752112</Code>
+<Text>Köksinredning, -renovering</Text>
+</Business>
+<Business>
+<Code>SN64202</Code>
+<Text>Holding i icke-finansiella koncerner</Text>
+</Business>
+<Business>
+<Code>SN64993</Code>
+<Text>Värdepapper, sluten förvaltning</Text>
+</Business>
+</Businesses>
+</BlockCRMBusiness>
+<BlockCRMEconomy dbId="201237946" parId="1:201237946" systemId="1">
+<ShareCapital>
+<Code>AK91</Code>
+<Text>> 10000 tkr</Text>
+<Value>60000</Value>
+<Start>201001</Start>
+<End>201012</End>
+</ShareCapital>
+<Turnover>
+<Code>OM10</Code>
+<Text>1 - 1999 tkr</Text>
+<Value>75</Value>
+<Start>201001</Start>
+<End>201012</End>
+</Turnover>
+</BlockCRMEconomy>
+<BlockCRMGeography dbId="201237946" parId="1:201237946" systemId="1">
+<Zipcode>115 41</Zipcode>
+<City>STOCKHOLM</City>
+<Municipality>
+<Code>0180</Code>
+<Text>Stockholm</Text>
+</Municipality>
+<County>
+<Code>01</Code>
+<Text>Stockholm</Text>
+</County>
+<WorkforceRegion>
+<Code>01</Code>
+<Text>Stockholm/Södertälje</Text>
+</WorkforceRegion>
+<BrickCode>
+<Code>71</Code>
+<Text>Stockholm Nordost</Text>
+</BrickCode>
+<Country>
+<Code>SE</Code>
+<Text>SVERIGE</Text>
+</Country>
+</BlockCRMGeography>
+<BlockCRMOrganization dbId="201237946" parId="1:201237946" systemId="1">
+<OfficialWorksiteNumber>42521609</OfficialWorksiteNumber>
+<WorksiteType>
+<Code>TY10</Code>
+<Text>Huvudkontor</Text>
+</WorksiteType>
+<CompanyNumber>556228-6350</CompanyNumber>
+<VatNo>SE556228635001</VatNo>
+<LegalName>Inter IKEA Investments AB</LegalName>
+<LegalForm>
+<Code>JF49</Code>
+<Text>Aktiebolag</Text>
+</LegalForm>
+<CompanyType>
+<Code>TY50</Code>
+<Text>Privat</Text>
+</CompanyType>
+</BlockCRMOrganization>
+<BlockCRMSize dbId="201237946" parId="1:201237946" systemId="1">
+<NumberOfEmployees>
+<Code>AA20</Code>
+<Text>5 - 9</Text>
+</NumberOfEmployees>
+<NumberOfOfficeEmployees>
+<Code>KA00</Code>
+<Text>0</Text>
+</NumberOfOfficeEmployees>
+<CompanyNumberOfWorksites>1</CompanyNumberOfWorksites>
+<CompanyNumberOfEmployees>
+<Code>AA20</Code>
+<Text>5 - 9</Text>
+</CompanyNumberOfEmployees>
+<CompanyNumberOfOfficeEmployees>
+<Code>KA00</Code>
+<Text>0</Text>
+</CompanyNumberOfOfficeEmployees>
+</BlockCRMSize>
+<BlockCRMGroup dbId="201237946" parId="1:201237946" systemId="1">
+<CompanyNumber>3330258934</CompanyNumber>
+<CompanyName>Inter Ikea Holding SA</CompanyName>
+<Country>LU</Country>
+</BlockCRMGroup>
+<BlockPlusCommunication dbId="201237946" parId="1:201237946" systemId="1">
+<WWW>www.ikea.se</WWW>
+</BlockPlusCommunication>
+</WorksiteBlock>

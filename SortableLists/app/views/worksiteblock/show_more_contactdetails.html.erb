@@ -1,0 +1,122 @@
+<head>
+<h1>Choice of Records from Rest Sc4 <%= @criteria  %> </h1>
+<h2> Click to choose accounts and contacts</h2>
+<% form_tag  :controller => 'worksiteblock', :action => 'get_user_req' do %>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script src="/javascripts/selectall.js" type="text/javascript" charset="utf-8"></script>
+</head>
+ <%= will_paginate @mapped_data %> <%= link_to 'Show more  ', worksiteblock_show_more_records_path%> 
+ <br><%= link_to '  fewer', worksiteblock_show_less_records_path%></br>
+</div>
+<body>
+<table>
+  <tr>
+  	<% j =0 %>
+    
+    <th>Subscribed</th>
+    <th>Account Name</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Zipcode</th>
+    <th>City</th>
+    <th>Status</th>
+    <th>All Accounts<%= check_box_tag 'accountsall' , 'toggle', false, :onclick => "toggleAll('accountselect');return true;" %></th> 
+    <th><%= link_to 'More info', worksiteblock_show_more_details_path %></th> 
+  </tr>
+  <% i =0 %>
+  <% @mapped_data.each do |acc| %>
+  	<% i= i+1 %>
+  	<tr>
+  	<% checked = false %>      
+  	<td><%= check_box_tag 'AccountSubscribed', "#{acc['Subscribed']}", acc["Subscribed"] == "true" ? checked=true : checked= false  %></td>
+	<td><%= acc["Name"]  %></td>
+	<td><%= acc["Phone"]  %></td>
+	<td><%= acc["Address"]  %></td>
+	<td><%= acc["Zipcode"]  %></td>
+	<td><%= acc["City"]  %></td>
+	<td><%= acc["Status"]  %></td>
+	 <% checked = false %>
+    	<% if session[:account_selected].blank? %> 
+    		<% checked = false %>
+    	<% elsif (session[:account_selected].include?("#{acc['parId']}")) %>
+    		<% checked = true %>
+    	<% end %>
+    	
+    	<td> <%= check_box_tag  "par_idset[#{i}]" , "#{acc['parId']}", checked, :id=>"par_idset_#{i}", :class => 'accountselect' %>   </td>
+    	<td><%= submit_tag "Show Contacts "  + " " + "#{acc['parId']}" %></td>
+    </tr>
+  	<% this_acc_par_id = acc["parId"] %>
+  	<% if  (params[:par] == this_acc_par_id)  or (@contacts_hash[this_acc_par_id].blank? == false) %>
+  		<tr>
+  		<th>Contacts</th>
+  		    <th>Subscribed</th>
+    		<th>First Name</th>
+    		<th>Last Name</th>
+    		<th>Main Job Title</th>
+    		<th>Status</th>
+    		<th>Worksite Name</th>
+    		<th>Legal Name</th>
+    		<th>Worksite Phone</th>
+    		<th>Address</th>
+    		<th>Zipcode</th>
+    		<th>City</th>
+    		<th>Postal Address</th>
+    		<th>Postal Zipcode</th>
+    		<th>Postal City</th>
+    		<th>Type Code</th>
+    		<th>Department</th>
+    		<th>Worksite Status</th>
+			<th> All<%= check_box_tag 'contactsall' , 'toggle', false, :onclick => "toggleAll('contactselect');return true;" %></th>
+			<th><%= link_to 'Less info', worksiteblock_show_contacts_path %></th> 
+	</tr>
+  		
+  		<% @contacts_hash[this_acc_par_id].each do |arr| %>
+  		 <% j= j+1 %>
+  		 <tr>
+  			<td>Contact <%= j  %></td>
+  			<td><%= check_box_tag 'ContactSubscribed', "#{arr['Subscribed']}", arr["Subscribed"] == "true" ? checked=true : checked= false  %></td>
+  			<td><%= arr["FirstName"]  %></td>
+    		<td><%= arr["LastName"]  %></td>
+    		<td><%= arr["MainJobTitle"]  %></td>
+    		<td><%= arr["Status"]  %></td>
+    		<td><%= arr["WorksiteName"]  %></td>
+    		<td><%= arr["Legalname"]  %></td>
+    		<td><%= arr["WorksitePhone"]  %></td>
+    		<td><%= arr["Address"]  %></td>
+    		<td><%= arr["Zipcode"]  %></td>
+    		<td><%= arr["City"]  %></td>
+    		<td><%= arr["PostalAddress"]  %></td>
+    		<td><%= arr["PostalZipcode"]  %></td>
+    		<td><%= arr["PostalCity"]  %></td>
+    		<td><%= arr["TypeCode"]  %></td>
+    		<td><%= arr["Department"]  %></td>
+    		<td><%= arr["WorksiteStatus"]  %></td>
+    		<% session[:accountPar] = "#{acc['parId']}" %>
+    		<% checked = false %>
+    		<% if session[:contact_selected][this_acc_par_id].blank? %> 
+    			<% checked = false %>
+    		<% elsif (session[:contact_selected][this_acc_par_id].include?("#{arr['parId']}")) %>
+     			<% checked = true %>
+    		<% end %>
+    		
+    		<% if "#{arr['parId']}".blank? == false %>
+    		<% value = "#{arr['parId']}" + " - " + "#{acc['parId']}"  %>
+    		<td><%= check_box_tag  "par_contactset[#{j}]" , value, checked, :id=>"par_contactset_#{j}", :class => 'contactselect' %>   </td>
+    		<% end %>
+  		</tr>
+  		<% end %> 
+ 	<% end %>  
+  <% end %>
+</table>
+<%= submit_tag "Add to SFDC" %>
+<% end %>
+</body>
+<p>  <%= will_paginate @mapped_data %> <%= link_to 'Show more ', worksiteblock_show_more_records_path%>
+	<br><%= link_to ' fewer', worksiteblock_show_less_records_path%></br>
+
+
+
+ 
+

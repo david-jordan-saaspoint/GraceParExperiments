@@ -1,0 +1,33 @@
+<table>
+ <% if @mapped_hash %>
+  <tr>
+    <th>Counter</th>
+    <th>Selected one</th>
+    
+   
+  </tr>
+   <p> data added to SObject </p>
+   <%= "inserted into Accounts details of PAR:  #{@inserted_accounts}" %>
+  
+   <% i =0 %>
+   <% @mapped_hash.each do |arr| %>
+   <% i= i+1 %>
+  <tr>
+  	<td><%= i  %></td>
+    <td><%= arr %></td>
+  <% end %>
+  <% end %>
+  <% if @contacts %>  
+  	<% @contacts.each do |con|%>
+  	<%= con %>
+  	<% end %>
+  
+ <% end %>
+ </table>
+ 
+
+<%= link_to 'SFDC Fields', sfdctables_path %>
+ <a href="#"  OnClick="DoAction('<%= @sfdctables %>');"  >  DoA arg</a>
+<%= link_to 'Select Fields', welcome_fieldlist_path(:orgId =>@orgId)%>
+<%= link_to 'Selected Fields', welcome_selectedfield_path%>
+<td><%= link_to 'Welcome Screen', welcome_index_path %></td>

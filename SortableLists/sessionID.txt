@@ -1,0 +1,1 @@
+https://localhost:3000/MyRailsApp/?sid=00DU0000000ITUe%21ASAAQDUiJoj77oqcvEIQxp9dNdnIh5JD_63K41lY75UeLuUQR2f_v6UqHCeobN.uBmDkEP9HQvILbBeZiqNud70T3MBy9TDo&endPointUrl=https%3A%2F%2Fna12.salesforce.com%2Fservices%2FSoap%2Fc%2F22.0%2F00DU0000000ITUe

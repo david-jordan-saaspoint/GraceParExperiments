@@ -1,0 +1,16 @@
+<h2> The countries you have access to </h2>
+ <table>
+  <tr>
+     <th>System Id</th>
+     <th>Countries</th>
+  </tr>
+  <% @mapped_country.each_with_index do |arr,i| %>
+	<tr>
+  		
+		
+		<td><%= arr["systemId"] %></td>
+		<td><%= arr["description"] %></td>
+	</tr>
+  <% end %>
+ </table>
+<td><%= link_to 'Select Search Parameters', worksiteblock_paruser_path() %></td>
