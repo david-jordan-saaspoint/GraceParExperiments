@@ -36,6 +36,7 @@ class ParuserController < ApplicationController
   #    counter += 1
    # end
      session[:country] = @mapped_country
+    
   end
   
 end

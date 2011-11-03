@@ -16,7 +16,7 @@ class WelcomeController < ApplicationController
 
  def index
     # this needs to come from sessions details in html header
-     if session[:orgId].blank?
+    
         session[:orgId] = params[:orgid]
      #session[:sfdc_id] = "005U0000000YmtlIAC"
         session[:sfdc_id] = params[:uid]
@@ -31,11 +31,14 @@ class WelcomeController < ApplicationController
  #      session[:sfdc_pw] = "Saaspoint12VmnWWoESfynbRW4RqG754SXD"
   #      session[:un] = 'aviord4@utveckling' 
   #      session[:pw] = 'K5MeMmPP'
-  #      session[:sid]= "00DU0000000ITUe!ASAAQPfone6uMq76p7hl5jkyzfEeQiS4j1fYMhNLh7gbZHlc8tXTrdXLqsq8LOUarjOzYFiAga6dqZga_QN0_Gb2TklPOeB0"
+  #      session[:sid]= "00DU0000000ITUe!ASAAQJgN9OMCVYAvqNYGq5kARo7E2lh8JSgnvsWxlp5IdDz6vkthwPDlNSt0iTfnpxQ3uU2BJuW3_BexPRKTyAU4uW3e8Cen"
    #     session[:uri] = "https://na12.salesforce.com"
    #     session[:orgId] = "00DU0000000ITUe"
    #     session[:sfdc_id] = "005U0000000Ymtl"
-      end
+   
+ 
+     
+      p  "session sid  = " , session[:sid]
      # @message = params[:sfdcid]
   end
   
@@ -45,9 +48,9 @@ class WelcomeController < ApplicationController
         account_class = client.materialize("Account")
         orgId = session[:orgId]
     	# result_hash = Hash.new
-  	client.describe_sobject('Account')
-     	result_hash= client.describe_sobject('Account')
-     	result_hash['fields'].each do |ele|
+  	    client.describe_sobject('Account')
+     	  result_hash= client.describe_sobject('Account')
+     	  result_hash['fields'].each do |ele|
         if ele['updateable']
           sfdctable = Sfdctable.create(:fieldname => ele['name'], :fieldtype => ele['soapType'], :fieldlabel => ele['label'], :orgid => session[:orgId])
         end

@@ -14,7 +14,7 @@
 <table>
   <tr>
   	<% j =0 %>
-     <th>Subscribed</th>
+     <th>All<%= check_box_tag 'accountsall' , 'toggle', false, :onclick => "toggleAll('accountselect');return true;" %></th> 
      <th>Account Name</th>
     <th>Legal Name</th>
     <th>Phone</th>
@@ -25,26 +25,15 @@
     <th>Department</th>
     <th>Status</th>
     <th>Num of Contacts</th>
-   <th>All Accounts<%= check_box_tag 'accountsall' , 'toggle', false, :onclick => "toggleAll('accountselect');return true;" %></th> 
+    <th>Subscribed</th>
+   
     <th> <%= link_to 'Less info', worksiteblock_show_contacts_path %></th> 
   </tr>
   <% i =0 %>
   <% @mapped_data.each do |acc| %>
   	<% i= i+1 %>
   	<tr>
-  	<% checked = false %>      
-  	<td><%= check_box_tag 'AccountSubscribed', "#{acc['Subscribed']}", acc["Subscribed"] == "true" ? checked=true : checked= false  %></td>
-	<td><%= acc["Name"]  %></td>
-    <td><%= acc["Legalname"]  %></td>
-    <td><%= acc["Phone"]  %></td>
-	<td><%= acc["Address"]  %></td>
-	<td><%= acc["Zipcode"]  %></td>
-	<td><%= acc["City"]  %></td>
-	<td><%= acc["TypeCode"]  %></td>
-	<td><%= acc["Department"]  %></td>
-	<td><%= acc["Status"]  %></td>
-	<td><%= acc["NumberOfContacts"]  %></td>
-	<% checked = false %>
+  	<% checked = false %>
     	<% if session[:account_selected].blank? %> 
     		<% checked = false %>
     	<% elsif (session[:account_selected].include?("#{acc['parId']}")) %>
@@ -54,39 +43,33 @@
     	<td> <%= check_box_tag  "par_idset[#{i}]" , "#{acc['parId']}", checked, :id=>"par_idset_#{i}", :class => 'accountselect' %>   </td>
     	<td><%= submit_tag "Show Contacts "  + " " + "#{acc['parId']}" %></td>
     </tr>
-  	<% this_acc_par_id = acc["parId"] %>
-  	<% if  (params[:par] == "#{acc['parId']}")  or (@contacts_hash[this_acc_par_id].blank? == false) %>
-  		<tr>
-  		<th>Contacts</th>
-  		    <th>Subscribed</th>
-    		<th>First Name</th>
-    		<th>Last Name</th>
-    		<th>Main Job Title</th>
+		<td><%= acc["Name"]  %></td>
+    	<td><%= acc["Legalname"]  %></td>
+    	<td><%= acc["Phone"]  %></td>
+		<td><%= acc["Address"]  %></td>
+		<td><%= acc["Zipcode"]  %></td>
+		<td><%= acc["City"]  %></td>
+		<td><%= acc["TypeCode"]  %></td>
+		<td><%= acc["Department"]  %></td>
+		<td><%= acc["Status"]  %></td>
+		<td><%= acc["NumberOfContacts"]  %></td>
+		<% checked = false %>      
+  		<td><%= check_box_tag 'AccountSubscribed', "#{acc['Subscribed']}", acc["Subscribed"] == "true" ? checked=true : checked= false,  :disabled => true  %></td>
+	
+  		<% this_acc_par_id = acc["parId"] %>
+  		<% if  (params[:par] == "#{acc['parId']}")  or (@contacts_hash[this_acc_par_id].blank? == false) %>
+  <tr>
+  			<th> <%= check_box_tag 'contactsall' , 'toggle', false, :onclick => "toggleAll('contactselect');return true;" %></th>
+    		<th>Contact Name</th>
+     		<th>Main Job Title</th>
     		<th>Status</th>
-    		<th>Worksite Name</th>
-    		<th>Worksite Phone</th>
-    		<th>Address</th>
-    		<th>Zipcode</th>
-    		<th>City</th>
-    		<th>Worksite Status</th>
-		<th> All<%= check_box_tag 'contactsall' , 'toggle', false, :onclick => "toggleAll('contactselect');return true;" %></th>
-  		</tr>
+     		 <th>Subscribed</th>
+  	</tr>
   		<% @contacts_hash[this_acc_par_id].each do |arr| %>
   		 <% j= j+1 %>
   		 <tr>
-  		<td>Contact <%= j  %></td>
-  			<td>Contact <%= j  %></td>
-  			<td><%= check_box_tag 'ContactSubscribed', "#{arr['Subscribed']}", arr["Subscribed"] == "true" ? checked=true : checked= false  %></td>
-  			<td><%= arr["FirstName"]  %></td>
-    		<td><%= arr["LastName"]  %></td>
-    		<td><%= arr["MainJobTitle"]  %></td>
-    		<td><%= arr["Status"]  %></td>
-    		<td><%= arr["WorksiteName"]  %></td>
-    		<td><%= arr["WorksitePhone"]  %></td>
-    		<td><%= arr["Address"]  %></td>
-    		<td><%= arr["Zipcode"]  %></td>
-    		<td><%= arr["City"]  %></td>
-    		<td><%= arr["WorksiteStatus"]  %></td>
+   			<td><%= check_box_tag 'ContactSubscribed', "#{arr['Subscribed']}", arr["Subscribed"] == "true" ? checked=true : checked= false ,  :disabled => true %></td>
+    		<td>Contact <%= j  %></td>
     		<% session[:accountPar] = "#{acc['parId']}" %>
     		<% checked = false %>
     		<% if session[:contact_selected][this_acc_par_id].blank? %> 
@@ -94,7 +77,10 @@
     		<% elsif (session[:contact_selected][this_acc_par_id].include?("#{arr['parId']}")) %>
      			<% checked = true %>
     		<% end %>
-    		
+
+  			<td><%= arr["FirstName"] + "  " + arr["LastName"]   %></td>
+    		<td><%= arr["MainJobTitle"]  %></td>
+    		<td><%= arr["Status"]  %></td>
     		<% if "#{arr['parId']}".blank? == false %>
     		<% value = "#{arr['parId']}" + " - " + "#{acc['parId']}"  %>
     		<td><%= check_box_tag  "par_contactset[#{j}]" , value, checked, :id=>"par_contactset_#{j}", :class => 'contactselect' %>   </td>

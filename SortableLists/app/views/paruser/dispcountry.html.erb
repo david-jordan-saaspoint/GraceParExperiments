@@ -9,7 +9,7 @@
   		
 		
 		<td><%= arr["systemId"] %></td>
-		<td><%= arr["description"] %></td>
+		<td><%= arr["description"].split(" - ").length == 1 ? arr["description"].capitalize : (arr["description"].split(" - ")[1] == "UK" ? "United Kingdom" : arr["description"].split(" - ")[1].capitalize) %></td>
 	</tr>
   <% end %>
  </table>
