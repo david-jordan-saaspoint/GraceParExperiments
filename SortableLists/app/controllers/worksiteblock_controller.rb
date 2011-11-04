@@ -14,6 +14,7 @@ class WorksiteblockController < ApplicationController
   before_filter :authentication_check
   
   def initialize
+    "initialize"
     @contacts_hash ||= Hash.new # Hash of {worksiteParId, contact_field_array}
     @mapped_data = Array.new
     @contacts_selected = Hash.new
@@ -68,9 +69,9 @@ class WorksiteblockController < ApplicationController
     criteria["zp"] = params[:zipcode]
     criteria["phn"] = params[:phone]
     criteria["gno"] = params[:group]
-    criteria["fn"] = params[:firstname]
-    criteria["ln"] = params[:lastname]
-    criteria["em"] = params[:email]
+  #  criteria["fn"] = params[:firstname].capitalize if params[:firstname]
+  #  criteria["ln"] = params[:lastname].capitalize if params[:lastname]
+  #  criteria["em"] = params[:email]
     
     if criteria["fn"] or criteria["ln"] or criteria["em"].blank? == false
       
@@ -263,7 +264,7 @@ class WorksiteblockController < ApplicationController
       
        p "session sid" , session[:sid]
        p "session uri" , session[:uri]
-       client = Databasedotcom:: Client.new #:client_id =>     "3MVG9QDx8IX8nP5SZh4eVqHyA0S7c4fHJn0F6fceNVYsECfC.3JP0g2WWZwcL_uXNL0COFbFuOndmT1aXi_oj", :client_secret =>    "5686796735919094998", :debugging =>true
+      client = Databasedotcom:: Client.new #:client_id =>     "3MVG9QDx8IX8nP5SZh4eVqHyA0S7c4fHJn0F6fceNVYsECfC.3JP0g2WWZwcL_uXNL0COFbFuOndmT1aXi_oj", :client_secret =>    "5686796735919094998", :debugging =>true
       #    client.authenticate :username => session[:sfdc_un], :password => session[:sfdc_pw]
         # session[:sid]= '00DU0000000ITUe!ASAAQDaRfoPHo8E4F_UuQsZAo6Z4LcIyS_S62qCNqfkuzmR2uKE5tGQ5Yb6FFDpFzhThO_b.HhMF3cGFEacyCe3fR5.vQafQ'
       client.authenticate(:options => nil, :token => session[:sid], :instance_url => session[:uri])
@@ -280,6 +281,7 @@ class WorksiteblockController < ApplicationController
 	     # reset session varaibles
         initialize_session_vars
 	       # verify number of accounts updated and reroute
+	      
 	      redirect_post_commit
     #    redirect_to(:controller => 'worksiteblock', :action => "find_by_wn")
     elsif params[:commit] == "Next page "
@@ -333,16 +335,8 @@ class WorksiteblockController < ApplicationController
    
  end
   
-  def authenticate_account
-    client = Databasedotcom:: Client.new #:client_id =>     "3MVG9QDx8IX8nP5SZh4eVqHyA0S7c4fHJn0F6fceNVYsECfC.3JP0g2WWZwcL_uXNL0COFbFuOndmT1aXi_oj", :client_secret =>    "5686796735919094998", :debugging =>true
-      #    client.authenticate :username => session[:sfdc_un], :password => session[:sfdc_pw]
-        # session[:sid]= '00DU0000000ITUe!ASAAQDaRfoPHo8E4F_UuQsZAo6Z4LcIyS_S62qCNqfkuzmR2uKE5tGQ5Yb6FFDpFzhThO_b.HhMF3cGFEacyCe3fR5.vQafQ'
-    client.authenticate(:options => nil, :token => session[:sid], :instance_url => session[:uri])
-  #  account_class = client.materialize("Account")
-  
-  end
   def query_selected_fields(client)
-    p client , "from qsf"
+   
     orgId = session[:orgId]
     query_selected = Selectedfield.find(:all, :select => "sfdcfield, parfield", :conditions => "orgid = '#{orgId}'")
     theUrl = 'https://obo.par.se/itb/doc/WorksiteBlock.xml' 
@@ -354,11 +348,15 @@ class WorksiteblockController < ApplicationController
  
   # This is a helper method for get_user_req to loop through multiple reqs
    def upsertAccounts(selected_par, query_selected, theUrl, client)
+     p selected_par
+     p query_selected
+     
       respaccount = self.class.get(theUrl, :query => {:worksiteId => selected_par}).body
      
       doc=Nokogiri::XML(respaccount)
             query_selected.each do |field|
             query_result = field.parfield
+            query_result = "WorksiteBlock/" + query_result
             sfdckey = field.sfdcfield    
             # fetch the value for the selected fields from the xml file
             doc.xpath(query_result).each do |node|
@@ -368,7 +366,7 @@ class WorksiteblockController < ApplicationController
           end
       # call insertsobject.rb to insert the mapped hashes into the S Object
       #InsertSObject.createclientobject(@mapped_hash, selected_par)
-      Account.upsert("par121__parId__c", "1:200109878", @mapped_hash)
+      Account.upsert("par121__parId__c", selected_par, @mapped_hash)
       p "account inserted"
   end
     
@@ -426,10 +424,29 @@ class WorksiteblockController < ApplicationController
         if @accounts_selected.length > 1
            uri = "https://" + uri.host + "/001/o"
        else
-          uri = "https://" + uri.host + "/" + @accounts_selected[0]
+          uri = "https://" + uri.host + "/" +  @par_id_to_account_id_hash.values[0]
        end
     redirect_to uri
   end
   
-
+ def updateFromAccountPage
+ #  @accounts_selected = Array.new
+    session[:orgId] = params[:orgId]
+    end_point = params[:endPointUrl]
+    session[:uri] = end_point
+    session[:sid] = params[:sid]
+    session[:accountId] = params[:accountId]
+    @accounts_selected.push(params[:parId])
+#    session[:accountId] = "001U0000004byBE"
+ #   @accounts_selected.push("1:200109878")
+     @par_id_to_account_id_hash[params[:parId]] = session[:accountId]
+    client = Databasedotcom:: Client.new #:client_id =>     "3MVG9QDx8IX8nP5SZh4eVqHyA0S7c4fHJn0F6fceNVYsECfC.3JP0g2WWZwcL_uXNL0COFbFuOndmT1aXi_oj", :client_secret =>    "5686796735919094998", :debugging =>true
+      #    client.authenticate :username => session[:sfdc_un], :password => session[:sfdc_pw]
+        # session[:sid]= '00DU0000000ITUe!ASAAQDaRfoPHo8E4F_UuQsZAo6Z4LcIyS_S62qCNqfkuzmR2uKE5tGQ5Yb6FFDpFzhThO_b.HhMF3cGFEacyCe3fR5.vQafQ'
+    client.authenticate(:options => nil, :token => session[:sid], :instance_url => session[:uri])
+    account_class = client.materialize("Account")
+       # refresh all contacts and accounts selected by user
+    query_selected_fields(client)
+    redirect_post_commit
+ end
 end
