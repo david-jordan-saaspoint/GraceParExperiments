@@ -227,27 +227,7 @@ function removeElement(arg1) {
 
 function addElementDroppable(eleName, k ) {	
 	var add_to = "";
-	 
-	if (k < 15) {
-		add_to = '#sfdcField';
-	}
-	else if(k < 30)
-	{
-		add_to = '#sfdc2Field'
-	}
-	else if(k <45)
-		{ add_to = '#sfdc3Field'
-	}
-	else if(k <60)
-		{ add_to = '#sfdc4Field'
-	}
-	else if(k <75)
-		{ add_to = '#sfdc5Field'
-	}
-		else{ add_to = '#sfdc6Field'
-	}
-	
-		
+		 add_to = '#sfdcField'
 		$('<div>' + eleName + '</div>').data( 'number', eleName ).attr( 'id', 'droppable'+ k  ).appendTo( add_to ).droppable( {
       		accept: '#parField div',
       		hoverClass: 'hovered',

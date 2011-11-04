@@ -61,7 +61,7 @@ h1, h2, h3, h4 {
 /* The initial position of parFields */
  
  
-#sfdcField, #sfdc2Field,#sfdc3Field , #sfdc4Field,  #sfdc5Field, #sfdc6Field, #notDroppable {
+#sfdcField, #notDroppable {
   height: 400px;
   padding: 2px;
   border: 2px solid #333;
@@ -72,31 +72,31 @@ h1, h2, h3, h4 {
   -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
 }
-#sfdcField , #sfdc2Field, #sfdc3Field , #sfdc4Field, #sfdc5Field, #sfdc6Field {
+#sfdcField {
   margin:2px;
   background: #aa9;
-  width: 180px;
+  width: 1080px;
 }
 
 #notDroppable {
   margin:22px;
   background: #aa7;
-  width: 1030px;
+  width: 1080px;
   height: 300px;
   padding-right: 10px;
 }
 
 #parField {
  // background: #ffd;
-  width: 1200px;
+  width: 1100px;
   height: 150px;
 }
  
 /* Individual fields div elements */ 
  
-#sfdcField div, #sfdc2Field div, #sfdc3Field div, #sfdc4Field div,#sfdc5Field div,#sfdc6Field div, #parField div, #notDroppable div{
+#sfdcField div, #parField div, #notDroppable div{
   float: left;
-  width: 370px;
+  width: 250px;
   height: 8px;
   padding: 5px;
   padding-top: 2px;
@@ -111,15 +111,15 @@ h1, h2, h3, h4 {
 }
 
  
-#sfdcField div:first-child, #sfdc2Field div:first-child, #sfdc3Field div:first-child, #sfdc4Field div:first-child, #sfdc5Field div:first-child, #sfdc6Field div:first-child, #parField div:first-child {
+#sfdcField div:first-child, #parField div:first-child {
   margin: 0 0 0 10px;
 }
  
-#sfdcField div.hovered, #sfdc2Field div.hovered , #sfdc3Field div.hovered , #sfdc4Field div.hovered, #sfdc5Field div.hovered, sfdc6Field div.hovered{
+#sfdcField div.hovered {
   background: #aaaa22;
 }
  
-#sfdcField div, #sfdc2Field div , #sfdc3Field  div, #sfdc4Field div, #sfdc5Field div, #sfdc6Field div{
+#sfdcField div{
   border-style: dashed;
   margin-top: 2px;
   width: 150px;
@@ -133,13 +133,12 @@ h1, h2, h3, h4 {
 }
 #notDroppable div {
   margin-top: 0px;
-  width: 420px;
+  width: 310px;
   padding-bottom: 10px;
   margin-right: 20px;
   border: 1px solid #333;
   background: #FFFFDD;
   color: #0033CC;
-  width: 300px;
   height: 25px;
   
 }
@@ -151,7 +150,7 @@ h1, h2, h3, h4 {
 	margin: 0px;
 	
 	float: right;
-  	width: 300px;
+  	width: 290px;
   	height: 5px;
  }
  
