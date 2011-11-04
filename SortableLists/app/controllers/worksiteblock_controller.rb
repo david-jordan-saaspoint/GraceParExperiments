@@ -33,8 +33,6 @@ class WorksiteblockController < ApplicationController
 
   def initialize_session_vars
 	# initialize all  session parameters for this task
-#	   if @session_initialised == false 
-#	     @session_initialised = flag
         session[:account_selected]= []
         session[:contact_selected] = {}
         session[:contacts_hash]= []
@@ -45,10 +43,9 @@ class WorksiteblockController < ApplicationController
         session[:tot_pages] = 0
         session[:page] = 1
         session[:maxSize] = 25
-#      end
+
   end
   def paruser
-     
       initialize_session_vars
       @mapped_country= Array.new
       session[:country].each do |rec| 
@@ -71,7 +68,29 @@ class WorksiteblockController < ApplicationController
     criteria["zp"] = params[:zipcode]
     criteria["phn"] = params[:phone]
     criteria["gno"] = params[:group]
+    criteria["fn"] = params[:firstname]
+    criteria["ln"] = params[:lastname]
+    criteria["em"] = params[:email]
+    
+    if criteria["fn"] or criteria["ln"] or criteria["em"].blank? == false
+      
+     # fetch_contacts(criteria)
+    end 
     criteria
+  end
+  def fetch_contacts(criteria)
+    if criteria["fn"].blank? == false
+      key = "fn"
+      value = criteria["fn"]
+    elsif criteria["ln"].blank? == false
+      key = "ln"
+      value = criteria["ln"]
+    elsif criteria["email"].blank? == false
+      key = "em"
+      value = criteria["em"]
+    end
+     get_contacts(key, value)
+     redirect_to(:controller => 'worksiteblock', :action => "display_contacts")
   end
      #searches the database for data based on search criteria
   def find_by_wn
@@ -100,7 +119,8 @@ class WorksiteblockController < ApplicationController
         if resp_hash["S_W_4"]["WorksiteSearchResult"]["hitsTotal"].to_i > 100
           too_many_rows
         else
-          session[:tot_pages] = resp_hash["S_W_4"]["WorksiteSearchResult"]["hitsTotal"].to_f / resp_hash["S_W_4"]["WorksiteSearchResult"]["hitsReturned"].to_f
+          session[:tot_pages] = resp_hash["S_W_4"]["WorksiteSearchResult"]["hitsTotal"].to_f / resp_hash["S_W_4"]["WorksiteSearchResult"]["hitsReturned"].to_f if resp_hash["S_W_4"]["WorksiteSearchResult"]["hitsReturned"].to_f == session[:maxSize]
+         
         end
         resp_data_array = resp_hash["S_W_4"]["WorksiteSearchResult"]["Hit"]
         # p resp_hash["S_W_4"]["WorksiteSearchResult"]."hitsTotal"
@@ -145,9 +165,7 @@ class WorksiteblockController < ApplicationController
       search_by_wn
       redirect_to(:controller => 'worksiteblock', :action => "show_contacts")
    end
-   def show_more_details
-	   show_contacts
-   end
+  
    
    def show_less_records
       session[:maxSize] = 25
@@ -168,20 +186,31 @@ class WorksiteblockController < ApplicationController
 	   return rtnval
    end 
    
-   def get_contacts(parId)
-      
+   def get_contacts( param, value)
+       key = :worksiteId if param == "par"
+       key = :contactFirstName if param == "fn"
+       key = :contactLastName if param == "ln"
+       key = :email if param == "em"
+       p key
 	     @contacts_hash = session[:contacts_hash] if session[:contacts_hash].blank? == false
 	 #  @contacts_hash = @contacts_selected if @contacts_selected.blank? == false
    	# mapped_contacts = @contacts_hash[parId]
       	#parId = "1:200037852"
        theUrl = 'https://obo.par.se/itb/doc/S-C-1.xml' 
-       resp = self.class.get(theUrl, :query => {:worksiteId => parId})
+       resp = self.class.get(theUrl, :query => {key => value})
        resp_hash = resp.parsed_response
+        if resp_hash["S_C_1"]["ContactSearchResult1"]["hitsTotal"].to_i > 100
+          too_many_rows
+        else
+          session[:tot_pages] = resp_hash["S_C_1"]["ContactSearchResult1"]["hitsTotal"].to_f / resp_hash["S_C_1"]["ContactSearchResult1"]["hitsReturned"].to_f if resp_hash["S_C_1"]["ContactSearchResult1"]["hitsReturned"].to_f == session[:maxSize]
+       end
+      
        resp_data_array = resp_hash["S_C_1"]["ContactSearchResult1"]["Hit"]
        if resp_data_array.blank? == false
-          @contacts_hash[parId]= read_from_array(resp_data_array)
+         # @contacts_hash[parId]= read_from_array(resp_data_array)
+         @contacts_hash[value]= resp_data_array
        else
-          @contacts_hash[parId]= [{"FirstName" => "No contacts available"}]
+          @contacts_hash[value]= [{"FirstName" => "No contacts available"}]
        end
         # store selected contacts just for checkboxes\
 	     params[:accountPar] = nil
@@ -228,24 +257,6 @@ class WorksiteblockController < ApplicationController
      p  session[:account_selected]
  end
     
- def read_from_array(xmlarray)
-     counter =0
-     mapped_data = Array.new
-     p xmlarray
-     xmlarray.each do |ele|
-          if ele.class ==Hash
-            resp_array = ele
-            mapped_data[counter] =resp_array
-            counter += 1
-          else
-            resp_array = xmlarray
-            mapped_data[counter] =resp_array
-          end  
-        end 
-        p mapped_data
-        mapped_data
- end
-
     # checks for user requirement single or multiple
  def get_user_req
      if params[:commit] == "Add to SFDC"   
@@ -256,8 +267,6 @@ class WorksiteblockController < ApplicationController
       #    client.authenticate :username => session[:sfdc_un], :password => session[:sfdc_pw]
         # session[:sid]= '00DU0000000ITUe!ASAAQDaRfoPHo8E4F_UuQsZAo6Z4LcIyS_S62qCNqfkuzmR2uKE5tGQ5Yb6FFDpFzhThO_b.HhMF3cGFEacyCe3fR5.vQafQ'
       client.authenticate(:options => nil, :token => session[:sid], :instance_url => session[:uri])
-      p client
-     
       account_class = client.materialize("Account")
 	     # refresh all contacts and accounts selected by user
 	     @contacts_selected = {}
@@ -284,16 +293,21 @@ class WorksiteblockController < ApplicationController
      elsif params[:commit] == "Show less "
        populate_before_redirect
        show_less_records
+       
+     elsif params[:commit] == "Prev page "
+        calc_offset("prev")
+        populate_before_redirect
+        show_next_page
       
     else  # one of the show contacts button is pressed
        label = params[:commit]
        accountpar = label.split[2]
-       get_contacts(accountpar)
+       
+       get_contacts("par", accountpar)
        populate_before_redirect
        @criteria = session[:criteria]
   #        redirect_to(:controller => 'worksiteblock', :action => "find_by_wn")
-    #
-      redirect_to(:controller => 'worksiteblock', :action => "show_contacts")
+       redirect_to(:controller => 'worksiteblock', :action => "show_contacts")
      end
   end
   
@@ -307,6 +321,10 @@ class WorksiteblockController < ApplicationController
     if  session[:tot_records] > offset + session[:maxSize].to_i  and cond == "next"
       session[:offset] = offset + session[:maxSize].to_i
       session[:page] = session[:page].to_i + 1
+      p "page number :" , session[:page], session[:offset]
+    elsif  cond == "next"
+      session[:offset] = offset - session[:maxSize].to_i
+      session[:page] = session[:page].to_i - 1
       p "page number :" , session[:page], session[:offset]
     else
       session[:offset] = 0
@@ -348,8 +366,6 @@ class WorksiteblockController < ApplicationController
             end 
             
           end
-          p client
-       p @mapped_hash   
       # call insertsobject.rb to insert the mapped hashes into the S Object
       #InsertSObject.createclientobject(@mapped_hash, selected_par)
       Account.upsert("par121__parId__c", "1:200109878", @mapped_hash)
@@ -407,10 +423,10 @@ class WorksiteblockController < ApplicationController
   end
   def redirect_post_commit
     uri = URI.parse(session[:uri])
-        if @par_id_to_account_id_hash.length > 1
+        if @accounts_selected.length > 1
            uri = "https://" + uri.host + "/001/o"
        else
-          uri = "https://" + uri.host + "/" + @par_id_to_account_id_hash.values[0]
+          uri = "https://" + uri.host + "/" + @accounts_selected[0]
        end
     redirect_to uri
   end

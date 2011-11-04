@@ -6,6 +6,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
 <script src="/javascripts/selectall.js" type="text/javascript" charset="utf-8"></script>
+<script src="/javascripts/showmore.js" type="text/javascript" charset="utf-8"></script>
 </head>
  <% if session[:page] > 1 %>
  <%= submit_tag "Prev page " %></td>
@@ -29,7 +30,7 @@
     <th>City</th>
     <th>Status</th>
     <th>Subscribed</th>
-    <th><%= link_to 'More info ...', worksiteblock_show_more_details_path %></th> 
+    
   </tr>
   <% i =0 %>
   <% @mapped_data.each do |acc| %>
@@ -53,6 +54,11 @@
 	<% checked = false %>      
   	<td><%= check_box_tag 'AccountSubscribed', "#{acc['Subscribed']}", acc["Subscribed"] == "true" ? checked=true : checked= false,  :disabled => true %></td>
     <td><%= submit_tag "Show Contacts "  + " " + "#{acc['parId']}" %></td>
+    <td><a href="#"  onclick="showMoreDetail('<%= acc['Name'] %>', '<%= acc['Legalname'] %>', '<%= acc['Department'] %>', '<%= acc['Address'] %>', '<%= acc['City'] %>', 
+    	 '<%= acc['Zipcode'] %>','<%= acc['PostalAddress'] %>', '<%= acc['PostalCity'] %>', '<%= acc['PostalZipcode'] %>','<%= acc['Phone'] %>'); '<%= acc['TypeCode'] %>',
+    	 '<%= acc['Status'] %>',  '<%= acc['NumberOfContacts'] %>','<%= acc['parId'] %>','<%= acc['CompanyNumber'] %>'" >   more details </a> </td>
+   
+   
     </tr>
     
   	<% this_acc_par_id = acc["parId"] %>
@@ -60,7 +66,8 @@
   		<tr>
   			<th> <%= check_box_tag 'contactsall' , 'toggle', false, :onclick => "toggleAll('contactselect');return true;" %></th>
   		 	   
-    		<th>Contact Name</th>
+    		<th>Contact</th>
+    		<th> Name</th>
     		<th>Main Job Title</th>
     		<th>Status</th>
     		<th>Subscribed</th>
@@ -93,7 +100,9 @@
  	<% end %>  
   <% end %>
 </table>
+<% if session[:tot_pages].ceil ==  session[:page] %>
 <%= submit_tag "Add to SFDC" %>
+<% end %>
 <% end %>
 </body>
 
