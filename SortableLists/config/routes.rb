@@ -1,11 +1,19 @@
 SortableLists::Application.routes.draw do
  
+  match "user/result"
+  match "user/update"
+   match "user/index"
+   get "user/search"
+
   resources :tasks, :collection => {:complete => :put}
 
   get "welcome/index"
-  get "welcome/fieldlist"
+  get "welcome/accountfieldlist"
+  get "welcome/contactfieldlist"
   
+  match "welcome/selectedcontactfield"
   match "welcome/selectedfieldPersist"
+  match "welcome/selectedcontactfieldPersist"
   match  "welcome/fieldlist"  
   match "worksiteblock/paruser"
   match "paruser/dispcountry"

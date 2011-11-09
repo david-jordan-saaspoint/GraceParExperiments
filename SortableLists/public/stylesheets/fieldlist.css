@@ -96,7 +96,7 @@ h1, h2, h3, h4 {
  
 #sfdcField div, #parField div, #notDroppable div{
   float: left;
-  width: 250px;
+  width: 160px;
   height: 8px;
   padding: 5px;
   padding-top: 2px;
@@ -155,7 +155,7 @@ h1, h2, h3, h4 {
  }
  
 #parField div.ui-draggable-dragging {
-  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
 }

@@ -10,7 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111027091708) do
+ActiveRecord::Schema.define(:version => 20111108142741) do
+
+  create_table "contact_partables", :force => true do |t|
+    t.string   "fieldname"
+    t.string   "orgid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contactsfdctables", :force => true do |t|
+    t.string   "fieldname"
+    t.string   "fieldtype"
+    t.string   "fieldlabel"
+    t.string   "orgid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pardbs", :force => true do |t|
     t.string   "sfdc_id"
@@ -23,6 +39,14 @@ ActiveRecord::Schema.define(:version => 20111027091708) do
 
   create_table "partables", :force => true do |t|
     t.string   "fieldname"
+    t.string   "orgid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "selectedcontactfields", :force => true do |t|
+    t.string   "parfield"
+    t.string   "sfdcfield"
     t.string   "orgid"
     t.datetime "created_at"
     t.datetime "updated_at"

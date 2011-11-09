@@ -49,21 +49,20 @@ class WorksiteblockController < ApplicationController
   def paruser
       initialize_session_vars
       @mapped_country= Array.new
-      session[:country].each do |rec| 
-        @mapped_country.push(rec["description"].split(" - ").length == 1 ? rec["description"].capitalize : (rec["description"].split(" - ")[1] == "UK" ? "United Kingdom" : rec["description"].split(" - ")[1].capitalize))
+      
+      #session[:country].each do |rec| 
+      #  @mapped_country.push(rec["description"].split(" - ").length == 1 ? rec["description"].capitalize : (rec["description"].split(" - ")[1] == "UK" ? "United Kingdom" : rec["description"].split(" - ")[1].capitalize))
       #  @mapped_country.sort!
-      end
+      @mapped_country = session[:country].values
+     # end
       @authentication = params[:authentication]
   end
   def search_criteria_populate
     criteria = Hash.new
     criteria["wn"] = params[:worksite].capitalize if params[:worksite]
     #criteria["cny"] = (params[:country].split(" - ").length == 1 ? params[:country] : params[:country].split(" - ")[1]).capitalize if params[:country]
-    session[:country].each do |rec|
-      if rec["description"] == params[:country]
-         criteria["cny"] = rec["systemId"]
-      end
-    end
+    
+    criteria["cny"] = session[:country].key(params[:country])
     criteria["add"] = params[:address].capitalize if params[:address]
     criteria["wgc"] = params[:city].capitalize if params[:city]
     criteria["zp"] = params[:zipcode]
@@ -100,7 +99,7 @@ class WorksiteblockController < ApplicationController
        elsif params[:commit] == "Cancel"
           uri = URI.parse(session[:uri])
           uri = "https://" + uri.host + "/001/o"
-          redirect_to uri
+          redirect_to uri, :target => "_top"
        else
          search_by_wn
        end
@@ -125,8 +124,8 @@ class WorksiteblockController < ApplicationController
         end
         resp_data_array = resp_hash["S_W_4"]["WorksiteSearchResult"]["Hit"]
         # p resp_hash["S_W_4"]["WorksiteSearchResult"]."hitsTotal"
-       # @mapped_data = read_from_array(resp_data_array) if resp_data_array.blank? == false
-       @mapped_data = resp_data_array if resp_data_array.blank? == false
+        @mapped_data = read_from_array(resp_data_array) if resp_data_array.blank? == false
+      # @mapped_data = resp_data_array if resp_data_array.blank? == false
         session[:mapped_data] = @mapped_data
      #   @mapped_data = @mapped_data.paginate :page=>params[:page],  :per_page => session[:maxSize]
         # @contacts_hash = @contacts_hash
@@ -156,9 +155,12 @@ class WorksiteblockController < ApplicationController
 	   @contacts_hash = session[:contacts_hash] if session[:contacts_hash].blank? == false
      @criteria = session[:criteria]
   end
-	
+	def calc_totpages
+	  session[:tot_pages] = session[:tot_records]/session[:maxSize]
+	end
    def show_more_records
  	    session[:maxSize] = 50
+ 	    calc_totpages
 	    show_next_page
       #show_contacts
    end
@@ -170,6 +172,7 @@ class WorksiteblockController < ApplicationController
    
    def show_less_records
       session[:maxSize] = 25
+      calc_totpages
       show_next_page
    end
 
@@ -188,11 +191,12 @@ class WorksiteblockController < ApplicationController
    end 
    
    def get_contacts( param, value)
+     p "from contacts"
        key = :worksiteId if param == "par"
        key = :contactFirstName if param == "fn"
        key = :contactLastName if param == "ln"
        key = :email if param == "em"
-       p key
+       
 	     @contacts_hash = session[:contacts_hash] if session[:contacts_hash].blank? == false
 	 #  @contacts_hash = @contacts_selected if @contacts_selected.blank? == false
    	# mapped_contacts = @contacts_hash[parId]
@@ -208,15 +212,15 @@ class WorksiteblockController < ApplicationController
       
        resp_data_array = resp_hash["S_C_1"]["ContactSearchResult1"]["Hit"]
        if resp_data_array.blank? == false
-         # @contacts_hash[parId]= read_from_array(resp_data_array)
-         @contacts_hash[value]= resp_data_array
+          @contacts_hash[value]= read_from_array(resp_data_array)
+        # @contacts_hash[value]= resp_data_array
        else
           @contacts_hash[value]= [{"FirstName" => "No contacts available"}]
        end
         # store selected contacts just for checkboxes\
 	     params[:accountPar] = nil
        session[:contacts_hash] = @contacts_hash
-                        
+        @contacts_hash                 
    end
    def verify_accounts_selected
 	     if params[:par_idset].blank? == false
@@ -240,6 +244,7 @@ class WorksiteblockController < ApplicationController
               contactset = contactpar[1]
               companyId = contactset.split(" - ")[1]
                 @contacts_selected.each {|key, value|  if key ==  companyId then contactsArray = value end }          
+                 # contactsArray = @contacts_selected[companyId]
                   contactId = contactset.split(" - ")[0]
                   contactsArray.push(contactId)
                   contactsArray = contactsArray.uniq
@@ -257,7 +262,22 @@ class WorksiteblockController < ApplicationController
      p  session[:contact_selected]
      p  session[:account_selected]
  end
-    
+ def read_from_array(xmlarray)
+   # this method is needed to fetch multiple as well as single records
+     counter =0
+     mapped_data = Array.new
+     xmlarray.each do |ele|
+          if ele.class ==Hash
+            resp_array = ele
+            mapped_data[counter] =resp_array
+            counter += 1
+          else
+            resp_array = xmlarray
+            mapped_data[counter] =resp_array
+          end  
+      end
+      mapped_data
+ end
     # checks for user requirement single or multiple
  def get_user_req
      if params[:commit] == "Add to SFDC"   
@@ -379,10 +399,12 @@ class WorksiteblockController < ApplicationController
        @par_id_to_account_id_hash[rec["PAR121__parId__c"]] =  rec["Id"]
     end
     @contacts_selected = session[:contact_selected]
-    insert_contact_details(@par_id_to_account_id_hash,@contacts_selected )
+    orgId = session[:orgId]
+    query_selectedcontacts = Selectedcontactfield.find(:all, :select => "sfdcfield, parfield", :conditions => "orgid = '#{orgId}'")
+    insert_contact_details(@par_id_to_account_id_hash,@contacts_selected, query_selectedcontacts )
   end
   
-  def insert_contact_details( accountId, contact_par)
+  def insert_contact_details( accountId, contact_par, query_selectedcontacts)
         authenticateContact
         account_Id = ""
         contact_par.each do  |accountpar, contactpar| 
@@ -390,25 +412,19 @@ class WorksiteblockController < ApplicationController
               theUrl = 'https://obo.par.se/itb/doc/ContactBlock.xml' 
               resp = self.class.get(theUrl, :query => {:contactId => contactId}).body
               doc=Nokogiri::XML(resp)
-              p "reading xml"
-              parfields = fieldstoinsert = Array.new
-
-		    # must come from datbase
-              fieldstoinsert = "Title", "PAR121__Status__c", "FirstName", "LastName", "Languages__c" 
-              parfields = "ContactBlock/BlockCRMPosition/MainPosition/Text",  "ContactBlock/BlockBaseContact.parId", "ContactBlock/BlockBaseContact/FirstName","ContactBlock/BlockBaseContact/LastName", "ContactBlock/BlockBaseContact/Language/Text"
-              fieldstoinsert.each_with_index do |field, ind|
-                  parfield = parfields[ind]
-                # fetch the value for the selected fields from the xml file
-                  doc.xpath(parfield).each do |node|
-                # @mapped_hash[sfdckey] = node.children.to_s 
-                  node.children.to_s 
-                  @contact_hash[field] = node.children.to_s
+              query_selectedcontacts.each do |field|
+                query_result = field.parfield
+                query_result = "ContactBlock/" + query_result
+                sfdckey = field.sfdcfield    
+                doc.xpath(query_result).each do |node| 
+                    @contact_hash[sfdckey] = node.children.to_s 
                 end 
               end
  		# pick up the account Id from accountId parameter using accountpar
              account_Id = accountId[accountpar] 
             @contact_hash["AccountId"] = "#{account_Id}"
             Contact.upsert("par121__parId__c", "#{contactId}", @contact_hash)
+            p "contact inserted"
 	         end
       end
    end

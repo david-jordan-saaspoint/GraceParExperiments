@@ -14,9 +14,6 @@ $(function () {
         })  
       });  
       
- 
-
-
 $( init );
 //selected = new Hash();
 var selected = new Object();
@@ -67,7 +64,7 @@ function replaceDuplicates(arr1, arr2,arr3)
 function init(sfdc, par, selectedfields) {
  
   // Hide the success message and convert rails variables into JS variables
-  $('#successMessage').hide();
+ // $('#successMessage').hide();
  
   var parf = stripEscapes(par);
   var sfdcf = stripEscapes(sfdc);
@@ -140,6 +137,7 @@ function populate_selected( ele, j ) {
 function handleFieldDrop( event, ui ) {
   
   var parFieldElementId = ui.draggable[0].id;
+ 
   var sfdcElementId = this.id;
  //add close button to the dropped field
   var sfdc_pos = $(this).data( 'number' );
@@ -174,6 +172,21 @@ function doSaveAs(){
 	//theRequestPost = selected;
 	try{
       	$.post('/welcome/selectedfieldPersist', theRequestPost,  mySuccess);
+        return false;
+       }
+    catch (e)
+    {
+    	alert("EXCEPTION "+e);
+    }
+  
+ }
+ 
+ function doSaveContactAs(){
+	var theRequestPost= {};
+	 theRequestPost['field_mapping'] = selected;
+	//theRequestPost = selected;
+	try{
+      	$.post('/welcome/selectedcontactfieldPersist', theRequestPost,  mySuccess);
         return false;
        }
     catch (e)
@@ -233,16 +246,33 @@ function addElementDroppable(eleName, k ) {
       		hoverClass: 'hovered',
       		drop: handleFieldDrop
     		} );
-    		
+    	
 }
 
-function addElementPar(eleName, i) {	 
+function addElementPar(eleName, i) {  
 	 $('<div>' + eleName + '</div>').data( 'number', eleName ).attr( 'id', 'parfield'+ i ).appendTo( '#parField' ).draggable( {
-     
      // containment: '#content',
       stack: '#parField div',
       cursor: 'move',
       revert: true,
       drop: handleFieldDrop
     });
+    var id ="parfield"+ i 
+    elem = window.document.getElementById(id)
+   
+    if (eleName.length > 60)
+    	{     
+	 	elem.style.width = 330 + 'px';}
+    else if (eleName.length > 55)
+    	{     
+	 	elem.style.width = 300 + 'px';}
+    else if (eleName.length > 45)
+    	{     
+	 	elem.style.width = 280 + 'px';}
+	 else if (eleName.length > 40)
+	 	elem.style.width = 230 + 'px';
+	 else if (eleName.length > 30)
+	 	elem.style.width = 200 + 'px';	
+	 	else if (eleName.length < 25)
+	 	elem.style.width = 120 + 'px';	
 }

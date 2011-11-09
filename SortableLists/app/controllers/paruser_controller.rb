@@ -35,8 +35,14 @@ class ParuserController < ApplicationController
  #     @mapped_country[counter] = resp_array["description"]
   #    counter += 1
    # end
-     session[:country] = @mapped_country
-    
+   
+   
+    countries = Hash.new
+    @mapped_country.each do |country|  
+      desc = country["description"].split(" - ").length == 1 ? country["description"].capitalize : country["description"].split(" - ")[1] == "UK" ? "United Kingdom" : country["description"].split(" - ")[1].capitalize
+      countries [country["systemId"]] = desc
+    end
+    session[:country]  = countries
   end
   
 end
