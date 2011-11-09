@@ -1,0 +1,28 @@
+<h1>Display Users</h1>
+
+<table>
+	<tr>
+		<th>SFDC Username</th>
+		<th></th>
+		<th>Active</th>
+		<th>Name</th>
+		<th>Role </th>
+		<th>Profile</th>
+		<th>PAR Username</th>
+		<th>PAR Password</th>
+	</tr>
+  <% @users.each do |user| %>
+	<tr>
+		<td><%= user.Id %></td>
+		<td><%= user.Username %></td>
+		<% checked = false %>      
+  		<td><%= check_box_tag 'IsActive', user.IsActive , user.IsActive == true ? checked=true : checked= false,  :disabled => true %></td>
+		<td><%= user.Name %></td>
+		<td><%= session[:roles][user.UserRoleId] %></td>
+		<td><%= session[:profiles][user.ProfileId] %></td>
+		<td><%= @result["par_un"] %></td>
+		<td><%= @result["par_pw"] %></td>
+	</tr>
+  <% end %>
+</table>
+<td><%= link_to 'Search User', user_search_path() %></td>

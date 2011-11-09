@@ -1,0 +1,27 @@
+
+<h2>Enter search criteria</h32>
+<% form_tag  :controller => 'user', :action => 'result' do  %>
+<table>
+  <tr>
+    <td><label> Role </label></td>
+   <td><%= select_tag "role", options_for_select(@rolenames.values) %></td>
+ </tr>
+ <tr>
+    <td><label> Profile </label></td>
+    <td><%= select_tag "profile", options_for_select(@profilenames.values) %></td>
+ </tr>
+ <tr>
+      <td><label>Name </label></td>
+     <td><%= text_field_tag :name %></td>
+ </tr>
+ <tr>
+      <td><label>  Active </label></td>
+     <td> <%= check_box_tag :active %></td>
+ </tr>
+ </table>
+    
+ <p> <%= submit_tag "Search for Users"  %></p>
+<% end %>
+
+
+

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fieldname: MyString
+  fieldtype: MyString
+  fieldlabel: MyString
+  orgid: MyString
+
+two:
+  fieldname: MyString
+  fieldtype: MyString
+  fieldlabel: MyString
+  orgid: MyString

@@ -1,0 +1,50 @@
+
+<% form_tag  :controller => 'user', :action => 'update' do  %>
+<table>
+	<tr>
+		<th>SFDC Username</th>
+		<th></th>
+		<th>Active</th>
+		<th>Name</th>
+		<th>Role Id/ Role</th>
+		<th>Profile Id/ Profile</th>
+	</tr>
+  <% @users.each do |user| %>
+	<tr>
+		<td><%= user.Username %></td>
+		<% checked = false %>      
+  		<td><%= check_box_tag 'IsActive', user.IsActive , user.IsActive == true ? checked=true : checked= false,  :disabled => true %></td>
+		<td></td>
+		<td><%= user.Name %></td>
+		<% if user.UserRoleId %>
+			<td><%= user.UserRoleId %> <%= " / " %><%= session[:roles][user.UserRoleId] %></td>
+		<% else %>
+			<td></td>
+		<% end %>
+		<% if user.ProfileId %>
+			<td><%= user.ProfileId %><%= " / " %><%= session[:profiles][user.ProfileId] %></td>
+		<% else %>
+			<td></td>
+		<% end %>
+	</tr>
+  <% end %>
+  </table>
+   <br> <br> <br>
+  	<table>
+  		<tr>
+  			<% @result.each do |res|  %>
+  			<td><label>PAR Username </label></td>
+     		<td><%= text_field_tag :parusername, res.par_un %> </td>
+    	</tr>
+    	<tr>
+    		<td><label>PAR Password </label></td>
+    		<td><%= text_field_tag :parpassword,  res.par_pw %> </td>
+   		</tr>
+   		<% end %>
+  </table>
+
+<p><%= link_to 'Search User', user_search_path() %>
+<%= submit_tag "Update selected users" %></p>
+
+ <% end %>
+
