@@ -24,7 +24,8 @@ class WorksiteblockController < ApplicationController
     @par_id_to_account_id_hash = Hash.new
     @criteria = Array.new
     @dup_account = {}
-    @dup_accId = []
+ #   @dup_accId = []
+    @dup_acc_sel = []
   end
 #  @un, @pw = 'aviord4@utveckling', 'K5MeMmPP'
   def authentication_check
@@ -35,7 +36,7 @@ class WorksiteblockController < ApplicationController
   end
 
   def initialize_session_vars
-	# initialize all  session parameters for this task
+  # initialize all  session parameters for this task
         session[:account_selected]= []
         session[:contact_selected] = {}
         session[:contacts_hash]= []
@@ -46,7 +47,7 @@ class WorksiteblockController < ApplicationController
         session[:tot_pages] = 0
         session[:page] = 1
         session[:maxSize] = 25
-        session[:dup_account] = {}
+        session[:dup_account] = []
 
   end
   def paruser
@@ -132,8 +133,8 @@ class WorksiteblockController < ApplicationController
         session[:mapped_data] = @mapped_data
      #   @mapped_data = @mapped_data.paginate :page=>params[:page],  :per_page => session[:maxSize]
         # @contacts_hash = @contacts_hash
-	    #   criteria = {}
-	    #   session[:flag] = "y"
+      #   criteria = {}
+      #   session[:flag] = "y"
       elsif session[:flag] == "y"
         show_contacts
       else
@@ -153,18 +154,18 @@ class WorksiteblockController < ApplicationController
        
    end
    def show_contacts
-	   @mapped_data = session[:mapped_data] 
-	#   @mapped_data = @mapped_data.paginate :page=>params[:page] ,  :per_page => session[:maxSize]
-	   @contacts_hash = session[:contacts_hash] if session[:contacts_hash].blank? == false
+     @mapped_data = session[:mapped_data] 
+  #   @mapped_data = @mapped_data.paginate :page=>params[:page] ,  :per_page => session[:maxSize]
+     @contacts_hash = session[:contacts_hash] if session[:contacts_hash].blank? == false
      @criteria = session[:criteria]
   end
-	def calc_totpages
-	  session[:tot_pages] = session[:tot_records]/session[:maxSize]
-	end
+  def calc_totpages
+    session[:tot_pages] = session[:tot_records]/session[:maxSize]
+  end
    def show_more_records
- 	    session[:maxSize] = 50
- 	    calc_totpages
-	    show_next_page
+      session[:maxSize] = 50
+      calc_totpages
+      show_next_page
       #show_contacts
    end
    def show_next_page
@@ -180,17 +181,17 @@ class WorksiteblockController < ApplicationController
    end
 
    def check_hash_empty?(criteria)
-	    rtnval = true
-	    criteria.each do |k,v|
-	      if  v.blank? == false
-			     @criteria.push(v) 
-			     rtnval = false if @criteria.length > 1
-		    else
-		    end
-		 end
-	p   session[:criteria] = @criteria
-	    session[:criteriahash] = criteria
-	   return rtnval
+      rtnval = true
+      criteria.each do |k,v|
+        if  v.blank? == false
+           @criteria.push(v) 
+           rtnval = false if @criteria.length > 1
+        else
+        end
+     end
+  p   session[:criteria] = @criteria
+      session[:criteriahash] = criteria
+     return rtnval
    end 
    
    def get_contacts( param, value)
@@ -200,10 +201,7 @@ class WorksiteblockController < ApplicationController
        key = :contactLastName if param == "ln"
        key = :email if param == "em"
        
-	     @contacts_hash = session[:contacts_hash] if session[:contacts_hash].blank? == false
-	 #  @contacts_hash = @contacts_selected if @contacts_selected.blank? == false
-   	# mapped_contacts = @contacts_hash[parId]
-      	#parId = "1:200037852"
+       @contacts_hash = session[:contacts_hash] if session[:contacts_hash].blank? == false
        theUrl = 'https://obo.par.se/itb/doc/S-C-1.xml' 
        resp = self.class.get(theUrl, :query => {key => value})
        resp_hash = resp.parsed_response
@@ -221,21 +219,21 @@ class WorksiteblockController < ApplicationController
           @contacts_hash[value]= [{"FirstName" => "No contacts available"}]
        end
         # store selected contacts just for checkboxes\
-	     params[:accountPar] = nil
+       params[:accountPar] = nil
        session[:contacts_hash] = @contacts_hash
-       p @contacts_hash
+      
         @contacts_hash                 
    end
    def verify_accounts_selected
-	     if params[:par_idset].blank? == false
-   		   checked_accounts = params[:par_idset]
-   		   checked_accounts.each do |accountset|
-			     account = accountset[1]
-			     @accounts_selected.push(account) if @accounts_selected.include?(account) == false
-			   end
-	     end
-	     @accounts_selected.uniq
-	  end
+       if params[:par_idset].blank? == false
+         checked_accounts = params[:par_idset]
+         checked_accounts.each do |accountset|
+           account = accountset[1]
+           @accounts_selected.push(account) if @accounts_selected.include?(account) == false
+         end
+       end
+       @accounts_selected.uniq
+    end
   
    def store_selected_contacts
      contactsArray = Array.new
@@ -293,42 +291,39 @@ class WorksiteblockController < ApplicationController
         # session[:sid]= '00DU0000000ITUe!ASAAQDaRfoPHo8E4F_UuQsZAo6Z4LcIyS_S62qCNqfkuzmR2uKE5tGQ5Yb6FFDpFzhThO_b.HhMF3cGFEacyCe3fR5.vQafQ'
       client.authenticate(:options => nil, :token => session[:sid], :instance_url => session[:uri])
       account_class = client.materialize("Account")
-	     # refresh all contacts and accounts selected by user
-	     @contacts_selected = {}
-	     @accounts_selected = []
+      session[:client] = client
+       # refresh all contacts and accounts selected by user
+       @contacts_selected = {}
+       @accounts_selected = []
        store_selected_contacts
-       query_selected_fields(client)
-      	# finds and inserts contacts for the accounts that were inserted
-       handle_duplicate_accounts
-       if session[:dup_account].blank?
-	       get_account_ids(@accounts_selected, client)
-          p "selected account ",  session[:account_selected]
-          p "selected contacts" , session[:contact_selected]
-	       # reset session varaibles
-          initialize_session_vars
-	       # verify number of accounts updated and reroute
-	      
-	       redirect_post_commit
-	      end 
+  # inserts accounts and identifies duplicates
+       query_selected_fields(client, "PAR121__parId__c", "upsert")
+       if session[:dup_account].blank? == true
+    # finds and inserts contacts for the accounts that were inserted
+          complete_contact_update
+      else
+        p "deal with duplicates"
+        redirect_to(:controller => 'worksiteblock', :action => "fetch_duplicate_account")
+      end
     #    redirect_to(:controller => 'worksiteblock', :action => "find_by_wn")
-    elsif params[:commit] == "Next page "
+   elsif params[:commit] == "Next page "
         calc_offset("next")
         populate_before_redirect
         show_next_page
         
-     elsif params[:commit] == "Show more "
+   elsif params[:commit] == "Show more "
        populate_before_redirect
        show_more_records
-     elsif params[:commit] == "Show less "
+   elsif params[:commit] == "Show less "
        populate_before_redirect
        show_less_records
        
-     elsif params[:commit] == "Prev page "
+   elsif params[:commit] == "Prev page "
         calc_offset("prev")
         populate_before_redirect
         show_next_page
       
-    else  # one of the show contacts button is pressed
+   else  # one of the show contacts button is pressed
        label = params[:commit]
        accountpar = label.split[2]
        
@@ -339,21 +334,63 @@ class WorksiteblockController < ApplicationController
        redirect_to(:controller => 'worksiteblock', :action => "show_contacts")
      end
   end
-  def handle_duplicate_accounts
-    redirect_to(:controller => 'worksiteblock', :action => "fetch_account_data")
+  def complete_contact_update
+    client = session[:client]
+    get_account_ids(session[:account_selected], client)
+          p "selected account ",  session[:account_selected]
+          p "selected contacts" , session[:contact_selected]
+         # reset session varaibles
+        #  initialize_session_vars
+         # verify number of accounts updated and reroute
+        
+    redirect_post_commit
+       
+  end
+ 
+  def fetch_duplicate_account
+  client = session[:client]
+
+ #   acc_id_string = session[:dup_account].values.flatten.map { |i| "'" + i + "'"}.join(",").gsub('"', "")
+  par_id_string = session[:dup_account].map { |i| "'" + i + "'"}.join(",").gsub('"', "")
+       # fetch all relevant data from Account sobject
+    ##@resp_acc = client.query("Select Id,Name,AccountNumber,PAR121__dbId__c, PAR121__parId__c,PAR121__Subscribed__c,PAR121__CompanyNumber__c,PAR121__Legalname__c, PAR121__Department__c,BillingStreet,BillingPostalCode,BillingCity,PAR121__Phone__c,PAR121__Type__c,PAR121__TypeCode__c,PAR121__Status__c, PAR121__StatusCode__c,ShippingStreet,ShippingPostalCode,ShippingCity from Account where id in (#{acc_id_string}) ")
+    @resp_acc = client.query("Select Id,Name,AccountNumber,PAR121__dbId__c, PAR121__parId__c,PAR121__Subscribed__c,PAR121__CompanyNumber__c,PAR121__Legalname__c, PAR121__Department__c,BillingStreet,BillingPostalCode,BillingCity,PAR121__Phone__c,PAR121__Type__c,PAR121__TypeCode__c,PAR121__Status__c, PAR121__StatusCode__c,ShippingStreet,ShippingPostalCode,ShippingCity from Account where par121__parId__c in (#{par_id_string}) ")
+    @resp_acc
     
   end
-  def fetch_account_data
-    
-    client = Databasedotcom:: Client.new 
-    client.authenticate(:options => nil, :token => session[:sid], :instance_url => session[:uri])
-    account_class = client.materialize("Account")
-    acc_id_string = session[:dup_accId].map { |i| "'" + i + "'"}.join(",").gsub('"', "")
-       # fetch all rlevant data from Account sobject
-    @resp_acc = client.query("Select Id,Name,AccountNumber,PAR121__dbId__c, PAR121__parId__c,PAR121__Subscribed__c,PAR121__CompanyNumber__c,PAR121__Legalname__c, PAR121__Department__c,BillingStreet,BillingPostalCode,BillingCity,PAR121__Phone__c,PAR121__Type__c,PAR121__TypeCode__c,PAR121__Status__c, PAR121__StatusCode__c,ShippingStreet,ShippingPostalCode,ShippingCity from Account where id in (#{acc_id_string}) ")
-   p @resp_acc
+  def handle_duplicate_records
+    p params[:commit]
+    if params[:commit] == "Cancel " 
+      session[:dup_account].each do  |par| 
+        session[:account_selected].delete(par) 
+        session[:contact_selected].delete(par)
+      end
+      @accounts_selected = session[:account_selected]
+      @contact_selected = session[:contact_selected]
+      session[:dup_account] = []
+        
+    else 
+      @dup_par = Array.new
+      @dup_acc_sel = Array.new
+      # update both accounts and track  their account ids
+      dup_par =  params[:id]
+      dup_par.each { |val| @dup_par.push(val[1]) }
+      session[:dup_account].each {|par|   @dup_acc_sel.push(par) }
+      @dup_acc_sel = @dup_acc_sel.uniq 
+      if params[:commit] == "Update selected "
+        query_selected_fields(session[:client], "Id", "update")
+      else
+        query_selected_fields(session[:client], "Id", "insert") 
+      end
   end
   
+  if session[:account_selected].blank?
+    redirect_post_commit
+  else
+    redirect_to(:controller => 'worksiteblock' , :action => 'complete_contact_update')
+  
+  end
+  end 
   
   def populate_before_redirect
      @contacts_hash = session[:contacts_hash] 
@@ -377,22 +414,26 @@ class WorksiteblockController < ApplicationController
    
  end
   
-  def query_selected_fields(client)
-   
+  def query_selected_fields(client, fieldname, action)
     orgId = session[:orgId]
     query_selected = Selectedfield.find(:all, :select => "sfdcfield, parfield", :conditions => "orgid = '#{orgId}'")
     theUrl = 'https://obo.par.se/itb/doc/WorksiteBlock.xml' 
-    @accounts_selected.each do |selected_par|
-           upsertAccounts(selected_par, query_selected, theUrl, client)
+    if fieldname == "PAR121__parId__c" 
+      @accounts_selected.each do |selected_par|
+          upsertAccounts(selected_par, query_selected, theUrl, client, fieldname, action)
+      end
+    else
+      @dup_acc_sel.each do |selected_par|
+          upsertAccounts(selected_par, query_selected, theUrl, client, fieldname, action)
+      end
     end
-    
   end
  
   # This is a helper method for get_user_req to loop through multiple reqs
-   def upsertAccounts(selected_par, query_selected, theUrl, client)
+   def upsertAccounts(selected_par, query_selected, theUrl, client, fieldname, action)
      p" ++++++++++++++upsertaccount +++++++"
-     @dup_accId = Array.new
-     @dup_account = Hash.new
+  #   @dup_accId = Array.new
+     @dup_account = Array.new
      @dup_account = session[:dup_account]
       respaccount = self.class.get(theUrl, :query => {:worksiteId => selected_par}).body
      
@@ -405,26 +446,37 @@ class WorksiteblockController < ApplicationController
             doc.xpath(query_result).each do |node|
               @mapped_hash[sfdckey] = node.children.to_s 
             end 
-            
           end 
           @mapped_hash["PAR121__Subscribed__c"] = true
+          
       # call insertsobject.rb to insert the mapped hashes into the S Object
       #InsertSObject.createclientobject(@mapped_hash, selected_par)
       begin
-          Account.upsert("par121__parId__c", selected_par, @mapped_hash) 
+          p "account insert"
+          if action == "insert"
+            @mapped_hash["PAR121__parId__c"] = selected_par
+            client = session[:client]
+            client.create("Account", @mapped_hash)
+             
+          elsif action == "update"
+            @dup_par.each { |accid | Account.upsert(fieldname, accid, @mapped_hash) }
+          else
+            p "upsert"
+            Account.upsert(fieldname, selected_par, @mapped_hash) 
+          end
           p "account inserted"
       rescue Exception => e
-        
-          e.response.body.split(',').each do |rec|
-          
-     #    p rec.sub("]", '').split('/')[6][0..-5]
-           pos =  rec.index("001")
-           @dup_accId.push(rec[pos, 15])
-          end
-          @dup_account[selected_par]  = @dup_accId
-          session[:dup_accId] = @dup_accId
-          @dup_accId = []
-          session[:dup_account] = @dup_account
+          p "rescue"
+  #         e.response.body.split(',').each do |rec|
+      #    p rec.sub("]", '').split('/')[6][0..-5]
+   #        pos =  rec.index("001")
+    #       @dup_accId.push(rec[pos, 15])
+    #      end
+    #      @dup_account[selected_par]  = @dup_accId
+    #      @dup_account.values
+   #       @dup_accId = []
+         @dup_account.push(selected_par)
+         session[:dup_account] = @dup_account
           
     #    p "Caught code #{e.error_code}"
      end
@@ -432,6 +484,7 @@ class WorksiteblockController < ApplicationController
   end
     
   def get_account_ids(par_id, client)
+    
     par_id_string = par_id.map { |i| "'" + i + "'" }.join(",")
     par_id_string.gsub('"', "")
 #    par_id_string = par_id.to_s.gsub!("[","'").gsub!("]","'")
@@ -439,10 +492,17 @@ class WorksiteblockController < ApplicationController
     queryresp.each do |rec|
        @par_id_to_account_id_hash[rec["PAR121__parId__c"]] =  rec["Id"]
     end
-    @contacts_selected = session[:contact_selected]
-  p  orgId = session[:orgId]
-    query_selectedcontacts = Selectedcontactfield.find(:all, :select => "sfdcfield, parfield", :conditions => "orgid = '#{orgId}'")
-    insert_contact_details(@par_id_to_account_id_hash,@contacts_selected, query_selectedcontacts )
+    
+    select_contact_details
+ end
+def select_contact_details
+  if session[:contact_selected].blank? == false
+      p "contacts"
+      @contacts_selected = session[:contact_selected]
+      orgId = session[:orgId]
+      query_selectedcontacts = Selectedcontactfield.find(:all, :select => "sfdcfield, parfield", :conditions => "orgid = '#{orgId}'")
+      insert_contact_details(@par_id_to_account_id_hash,@contacts_selected, query_selectedcontacts )
+  end
   end
   
   def insert_contact_details( accountId, contact_par, query_selectedcontacts)
@@ -461,14 +521,14 @@ class WorksiteblockController < ApplicationController
                     @contact_hash[sfdckey] = node.children.to_s 
                 end 
               end
- 		# pick up the account Id from accountId parameter using accountpar
+             # pick up the account Id from accountId parameter using accountpar
              account_Id = accountId[accountpar] 
             @contact_hash["AccountId"] = "#{account_Id}"
             @contact_hash["PAR121__Subscribed__c"] = true
-             @contact_hash
+            @contact_hash
             Contact.upsert("par121__parId__c", "#{contactId}", @contact_hash)
             p "contact inserted"
-	         end
+           end
       end
    end
   
@@ -478,13 +538,17 @@ class WorksiteblockController < ApplicationController
     client_class = client.materialize("Contact")
     orgId = session[:orgId]
   end
+  
   def redirect_post_commit
     uri = URI.parse(session[:uri])
-        if @accounts_selected.length > 1
+        if session[:account_selected].length > 1
            uri = "https://" + uri.host + "/001/o"
+       elsif session[:account_selected].length == 0
+          uri = "https://" + uri.host + "/001/o"
        else
           uri = "https://" + uri.host + "/" +  @par_id_to_account_id_hash.values[0]
        end
+    initialize_session_vars
     redirect_to uri
   end
   
@@ -496,16 +560,37 @@ class WorksiteblockController < ApplicationController
     session[:sid] = params[:sid]
     session[:accountId] = params[:accountId]
     @accounts_selected.push(params[:parId])
-#    session[:accountId] = "001U0000004byBE"
- #   @accounts_selected.push("1:200109878")
-     @par_id_to_account_id_hash[params[:parId]] = session[:accountId]
-    client = Databasedotcom:: Client.new #:client_id =>     "3MVG9QDx8IX8nP5SZh4eVqHyA0S7c4fHJn0F6fceNVYsECfC.3JP0g2WWZwcL_uXNL0COFbFuOndmT1aXi_oj", :client_secret =>    "5686796735919094998", :debugging =>true
-      #    client.authenticate :username => session[:sfdc_un], :password => session[:sfdc_pw]
-        # session[:sid]= '00DU0000000ITUe!ASAAQDaRfoPHo8E4F_UuQsZAo6Z4LcIyS_S62qCNqfkuzmR2uKE5tGQ5Yb6FFDpFzhThO_b.HhMF3cGFEacyCe3fR5.vQafQ'
+    @dup_acc_sel.push(params[:accountId])
+    @par_id_to_account_id_hash[params[:parId]] = session[:accountId]
+    session[:account_selected] = @accounts_selected
+   
+    client = Databasedotcom:: Client.new 
     client.authenticate(:options => nil, :token => session[:sid], :instance_url => session[:uri])
     account_class = client.materialize("Account")
-       # refresh all contacts and accounts selected by user
-    query_selected_fields(client)
+       # refresh all  accounts selected by user
+    query_selected_fields(client, "id", "upsert")
+    @dup_acc_sel =[]
     redirect_post_commit
+ end
+ def updateFromContactPage
+    contact_selected = Hash.new
+    contacts_array = Array.new
+    session[:orgId] = params[:orgId]
+    session[:uri] = params[:endPointUrl]
+    session[:sid] = params[:sid]
+    session[:accountPar] = params[:accountPar]
+    session[:accountId] = params[:accountId]
+    contacts_array.push(params[:contactPar])
+    session[:contactId] = params[:contactId]
+    @par_id_to_account_id_hash[session[:accountPar]] = session[:accountId]
+    contact_selected[session[:accountPar]] = contacts_array
+    session[:contact_selected] = contact_selected
+    select_contact_details
+    redirect_commit_contact
+ end
+ def redirect_commit_contact
+   uri = URI.parse(session[:uri])
+   uri = "https://" + uri.host + "/" +  session[:contactId]
+   redirect_to uri
  end
 end

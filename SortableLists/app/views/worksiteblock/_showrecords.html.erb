@@ -63,9 +63,8 @@
 	<% checked = false %>      
   	<td><%= check_box_tag 'AccountSubscribed', "#{acc['Subscribed']}", acc["Subscribed"] == "true" ? checked=true : checked= false,  :disabled => true %></td>
     <td><%= submit_tag "Show Contacts "  + " " + "#{acc['parId']}" %></td>
-    <td><a href="#"  onclick="showMoreDetail('<%= acc['Name'] %>', '<%= acc['Legalname'] %>', '<%= acc['Department'] %>', '<%= acc['Address'] %>', '<%= acc['City'] %>', 
-    	 '<%= acc['Zipcode'] %>','<%= acc['PostalAddress'] %>', '<%= acc['PostalCity'] %>', '<%= acc['PostalZipcode'] %>','<%= acc['Phone'] %>'); '<%= acc['TypeCode'] %>',
-    	 '<%= acc['Status'] %>',  '<%= acc['NumberOfContacts'] %>','<%= acc['parId'] %>','<%= acc['CompanyNumber'] %>'" >   more details </a> </td>
+    <td><a href="#"  onclick="showMoreDetail('Y', '<%= acc['Name'] %>', '<%= acc['Legalname'] %>', '<%= acc['Department'] %>', '<%= acc['Address'] %>', '<%= acc['City'] %>', 
+    	 '<%= acc['Zipcode'] %>','<%= acc['PostalAddress'] %>', '<%= acc['PostalCity'] %>', '<%= acc['PostalZipcode'] %>','<%= acc['Phone'] %>', '<%= acc['TypeCode'] %>', '<%= acc['Status'] %>',  '<%= acc['NumberOfContacts'] %>','<%= acc['parId'] %>','<%= acc['CompanyNumber'] %>');" >   more details </a> </td>
     </tr>
     
   	<% this_acc_par_id = acc["parId"] %>
@@ -122,9 +121,3 @@
 <% end %>
 <% end %>
 </body>
-
-
-
-
- 
-

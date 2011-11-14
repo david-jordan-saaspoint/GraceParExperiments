@@ -26,8 +26,11 @@ SortableLists::Application.routes.draw do
   match "worksiteblock/show_more_details"
   match "worksiteblock/show_more_contactdetails"
   match "worksiteblock/show_contacts"
-    match "worksiteblock/updateFromAccountPage"
-     match "worksiteblock/fetch_account_data"
+  match "worksiteblock/updateFromAccountPage"
+  match "worksiteblock/fetch_duplicate_account"
+  match "worksiteblock/handle_duplicate_records"
+  match "worksiteblock/complete_contact_update"
+  match "worksiteblock/updateFromContactPage"
     
      match "welcome/contact_unsubscribe"
      match "welcome/account_unsubscribe"
