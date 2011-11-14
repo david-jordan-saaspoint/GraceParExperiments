@@ -1,0 +1,55 @@
+<head>
+
+<h2> Duplicate Accounts Found/h2>
+
+<% form_tag  :controller => 'worksiteblock', :action => 'handle_duplicate_accounts' do %>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script src="/javascripts/selectall.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+ <%= submit_tag "Create selected as duplicates " %></td>
+ <%= submit_tag "Update selected " %></td>
+ <%= submit_tag "Cancel " %>
+
+<body>
+<table>
+  <tr>
+  	<% j =0 %>
+  	
+    <th>Select <%= check_box_tag 'dupsall' , 'toggle', false, :onclick => "toggleAll('accountselect');return true;" %></th> 
+    <th>Account Name</th>
+    <th>City </th>
+    <th>Address</th>
+    <th>Zipcode</th>
+    <th>Phone Number </th>
+    <th>PAR Id</th>
+    <th>HQ/ Branch Office</th>
+    <th>Worksite Status </th>
+    
+  </tr>
+  <% i =0 %>
+  <% @resp_acc.each do |acc| %>
+  <tr></tr><tr></tr>
+  	<% i= i+1 %>
+  	<tr>
+  	<td> <%= check_box_tag  "par_idset[#{i}]" , "#{acc['parId']}", checked, :id=>"par_idset_#{i}", :class => 'accountselect' %>   </td>
+  	
+	<td><%= acc["Name"]  %></td>
+	<td><%= acc["Phone"]  %></td>
+	<td><%= acc["Address"]  %></td>
+	<td><%= acc["Zipcode"]  %></td>
+	<td><%= acc["City"]  %></td>
+	<td><%= acc["Status"]  %></td>
+	<% checked = false %>      
+  	<td><%= check_box_tag 'AccountSubscribed', "#{acc['Subscribed']}", acc["Subscribed"] == "true" ? checked=true : checked= false,  :disabled => true %></td>
+    <td><%= submit_tag "Show Contacts "  + " " + "#{acc['parId']}" %></td>
+    <td><a href="#"  onclick="showMoreDetail('<%= acc['Name'] %>', '<%= acc['Legalname'] %>', '<%= acc['Department'] %>', '<%= acc['Address'] %>', '<%= acc['City'] %>', 
+    	 '<%= acc['Zipcode'] %>','<%= acc['PostalAddress'] %>', '<%= acc['PostalCity'] %>', '<%= acc['PostalZipcode'] %>','<%= acc['Phone'] %>'); '<%= acc['TypeCode'] %>',
+    	 '<%= acc['Status'] %>',  '<%= acc['NumberOfContacts'] %>','<%= acc['parId'] %>','<%= acc['CompanyNumber'] %>'" >   more details </a> </td>
+    </tr>
+  <% end %>
+<% end %>
+</body>

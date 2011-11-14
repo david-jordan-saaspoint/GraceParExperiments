@@ -27,6 +27,10 @@ SortableLists::Application.routes.draw do
   match "worksiteblock/show_more_contactdetails"
   match "worksiteblock/show_contacts"
     match "worksiteblock/updateFromAccountPage"
+     match "worksiteblock/fetch_account_data"
+    
+     match "welcome/contact_unsubscribe"
+     match "welcome/account_unsubscribe"
 # match "/updated" => redirect("https://na12.salesforce.com/001/o"), :as => :update
   resources :sfdctables
   resources :pardbs

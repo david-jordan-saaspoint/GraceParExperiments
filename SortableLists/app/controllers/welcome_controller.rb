@@ -104,9 +104,9 @@ class WelcomeController < ApplicationController
       @sf.each do |sfitem|
         @selectedfields[sfitem.parfield] = sfitem.sfdcfield
       end
-   p   session[:sfdclist] = @sfdclist
-   p   session[:parlist] = @parlist
-   p   session[:selectedfields] = @selectedfields
+      session[:sfdclist] = @sfdclist
+      session[:parlist] = @parlist
+      session[:selectedfields] = @selectedfields
   end
   def selectedfield
     @orgId = session[:orgId]
@@ -114,25 +114,7 @@ class WelcomeController < ApplicationController
   end
   
   def selectedfieldPersist
-    @orgId = session[:orgId]
-    @form_params = Hash.new
-    @form_params = params[:field_mapping]
-    sfdctables = Sfdctable.find_all_by_orgid(@orgId, :select => "fieldname, fieldlabel")
-     # To do: Persist data here - first delete all the records for the org and re insert the selected ones
-    Selectedfield.delete_all(:orgid => @orgId)
-    @form_params.each do |val| 
- #     Debugger.debugger()
-  #    Debugger.start()
-      fieldname = replaceFieldlabel(val[1], sfdctables)
-      selectedfield = Selectedfield.create(:parfield => val[0], :sfdcfield => fieldname, :orgid =>@orgId)
-    end
- #   p params.class
- # Debugger.stop()
-      respond_to do |format|
-      format.html # selectedfieldPersist.html.erb
-      format.json  { render :json => @form_params }
-    end
-   
+    fieldpersist(Sfdctable, Selectedfield)
   end
   
   def replaceFieldlabel(fieldlabel, sfdctables)
@@ -156,18 +138,18 @@ class WelcomeController < ApplicationController
      session[:flag] = "C"
      redirect_to :controller => 'welcome' , :action => 'fieldlist'
   end
-  def selectedcontactfieldPersist
+  def fieldpersist(sftable, selectable)
     @orgId = session[:orgId]
     @form_params = Hash.new
     @form_params = params[:field_mapping]
-    sfdctables = Contactsfdctable.find_all_by_orgid(@orgId, :select => "fieldname, fieldlabel")
+    sfdctables = sftable.find_all_by_orgid(@orgId, :select => "fieldname, fieldlabel")
      # To do: Persist data here - first delete all the records for the org and re insert the selected ones
-    Selectedcontactfield.delete_all(:orgid => @orgId)
+    selectable.delete_all(:orgid => @orgId)
     @form_params.each do |val| 
  #     Debugger.debugger()
   #    Debugger.start()
       fieldname = replaceFieldlabel(val[1], sfdctables)
-      selectedfield = Selectedcontactfield.create(:parfield => val[0], :sfdcfield => fieldname, :orgid =>@orgId)
+      selectedfield =selectable.create(:parfield => val[0], :sfdcfield => fieldname, :orgid =>@orgId)
     end
  #   p params.class
  # Debugger.stop()
@@ -175,10 +157,63 @@ class WelcomeController < ApplicationController
       format.html # selectedfieldPersist.html.erb
       format.json  { render :json => @form_params }
     end
-   
+  end
+  def selectedcontactfieldPersist
+    fieldpersist(Contactsfdctable, Selectedcontactfield)
   end
   def hash_for_js(ruby_hash)
   js_params = ruby_hash.map {|k,v| "'#{k}': '#{v}'"}.join(",")
   "$H({#{js_params})"
-  end   
+  end  
+  
+  def session_validate
+    session[:parId] = params[:parId]
+    session[:uri] = params[:endPointUrl]
+    client = Databasedotcom:: Client.new 
+    client.authenticate(:options => nil, :token => session[:sid], :instance_url => session[:uri])
+    client
+  end 
+  
+  def contact_unsubscribe
+    contactIdArray = Array.new
+    contactId = params[:contactId]
+    contactIdArray.push(contactId)
+    perform_unsubscribe(contactIdArray)
+    redirect_post_update(contactId)
+  end
+  def perform_unsubscribe(contactId)
+    p contactId
+    client = session_validate
+    contact_class = client.materialize("Contact")
+    contactId.each  do |contact|
+      client.update("Contact",  contact, {"PAR121__parId__c" => "", "PAR121__Subscribed__c" => false})
+    end
+   
+  end
+  
+  def redirect_post_update(path)
+    uri = URI.parse(session[:uri])
+    uri = "https://" + uri.host + "/" +  path
+    redirect_to uri
+  end
+  def account_unsubscribe
+    contactsId = Array.new
+    client = session_validate
+    account_class = client.materialize("Account")
+    session[:accountId] = params[:accountId]
+    
+    contactsId= find_contacts(session[:accountId],client)
+    perform_unsubscribe(contactsId)
+    client.update("Account",  session[:accountId], {"PAR121__parId__c" => "", "PAR121__Subscribed__c" => false})
+    redirect_post_update(session[:accountId])
+  end
+  def find_contacts(accountId, client)
+    contactsId = Array.new
+    query_result =  client.query("select Id  from Contact where AccountId = '#{session[:accountId]}' and PAR121__parId__c != '' ")
+    query_result.each do |rec|
+      contactsId.push(rec["Id"])
+    end
+    contactsId
+  end
+  
 end

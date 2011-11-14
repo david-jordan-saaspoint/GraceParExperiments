@@ -106,6 +106,7 @@
   			
     		<td><%= arr["MainJobTitle"]  %></td>
     		<td><%= arr["Status"]  %></td>
+    		<td><%= arr["Subscribed"]  %></td>
     		<% session[:accountPar] = "#{acc['parId']}" %>
     		<td><%= check_box_tag 'ContactSubscribed', "#{arr['Subscribed']}", arr["Subscribed"] == "true" ? checked=true : checked= false ,  :disabled => true %></td>
     		

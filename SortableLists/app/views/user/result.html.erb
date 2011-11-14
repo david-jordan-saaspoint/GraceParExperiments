@@ -9,6 +9,10 @@
 		<th>Role Id/ Role</th>
 		<th>Profile Id/ Profile</th>
 	</tr>
+	
+ <% if @users.blank? %>
+   	<th>No users found </th>
+  <% else %>
   <% @users.each do |user| %>
 	<tr>
 		<td><%= user.Username %></td>
@@ -27,6 +31,8 @@
 			<td></td>
 		<% end %>
 	</tr>
+  <% end %>
+  
   <% end %>
   </table>
    <br> <br> <br>

@@ -5,21 +5,27 @@
   require 'databasedotcom'
   require 'uri'
 class UserController < ApplicationController
-
-  def index
-    
+  def authorize
     client = Databasedotcom:: Client.new 
     client.authenticate(:options => nil, :token => session[:sid], :instance_url => session[:uri])
     users = client.materialize("User")
     roles = client.materialize("UserRole")
     profiles = client.materialize("Profile")
+  end
+
+  def index
+    authorize
+    userId= Array.new
     @users = User.all
+    @users.each do |user| 
+        user = user.Id[0..-4]
+        userId.push(user)
+      end
     
-    userId = "005U0000000Ymtl"
     @result = Pardb.find_by_sfdc_id(userId, :select => "par_un, par_pw")
   end
   def search
-    
+    authorize
     @rolenames = Hash.new
     @profilenames = Hash.new
     @rolenames[0] = 'All'
@@ -48,11 +54,15 @@ class UserController < ApplicationController
     criteria = get_search_criteria
     criteriastring = ''
     userId= Array.new
-    p "results", criteria
-     # @users= User.query("IsActive = true")
-    #  User.find_all_by_Name("#{criteria['name']}", "#{criteria['role']}")
-   #  @users= User.query(criteriastring)
-      @users = User.query( "Name = '#{criteria['name']}'" && "UserRoleId = '#{criteria['role']}'"  && "ProfileId = '#{criteria['profile']}'" && "IsActive = #{criteria['active']}")
+    criteriastring = "Name = '#{criteria['name']}' and " if criteria['name']
+    criteriastring = criteriastring + "UserRoleId = '#{criteria['role']}' and " if criteria['role']
+    criteriastring = criteriastring + "ProfileId = '#{criteria['profile']}' and " if criteria['profile']
+    criteriastring = criteriastring + "IsActive = #{criteria['active']} and " 
+     if criteriastring.length > 0  
+       criteriastring = criteriastring[0..-5]
+     end
+      p criteriastring
+      @users= User.query(criteriastring)
       @users.each do |user| 
         user = user.Id[0..-4]
         userId.push(user)
@@ -71,3 +81,4 @@ class UserController < ApplicationController
    redirect_to :controller => 'user', :action => "index"
   end
 end
+
