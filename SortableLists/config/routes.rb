@@ -7,9 +7,10 @@ SortableLists::Application.routes.draw do
 
   resources :tasks, :collection => {:complete => :put}
 
-  get "welcome/index"
+ # get "welcome/index" => redirect("https://na12.salesforce.com/001/o")
   get "welcome/accountfieldlist"
   get "welcome/contactfieldlist"
+  get "welcome/selectedfieldPersist"
   
   match "welcome/selectedcontactfield"
   match "welcome/selectedfieldPersist"

@@ -115,6 +115,8 @@ class WelcomeController < ApplicationController
   
   def selectedfieldPersist
     fieldpersist(Sfdctable, Selectedfield)
+   # redirect_to(session[:uri])
+    
   end
   
   def replaceFieldlabel(fieldlabel, sfdctables)
@@ -151,12 +153,10 @@ class WelcomeController < ApplicationController
       fieldname = replaceFieldlabel(val[1], sfdctables)
       selectedfield =selectable.create(:parfield => val[0], :sfdcfield => fieldname, :orgid =>@orgId)
     end
+    
  #   p params.class
  # Debugger.stop()
-      respond_to do |format|
-      format.html # selectedfieldPersist.html.erb
-      format.json  { render :json => @form_params }
-    end
+      
   end
   def selectedcontactfieldPersist
     fieldpersist(Contactsfdctable, Selectedcontactfield)
