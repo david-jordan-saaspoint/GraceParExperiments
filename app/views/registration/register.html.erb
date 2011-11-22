@@ -1,0 +1,76 @@
+<span id="title" >Register for online account management</span></br>
+<span id="link">Already have an account? <a href="/registration/login"> login</a></span><p/>
+
+<p/>
+
+<form method="post" controller = "registration", action = "save"> 
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+	<tr id="label2" >Fields marked with (*) must be completed.</tr>
+		<tr>
+		<td id="label">Title *</td>
+		<td id= "list"><%= select_tag "title", options_for_select(@title) %></td>
+	</tr>
+	
+	<tr>
+		<td id="label">First Name *</td>
+		<td id= "text"><input type="text" name= "firstname" size=50 </td>
+	</tr>
+	<tr>
+		<td id="label">Last Name *</td>
+		<td id= "text"><input type="text" name= "lastname" size=50 </td>
+	</tr>
+	<tr>
+		<td id="label">Email *</td>
+		<td id= "text"><input type="email" name= "email" size=50 </td>
+	</tr>
+	<tr>
+		<td></td>
+		<td id="label2"   align="center">This will be used to sign-in to your account</td>
+	</tr>
+	<tr>
+		<td id="label">Landline Number *</td>
+		<td id= "text"><input type="telephone_field_tag" name= "landline" size=50 only_integer = true </td>
+	</tr>
+	<tr>
+		<td id="label">Mobile Number *</td>
+		<td id= "text"><input type="telephone_field_tag" name= "mobile" size=50 </td>
+	</tr>
+	<tr>
+		<td id="label">Customer Reference Number *</td>
+		<td id= "text"><input type="text" name= "crn" size=50 </td>
+	</tr>
+	<tr>
+		<td id="label">Supply Point ID *</td>
+		<td id= "text"><input type="text" name= "spid" size=50 </td>
+	</tr>
+	<tr>
+		
+		<td id="label" >We would like to keep you up-to-date with our services and offers. Please let us know how you want us to keep in touch*.</td>
+		
+		<% checked = false %>
+		<td>
+		 <div id= "check">  <%= check_box_tag 'mail', '0', false %>By mail</div>
+		 <div id= "check">  <%= check_box_tag 'phone', '0', false %>By phone</div>
+		 <div id= "check">  <%= check_box_tag 'email', '0', false %>By email</div>
+		 <div id= "check">  <%= check_box_tag 'none', '0', false %>Please DO NOT contact me</div>
+		 </td>
+	</tr>
+	<tr>
+	<td id="label" > </td>
+	<td>
+		
+		<div id= "check">  <%= check_box_tag 'terms', '0', false %>Please confirm that all your details are correct and that you have agreed to the <a href="/registration/login"> terms and conditions </a> (opens in a new window). </div>
+		<div id= "check">  <%= check_box_tag 'policy', '0', false %>Please confirm that you have read and agree with the <a href="/registration/login"> privacy policy </a> (opens in a new window). </div>
+		</td>
+			
+	</tr>
+	
+	
+</table>
+<table>
+	<tr>
+		 <td id = "button2"   align="center"><input type="submit" value="Sign me up >>"> </td>
+		 <td id="button"  align="center"><input type="submit" value ="Cancel" ></td>		 
+	</tr>
+	<tr><td id="text2" > We will email you a password</td></tr>
+</table>
