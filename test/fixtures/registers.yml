@@ -1,0 +1,19 @@
+one:
+  title: MyString
+  fname: MyString
+  lname: MyString
+  email: MyString
+  landline: 1
+  mobile: 1
+  crn: MyString
+  spid: MyString
+
+two:
+  title: MyString
+  fname: MyString
+  lname: MyString
+  email: MyString
+  landline: 1
+  mobile: 1
+  crn: MyString
+  spid: MyString

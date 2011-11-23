@@ -1,7 +1,14 @@
 Bstream::Application.routes.draw do
-  match "registration/register", :to => "registration#register"
-  match "registration/save", :to => "registration#save"
-  get "registration/login" , :to => "registration#login"
+ 
+  resources :registers
+  
+  
+  match "registers/save_registration", :to => "registers#save_registration"
+#  post "/registers" , :to => "registers#save_registration"
+#  match "registers/create" => "registers#save_registration"
+  root :to => "registers#new"
+   
+ # match "/save", :to => "registration#save"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

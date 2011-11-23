@@ -1,11 +1,15 @@
 <span id="title" >Register for online account management</span></br>
-<span id="link">Already have an account? <a href="/registration/login"> login</a></span><p/>
+<span id="link">Already have an account? <%= link_to "login", "https://ebilling.business-stream.co.uk/bstream/jsp/login.jsp" %> </span><p/>
 
 <p/>
 
 <form method="post" controller = "registration", action = "save"> 
 <table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
-	<tr id="label2" >Fields marked with (*) must be completed.</tr>
+	
+	<tr id="label2" >Fields marked with (*) must be completed.
+		<div><%= @error %></div>
+		</tr>
+	
 		<tr>
 		<td id="label">Title *</td>
 		<td id= "list"><%= select_tag "title", options_for_select(@title) %></td>
@@ -59,8 +63,8 @@
 	<td id="label" > </td>
 	<td>
 		
-		<div id= "check">  <%= check_box_tag 'terms', '0', false %>Please confirm that all your details are correct and that you have agreed to the <a href="/registration/login"> terms and conditions </a> (opens in a new window). </div>
-		<div id= "check">  <%= check_box_tag 'policy', '0', false %>Please confirm that you have read and agree with the <a href="/registration/login"> privacy policy </a> (opens in a new window). </div>
+		<div id= "check">  <%= check_box_tag 'terms', '0', false %>Please confirm that all your details are correct and that you have agreed to the <redirect_to "http://www.business-stream.co.uk/terms-and-conditions"> terms and conditions  (opens in a new window). </div>
+		<div id= "check">  <%= check_box_tag 'policy', '0', false %>Please confirm that you have read and agree with the <redirect_to "http://www.business-stream.co.uk/privacy-policy"> privacy policy (opens in a new window). </div>
 		</td>
 			
 	</tr>

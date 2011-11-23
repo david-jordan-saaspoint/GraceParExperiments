@@ -3,3 +3,12 @@
 
 en:
   hello: "Hello world"
+  attributes:
+        email: "E-mail address"
+        fname: "First Name"
+        lname: "Last Name"
+        landline: "Landline Number"
+        mobile: "Mobile Number"
+        crn: "Customer Reference Number"
+        spid: "Supply Point ID"
+        

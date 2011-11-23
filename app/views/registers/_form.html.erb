@@ -1,0 +1,75 @@
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+	
+<tr id="label2" >Fields marked with (*) must be completed.</tr>
+<%= form_for @register do |f| %>
+  <%= f.error_messages %>
+  <tr>
+    <td id="label"><%= f.label :title, "Title *" %></td>
+   <td id= "list"> <%= f.select :title,  options_for_select(@title)%></td>
+  </tr>
+ 
+  <tr>
+    <td id="label"><%= f.label :fname, "First Name *" %></td>
+    <td id= "text"><%= f.text_field :fname, :size => 50 %></td>
+  </tr>
+  <tr>
+    <td id="label"><%= f.label :lname, "Last name *" %></td>
+     <td id= "text"><%= f.text_field :lname, :size => 50 %> </td>
+  </tr>
+  <tr>
+		<td id="label"><%= f.label :email, "Email *" %></td>
+		<td id= "text"><%= f.email_field :email, :size => 70 %> </td>
+	</tr>
+	<tr>
+		<td></td>
+		<td id="label2"   align="center">This will be used to sign-in to your account</td>
+	</tr>
+	<tr>
+		<td id="label"> <%= f.label :landline, "Landline Number *" %></td>
+		<td id= "text"><%= f.telephone_field :landline, :size => 50 %></td>
+	</tr>
+	<tr>
+		<td id="label"><%= f.label :mobile, "Mobile Number *" %></td>
+		<td id= "text"><%= f.telephone_field :mobile, :size => 50 %></td>
+	</tr>
+	<tr>
+		<td id="label"><%= f.label :crn, "Customer Reference Number *" %></td>
+		<td id= "text"><%= f.text_field :crn, :size => 50 %> </td>
+	</tr>
+	<tr>
+		<td id="label"><%= f.label :spid, "Supply Point ID * " %> </td>
+		<td id= "text"><%= f.text_field :spid, :size => 50 %> </td>
+	</tr>
+	<tr>
+		
+		<td id="label" >We would like to keep you up-to-date with our services and offers. Please let us know how you want us to keep in touch *.</td>
+		
+		<% checked = false %>
+		<td>
+		 <div id= "check">  <%= check_box_tag 'mail', '0', false %>By mail</div>
+		 <div id= "check">  <%= check_box_tag 'phone', '0', false %>By phone</div>
+		 <div id= "check">  <%= check_box_tag 'email', '0', false %>By email</div>
+		 <div id= "check">  <%= check_box_tag 'none', '0', false %>Please DO NOT contact me</div>
+		 </td>
+	</tr>
+	<tr>
+	<td id="label" > </td>
+	<td>
+		
+		<div id= "check">  <%= check_box_tag 'terms', '0', false %>Please confirm that all your details are correct and that you have agreed to the <%= link_to "terms and conditions", "http://www.business-stream.co.uk/terms-and-conditions", :target => "_blank" %>   (opens in a new window). </div>
+		<div id= "check">  <%= check_box_tag 'policy', '0', false %>Please confirm that you have read and agree with the <%= link_to "privacy policy", "http://www.business-stream.co.uk/privacy-policy", :target => "_blank" %>  (opens in a new window). </div>
+		</td>
+			
+	</tr>
+  </table>
+  <table>
+	<tr>
+		 <td id = "button2"   align="center"><%= f.submit "Sign me up >>" %> </td>
+		 <td id="button"  align="center"><%= f.submit "Cancel" %> </td>		 
+	</tr>
+	<tr><td id="text2" > We will email you a password</td></tr>
+</table>
+  <p></p>
+<% end %>
+
+
