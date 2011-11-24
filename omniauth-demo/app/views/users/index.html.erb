@@ -1,0 +1,14 @@
+<span class="title">Welcome to the User Controller App (RoR on Heroku)</span><p/>
+
+<p/>
+<form method="post" action="search">
+	<span class="heading">Search by First Name:</span>
+	<p/>
+	<input type="text" name="name" value= "David" style="width: 300px"/>
+	&nbsp
+	<input type="submit" value="Search"/>
+	&nbsp 
+</form>
+<p/>
+<%= link_to "Display All Users" , :controller => "users", :action => "displayall" %>
+

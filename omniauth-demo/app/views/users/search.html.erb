@@ -1,0 +1,35 @@
+<span class="title">Welcome to the User Controller App (RoR on Heroku)</span><p/>
+<p/>
+<form method="post" action="search">
+  <span class="heading">Search by First Name:</span><p/>
+  <input type="text" name="Active" value="<%= params[:name] %>" style="width: 300px"/>
+  <input type="submit" value="Search"/>
+</form>
+<p/>
+ 
+<span class="heading"><%= @json["records"].length %> accounts matching your search criteria:</span>
+ 
+<p/>
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC" width="50%">
+<tr bgcolor="#407BA8">
+  <td style="color: #ffffff; font-weight: bold;">Name</td>
+  <td style="color: #ffffff; font-weight: bold;">IsActive</td>
+  <td style="color: #ffffff; font-weight: bold;">Profile Id</td>
+  <td style="color: #ffffff; font-weight: bold;">Role Id</td>
+  <td style="color: #ffffff; font-weight: bold;">Email </td>
+  <td style="color: #ffffff; font-weight: bold;">UserName </td>
+</tr>
+<% @json["records"].each do |record| %>
+  <tr style="background:#ffffff" onMouseOver="this.style.background='#eeeeee';" onMouseOut="this.style.background='#ffffff';">
+    <td><a href="/users/<%= record["Id"]%>"><%= record["Name"] %></a></td>
+    <td><%= record["IsActive"] %></td>
+    <td><%= record["ProfileId"] %></td>
+    <td><%= record["UserRoleId"] %></td>
+    <td><%= record["Email"] %></td>
+    <td><%= record["Username"] %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to "back" , :controller => "users", :action => "index" %> or 
+<%= link_to "Create a new User", :controller => "users", :action => "new" %>
+

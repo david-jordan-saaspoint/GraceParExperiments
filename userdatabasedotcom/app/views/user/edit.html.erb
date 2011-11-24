@@ -1,0 +1,47 @@
+
+<span id="title" >Edit User</span>
+<p/>
+
+<form method="post" action="/user/<%=  params[:id] %>/save"> 
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+	<% @user.each do |user| %>
+	
+	<tr>
+		<td id="label">Name</td>
+		<td id= "text"><%= user.Name %>  </td>
+	</tr>
+	
+	<tr>
+		<td id="label">Email</td>
+		<td id= "text"><input type="email" name="email" value="<%= user.Email %>" size=50 </td>
+	</tr>
+	<tr>
+		<td id="label" >Active Status</td>
+		
+		<% checked = false %>
+		<td id= "check"><%= check_box_tag 'active', "#{user.IsActive}", user.IsActive == true ? checked=true : checked= false,  :disabled => false %>  </td>
+	</tr>
+	<tr >
+		<td id="label" >SFDC Name</td>
+		<td id= "text"><%= user.Username %></td>
+	</tr>
+	<tr >
+		<td  id="label" >Role</td>
+		<td id= "list"><%= select_tag "role", options_for_select(@rolenames.values, "#{session[:roles][user.UserRoleId]}")  %></td>
+	</tr>
+	<tr >
+		
+		<td  id="label" >Profile</td>
+		<td id= "list"><%= select_tag "profile", options_for_select(@profilenames.values, "#{session[:profiles][user.ProfileId]}") %></td>
+	</tr>	
+	<% end %>
+	
+ 		<%= raw hash_as_hidden_fields(:roles => session[:roles]) %>	
+ 		<%= raw hash_as_hidden_fields(:profiles => session[:profiles]) %>
+ 		
+	<tr> 
+		<td id = 'label'></td>
+		<td id = 'button' colspan="2"  align="center"><input type="submit" value="Submit" ></td> 
+	</tr>	
+</table>	
+<span id="link"><a href="/user/index">Cancel</a></span><p/>

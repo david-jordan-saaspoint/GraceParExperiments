@@ -1,0 +1,34 @@
+<span class="nav"><a href="/users/index">Search</a></span><p/>
+<span class="title">Edit User</span>
+<p/>
+
+<form method="post" action="/users/<%= params[:id]%>/save"> 
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Name</td>
+		<td bgcolor="#ffffff"><%= @user["Name"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Email</td>
+		<td bgcolor="#ffffff"><input type="input" name="email" value="<%= @user["Email"] %>" style="width:150px"></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Active Status</td>
+		<td bgcolor="#ffffff"><input type="checkbox" name="active" value="<%= @user["IsActive"] %>" style="width:150px"></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">SFDC Name</td>
+		<td bgcolor="#ffffff"><%= @user["Username"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Profile Id</td>
+		<td bgcolor="#ffffff"><%= @user["ProfileId"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Role Id</td>
+		<td bgcolor="#ffffff"><%= @user["UserRoleId"] %></td>
+	</tr>	
+	<tr> 
+		<td colspan="2" bgcolor="#ffffff" align="center"><input type="submit" value="Submit"></td> 
+	</tr>	
+</table>

@@ -1,0 +1,30 @@
+
+<span id="title" >Enter Search Criteria</span>
+<% form_tag  :controller => 'user', :action => 'result' do  %>
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC" >
+  <tr>
+    <td id="label"> Role </td>
+   <td id= "list"><%= select_tag "role", options_for_select(@rolenames.values) %></td>
+ </tr>
+ <tr>
+    <td id="label" ><label> Profile </label></td>
+    <td id= "list"><%= select_tag "profile", options_for_select(@profilenames.values) %></td>
+ </tr>
+ <tr>
+	<td id="label">First Name</td>
+     <td id= "text"><%= text_field_tag "name", '', :size => 40  %> </td>
+ </tr>
+ <tr>
+      <td id="label" ><label>  Active </label></td>
+     <td id= "check"> <%= check_box_tag 'active', '1', true %></td>
+ </tr>
+ 
+    <td id = 'label'></td>
+	<td id = 'button' colspan="2"  align="center"><%= submit_tag "Get User Details"  %></td>
+ 
+ </table>
+<% end %>
+
+<span id="link"><a href="/user/index">Cancel</a></span><p/>
+
+

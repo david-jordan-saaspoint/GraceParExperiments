@@ -1,0 +1,44 @@
+<span class="title">Create a New User</span> 
+<p/> 
+
+<form method="post" action="/users/save"> 
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC"> 
+	
+	<tr bgcolor="#407BA8"> 
+		<td style="color: #ffffff; font-weight: bold;">Name</td> 
+		<td bgcolor="#ffffff"><input type="input" name="Name" style="width:250px"></td> 
+	</tr> 
+	<tr bgcolor="#407BA8"> 
+		<td style="color: #ffffff; font-weight: bold;">Email</td> 
+		<td bgcolor="#ffffff"><input type="input" name="Email"></td> 
+	</tr> 
+	<tr bgcolor="#407BA8"> 
+		<td style="color: #ffffff; font-weight: bold;">Profile</td> 
+		<td bgcolor="#ffffff"> 
+		<select name="Profile"> 
+			<option>CEO</option> 
+			<option>NormalUser</option> 
+			<option>Something else</option> 
+		</select> 
+		</td> 
+	</tr> 
+	<tr bgcolor="#407BA8"> 
+		<td style="color: #ffffff; font-weight: bold;">Role</td> 
+		<td bgcolor="#ffffff"> 
+		<select name="Role"> 
+			<option value="10">CEO</option> 
+			<option value="25">ABC</option> 
+			<option value="50">DEF</option> 
+			<option value="75">XYZ</option> 
+		</select> 
+		</td> 
+	</tr> 
+	<tr bgcolor="#407BA8"> 
+		<td style="color: #ffffff; font-weight: bold;">Active Status</td> 
+		<td bgcolor="#ffffff"><input type="input" name="IsActive" value=true></td> 
+	</tr>	
+	<tr> 
+		<td colspan="2" bgcolor="#ffffff" align="center"><input type="submit" value="Submit"></td> 
+	</tr> 
+</table> 
+</form> 

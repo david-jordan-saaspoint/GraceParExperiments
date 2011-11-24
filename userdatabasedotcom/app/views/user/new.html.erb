@@ -1,0 +1,23 @@
+
+<span id="title" >Create new User</span>
+
+<%= raw hash_as_hidden_fields(:client => session[:client]) %>	
+<form method="post" contoller = "user" action="create" > 
+    <% User.attributes.select {|a| User.updateable?(a)}.each do |attr| %>
+        <field>
+            <td id="label"><%= attr %></td>
+            <% case User.field_type(attr) %>
+                <% when "boolean" %>
+                    <td id= "check"><%= check_box_tag "#{attr}",  :disabled => false %>  </td>
+                <% when "multipicklist" %>
+                <% when "picklist" %>
+                      <td id= "list"><%= select_tag "#{attr}", options_for_select(User.picklist_values("#{attr}").collect {|p| [p["label"], p["value"]]}), :multiple => (User.field_type(attr) == "multipicklist") %></td>
+                <% else %>
+                   <td id= "text"><input type="text" name=<%= attr %>  size=50 ></td>
+            <% end %>
+        </field>
+        <br>
+    <% end %>
+    <td id = 'button' colspan="2"  align="center"><input type="submit" value="Create" ></td> 
+	<span id="link"><a href="/user/index">Cancel</a></span><p/>
+

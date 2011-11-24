@@ -1,0 +1,117 @@
+/* Add some margin to the page and set a default font and colour */
+ 
+body {
+  margin: 30px;
+  font-family: "Georgia", serif;
+  line-height: 1.8em;
+  color: #333;
+}
+ 
+/* Give headings their own font */
+ 
+h1, h2, h3, h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+ 
+/* Main content area */
+ 
+#content {
+  /*margin: 80px 70px;*/
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -user-select: none;
+}
+ 
+/* Header/footer boxes */
+ 
+.wideBox {
+  clear: both;
+  text-align: center;
+  /*margin: 70px;*/r
+  padding: 10px;
+  background: #ebedf2;
+  border: 1px solid #333;
+}
+ 
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  
+}
+
+#table {
+	table border: 0;
+	padding: 5px;
+	
+	background-color: #CCCCCC;
+}
+#button  {
+	width: 280px;
+  	float:left;
+   	margin:0 7px 0 0;
+    background-color:#6299c5;
+    border:1px solid #6299c5;
+    color:#fff;
+    font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    font-size:20px;
+    line-height:130%;
+    text-decoration: none;
+    font-weight:bold;
+    color:#565656;
+    cursor:pointer;
+   
+}
+
+#link {
+	font-size: 16px;
+	color: blue;
+}
+#title{
+	font-weight:bold;
+	font-size:16px;
+}
+ 
+
+#label, #label2 {
+	background-color: #407BA8;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: bold;
+}
+#label2 {
+	
+	font-size: 12px;
+	
+}
+ 
+#column1 {
+	background-color: #565656;
+}
+#text, #text2 {
+	background-color: #ffffff;
+	width: 180px;
+} 
+ 
+#text2 {
+ 	font-size: 12px;
+ }
+/* "You did it!" message */
+#successMessage {
+  position: absolute;
+  left: 580px;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: #dfd;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+}

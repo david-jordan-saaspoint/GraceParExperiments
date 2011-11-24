@@ -1,0 +1,31 @@
+<span class="nav"><a href="/users/index">Search</a></span><p/>
+<span class="title">User Display</span>
+<p/>
+
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Name</td>
+		<td bgcolor="#ffffff"><%= @user["Name"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Email</td>
+		<td bgcolor="#ffffff"><%= @user["Email"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">IsActive</td>
+		<td bgcolor="#ffffff"><%= @user["IsActive"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Username</td>
+		<td bgcolor="#ffffff"><%= @user["Username"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">ProfileId</td>
+		<td bgcolor="#ffffff"><%= @user["ProfileId"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">RoleId</td>
+		<td bgcolor="#ffffff"><%= @user["UserRoleId"] %></td>
+	</tr>	
+</table>
+<br><a href="/users/<%= params[:id] %>/edit">edit this User</a><p/>

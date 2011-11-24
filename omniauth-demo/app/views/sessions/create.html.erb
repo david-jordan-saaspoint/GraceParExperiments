@@ -1,0 +1,38 @@
+<table>
+	<tr>
+	<th> Name </th>
+	<th> Email </th>
+	<th> Active Status </th>
+	<th> Title </th>
+	<th> UserName </th>
+	<th> Profile </th>
+	<th> Profile </th>
+	<th> Role </th>
+	<th> UserType </th>
+	<th> Country </th>
+	<th> PAR_Username </th>
+	<th> PAR_Password </th>
+	<%= @roles %>
+	<%= @profiles %>
+	</tr>
+	<% @users.each do |user| %>
+	<tr>
+		<td> <%= user["Name"] %></td>
+		<td><%= user["Email"] %></td>
+		<% checked = false %>  
+		<td><%= check_box_tag 'IsActive', user["IsActive"] , user["IsActive"] == true ? checked=true : checked= false,  :disabled => true %></td>
+		<td> <%= user["Title"] %></td>
+		<td> <%= user["Department"] %></td>
+		<td> <%= user["Username"] %></td>
+		<td> <%= user["ProfileId"] %></td>
+		<td> <%= user["UserRoleId"] %></td>
+		<td> <%= user["UserType"]%></td>
+		<td> <%= user["PAR121__PAR_Country__c"] %></td>
+		<td> <%= user["PAR121__PAR_Username__c"] %></td>
+		<td> <%= user["PAR121__PAR_Password__c"] %></td>
+		
+	</tr>
+	<% end %>
+</table>
+
+

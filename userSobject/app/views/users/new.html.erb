@@ -1,0 +1,19 @@
+<%= form_for(@user) do |form| %>
+    <% Users.attributes.select {|a| Users.updateable?(a)}.each do |attr| %>
+        <field>
+            <%= form.label attr, Users.label_for(attr) %>
+            <% case Users.field_type(attr) %>
+                <% when "boolean" %>
+                    <%= form.check_box attr %>
+                <% when "multipicklist" %>
+                <% when "picklist" %>
+                    <% puts "Rendering picklist for #{attr}, value is #{@user[attr]}, type is #{User.field_type(attr)}"%>
+                    <%= form.select attr, Users.picklist_values(attr).collect {|p| [p["label"], p["value"]]}, :multiple => (Users.field_type(attr) == "multipicklist") %>
+                <% else %>
+                    <%= form.text_field attr%>
+            <% end %>
+        </field>
+        <br>
+    <% end %>
+    <%= form.submit %>
+<% end %>
