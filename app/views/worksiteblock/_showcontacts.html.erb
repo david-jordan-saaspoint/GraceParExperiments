@@ -1,0 +1,42 @@
+	
+	<% par = @accountpar %>
+  		<tr>
+  		<th>Contacts</th>
+    		<th>First Name</th>
+    		<th>Last Name</th>
+    		<th>Status</th>
+    		<th>Subscribed</th>
+    		<th>Par ID</th>
+		
+		<th> All<%= check_box_tag 'contactsall' , 'toggle', false, :onclick => "toggleAll('contactselect');return true;" %></th>
+    		
+  		</tr>
+	<% j = 0 %>
+  	<% @contacts_hash["#{par}"] %>	
+  	<% @contacts_hash["#{par}"].each do |arr| %>
+  		 <% j= j+1 %>
+  		 <tr>
+  		<td>Contact <%= j  %></td>
+  		<td><%= arr["FirstName"]  %></td>
+    		<td><%= arr["LastName"]  %></td>
+    		<td><%= arr["Status"]  %></td>
+    		<td><%= arr["Subscribed"]  %></td>
+    		<td> <%=arr["parId"] %> </td>
+    		<% session[:accountPar] = @accountpar %>
+    		<% checked = false %>
+    		<% if session[:contact_selected][@accountpar].blank? %> 
+    			<% checked = false %>
+    		<% elsif (session[:contact_selected][@accountpar].include?("#{arr['parId']}")) %>
+     			<% checked = true %>
+    		<% end %>
+    		
+    		<% if "#{arr['parId']}".blank? == false %>
+    		<% value = "#{arr['parId']}" + " - " + @accountpar   %>
+    		<td><%= check_box_tag  "par_contactset[#{j}]" , value, checked, :id=>"par_contactset_#{j}", :class => 'contactselect' %>   </td>
+    		<% end %>
+  		</tr>
+  	<% end %> 
+ 	 
+ 
+ 
+

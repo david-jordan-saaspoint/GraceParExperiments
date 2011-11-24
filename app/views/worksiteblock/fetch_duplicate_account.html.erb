@@ -1,0 +1,61 @@
+<head>
+
+<h2> Duplicate Accounts Found</h2>
+
+<% form_tag  :controller => 'worksiteblock', :action => 'handle_duplicate_records' do %>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script src="/javascripts/selectall.js" type="text/javascript" charset="utf-8"></script>
+<script src="/javascripts/showmore.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<table>
+
+ <%= submit_tag "Create selected as duplicates " %>
+ <%= submit_tag "Update selected " %>
+ <%= submit_tag "Cancel " %>
+
+
+
+
+  <tr>
+  <th>Select <%= check_box_tag 'dupsall' , 'toggle', true, :onclick => "toggleAll('accountselect');return true;" %></th> 
+    <th>Account Name</th>
+    <th>City </th>
+    <th>Address</th>
+    <th>Zipcode</th>
+    <th>Phone Number </th>
+    <th>PAR Id</th>
+    <th>HQ/ Branch Office</th>
+    <th>Worksite Status </th>
+    
+  </tr>
+  <% i =0 %>
+  <% @resp_acc.each do |acc| %>
+  <tr></tr><tr></tr>
+  	<% i= i+1 %>
+  	<tr>
+  	<td> <%= check_box_tag  "id[#{i}]" , "#{acc.Id}", true, :id=>"id_#{i}", :class => 'accountselect' %>   </td>
+  	
+	<td><%= acc.Name  %></td>
+	<td><%= acc.BillingCity  %></td>
+	<td><%= acc.BillingStreet  %></td>
+	<td><%= acc.BillingPostalCode  %></td>
+	<td><%= acc.PAR121__Phone__c  %></td>
+	<td><%= acc.PAR121__parId__c  %></td>
+	<td><%= acc.PAR121__Department__c  %></td>
+	<td><%= acc.PAR121__Status__c  %></td>
+	
+	
+    <td><a href="#"  onclick="showMoreDetail('Dup', '<%= acc.Name  %>', '<%= acc.PAR121__Legalname__c %>', '<%= acc.PAR121__Department__c %>', '<%= acc.BillingStreet %>', '<%= acc.BillingCity %>', '<%= acc.BillingPostalCode %>','<%= acc.ShippingStreet %>', '<%= acc.ShippingCity %>', '<%= acc.ShippingPostalCode %>','<%= acc.PAR121__Phone__c %>', '<%= acc.PAR121__Type__c %>',
+    	 '<%= acc.PAR121__Status__c %>',  '<%= acc.PAR121__Subscribed__c %>','<%= acc.PAR121__parId__c %>','<%= acc.AccountNumber %>',  '<%= acc.Id %>', '<%= acc.PAR121__StatusCode__c  %>', '<%= acc.PAR121__TypeCode__c  %>'); " >   more details </a> </td>
+    </tr>
+  <% end %>
+<% end %>
+
+</table>
+</body>
+<%= submit_tag "Create selected as duplicates " %>
+ <%= submit_tag "Update selected " %>
+ <%= submit_tag "Cancel " %>

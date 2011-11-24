@@ -1,0 +1,182 @@
+/* Add some margin to the page and set a default font and colour */
+ 
+body {
+  margin: 30px;
+  font-family: "Georgia", serif;
+  line-height: 1.8em;
+  color: #333;
+}
+ 
+/* Give headings their own font */
+ 
+h1, h2, h3, h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+ 
+/* Main content area */
+ 
+#content {
+  /*margin: 80px 70px;*/
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -user-select: none;
+}
+ 
+/* Header/footer boxes */
+ 
+.wideBox {
+  clear: both;
+  text-align: center;
+  /*margin: 70px;*/r
+  padding: 10px;
+  background: #ebedf2;
+  border: 1px solid #333;
+}
+ 
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  
+}
+#button  {
+  	float:left;
+   	margin:0 7px 0 0;
+    background-color:#6299c5;
+    border:1px solid #6299c5;
+    color:#fff;
+    font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    font-size:20px;
+    line-height:130%;
+    text-decoration: none;
+    font-weight:bold;
+    color:#565656;
+    cursor:pointer;
+    padding:2px 4px 2px 4px;
+}
+/* Slots for final SFDC field positions */
+ 
+
+/* The initial position of parFields */
+ 
+ 
+#sfdcField, #notDroppable {
+  height: 400px;
+  padding: 2px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+#sfdcField {
+  margin:2px;
+  background: #aa9;
+  width: 1080px;
+}
+
+#notDroppable {
+  margin:22px;
+  background: #aa7;
+  width: 1080px;
+  height: 300px;
+  padding-right: 10px;
+}
+
+#parField {
+ // background: #ffd;
+  width: 1100px;
+  height: 150px;
+}
+ 
+/* Individual fields div elements */ 
+ 
+#sfdcField div, #parField div, #notDroppable div{
+  float: left;
+  width: 160px;
+  height: 8px;
+  padding: 5px;
+  padding-top: 2px;
+  padding-bottom: 10px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 2px;
+  margin: 0 0 0 10px;
+  background: #fff;
+  font-size:10px;
+}
+
+ 
+#sfdcField div:first-child, #parField div:first-child {
+  margin: 0 0 0 10px;
+}
+ 
+#sfdcField div.hovered {
+  background: #aaaa22;
+}
+ 
+#sfdcField div{
+  border-style: dashed;
+  margin-top: 2px;
+  width: 150px;
+}
+ 
+#parField div {
+  background: #666;
+  color: #fff;
+  margin-top: 2px;
+  
+}
+#notDroppable div {
+  margin-top: 0px;
+  width: 310px;
+  padding-bottom: 10px;
+  margin-right: 20px;
+  border: 1px solid #333;
+  background: #FFFFDD;
+  color: #0033CC;
+  height: 25px;
+  
+}
+
+#notDroppable div.image {
+	border: 0px;
+	margin-top: -2px;
+	padding: 0px;
+	margin: 0px;
+	
+	float: right;
+  	width: 290px;
+  	height: 5px;
+ }
+ 
+#parField div.ui-draggable-dragging {
+   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+ 
+ 
+ 
+/* "You did it!" message */
+#successMessage {
+  position: absolute;
+  left: 580px;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: #dfd;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+}

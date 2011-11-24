@@ -1,0 +1,23 @@
+<h2>Welcome to PAR Database access  </h2>
+<h3> SFDC </h3>
+<%= link_to 'SFDC Fields', sfdctables_path %>
+<!%= link_to 'Tasks', tasks_path %>
+<h3> Account Fields </h3>
+<div> <%= link_to 'Select Account Fields', welcome_accountfieldlist_path(:orgId =>session[:orgId])%></div>
+<div><%= link_to 'Selected Account Fields', welcome_selectedfield_path%> </div>
+
+  
+<h3> Contact Fields</h3>
+<div> <%= link_to 'Select Contact Fields', welcome_contactfieldlist_path(:orgId =>session[:orgId])%></div>
+<div><%= link_to 'Selected Contact Fields', welcome_selectedcontactfield_path%></div>
+<h3> User Table</h3>
+<td><%= link_to 'Search User', user_search_path() %></td>
+
+<h3> Par User</h3>
+<td><%= link_to 'Paruser', paruser_dispcountry_path() %></td>
+
+
+
+<div><!a href="#"  <OnClick="DoAction('<%= @sfdctables %>');" >   DoA arg</a>
+<!a href="#"  <!OnClick="DoAction('sent from DoAction');" >  Doa </a> </div>
+

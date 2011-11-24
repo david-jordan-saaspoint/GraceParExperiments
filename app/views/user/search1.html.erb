@@ -1,0 +1,23 @@
+<h1>Search for a User</h1>
+<h3>Enter search criteria</h3>
+<% form_tag  :controller => 'user', :action => 'result' do  %>
+<table>
+	<tr>
+    <td><label> Search for </label></td>
+      
+      <td> <%= select_tag "field", options_for_select(@fields) %></td>
+      	<td><%= text_field_tag :username %></td>
+      	<td> Leave blank to search for all </td>
+   </tr>
+    <tr>
+      <td><label>  Usertypes </label></td>
+      <td> <%= select_tag "type", options_for_select(@types) %></td>
+    </tr>
+    <tr>
+  
+     
+   </tr>
+  
+   <td> <%= submit_tag "Search for Users"  %></td>
+  </table>
+<% end %>

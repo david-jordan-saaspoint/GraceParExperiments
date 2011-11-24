@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  parfield: MyString
+  sfdcfield: MyString
+  orgid: MyString
+
+two:
+  parfield: MyString
+  sfdcfield: MyString
+  orgid: MyString

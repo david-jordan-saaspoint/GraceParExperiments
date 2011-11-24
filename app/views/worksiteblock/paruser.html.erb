@@ -1,0 +1,59 @@
+
+ <h1> Enter Search Criteria </h1>
+ <% if params[:id].blank? == false %>
+	<h3> <%=  params[:id] %> </h3>
+ <% end %>
+  
+ 
+	
+ <% form_tag  :controller => 'worksiteblock',  :action => 'find_by_wn' do %>
+  <p><%= submit_tag 'Search'%>
+    <%= submit_tag 'Cancel'%></p>
+  <table>
+  	<tr><td><h3> Company Information </h3></td></tr>
+	<tr>  
+		<td><label>Worksite Name </label></td>
+		<td><%= text_field_tag :worksite %></td>
+	
+		<td><label>Country </label></td>
+		<td> <%= select_tag "country", options_for_select(@mapped_country) %>
+		</td>
+	</tr>
+	<tr>
+		<td><label>Address </label></td>
+		<td><%= text_field_tag  :address %></td>
+	
+		<td><label>City </label></td>
+		<td><%= text_field_tag :city %></td>
+	</tr>
+	<tr>
+		<td><label>Zipcode </label></td>
+		<td><%= text_field_tag  :zipcode%></td>
+	
+		<td><label>Phone </label></td>
+		<td><%= text_field_tag  :phone %></td>
+	</tr>
+	<tr>
+		<td><label>Group No </label></td>
+		<td><%= text_field_tag  :group %></td>
+	</tr>
+
+   <td></td>
+   <tr> <td><h3> Contact Information </h3></td></tr>
+   
+	<tr>
+		<td><label>First Name </label></td>
+		<td><%= text_field_tag  :firstname%></td>
+	
+		<td><label>Last Name </label></td>
+		<td><%= text_field_tag  :lastname %></td>
+	</tr>
+	<tr>
+		<td><label>E-mail contact </label></td>
+		<td><%= text_field_tag  :email %></td>
+	</tr>
+	
+</table>
+    <p><%= submit_tag 'Search'%>
+    <%= submit_tag 'Cancel'%></p>
+<% end %>

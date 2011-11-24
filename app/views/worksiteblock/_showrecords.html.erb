@@ -1,0 +1,123 @@
+<head>
+<h1>Choice of Records from Rest Sc4 <%= @criteria  %> </h1>
+<h2> Click to choose accounts and contacts</h2>
+<% form_tag  :controller => 'worksiteblock', :action => 'get_user_req' do %>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script src="/javascripts/selectall.js" type="text/javascript" charset="utf-8"></script>
+<script src="/javascripts/showmore.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+ <% if session[:page] > 1 %>
+ 	<%= submit_tag "Prev page " %></td>
+ <% end %>
+ <% if session[:tot_pages] > session[:page] %>
+ 	<%= submit_tag "Next page " %></td>
+ <% end %>
+ <% if session[:maxSize] == 25 and session[:tot_records] > 25 and session[:page] < session[:tot_pages]  %>
+ 	<%= submit_tag "Show more " %>
+ <% end %>
+ <% if session[:maxSize] == 50 and session[:page] < session[:tot_pages]%>
+ 	<%= submit_tag "Show less " %>  
+ <% end %>
+ <% if session[:tot_pages].ceil ==  session[:page] or session[:tot_records] < session[:maxSize] %>
+	<%= submit_tag "Add to SFDC" %>
+<% end %>
+</div>
+<body>
+<table>
+  <tr>
+  	<% j =0 %>
+  	
+    <th>All<%= check_box_tag 'accountsall' , 'toggle', false, :onclick => "toggleAll('accountselect');return true;" %></th> 
+    <th>Account Name</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Zipcode</th>
+    <th>City</th>
+    <th>Status</th>
+    <th>Subscribed</th>
+    
+  </tr>
+  <% i =0 %>
+  <% @mapped_data.each do |acc| %>
+  <tr></tr><tr></tr>
+  	<% i= i+1 %>
+  	<tr>
+  		 <% checked = false %>
+    	<% if session[:account_selected].blank? %> 
+    		<% checked = false %>
+    	<% elsif (session[:account_selected].include?("#{acc['parId']}")) %>
+    		<% checked = true %>
+    	<% end %>
+    	
+    	<td> <%= check_box_tag  "par_idset[#{i}]" , "#{acc['parId']}", checked, :id=>"par_idset_#{i}", :class => 'accountselect' %>   </td>
+  	
+	<td><%= acc["Name"]  %></td>
+	<td><%= acc["Phone"]  %></td>
+	<td><%= acc["Address"]  %></td>
+	<td><%= acc["Zipcode"]  %></td>
+	<td><%= acc["City"]  %></td>
+	<td><%= acc["Status"]  %></td>
+	<% checked = false %>      
+  	<td><%= check_box_tag 'AccountSubscribed', "#{acc['Subscribed']}", acc["Subscribed"] == "true" ? checked=true : checked= false,  :disabled => true %></td>
+    <td><%= submit_tag "Show Contacts "  + " " + "#{acc['parId']}" %></td>
+    <td><a href="#"  onclick="showMoreDetail('Y', '<%= acc['Name'] %>', '<%= acc['Legalname'] %>', '<%= acc['Department'] %>', '<%= acc['Address'] %>', '<%= acc['City'] %>', 
+    	 '<%= acc['Zipcode'] %>','<%= acc['PostalAddress'] %>', '<%= acc['PostalCity'] %>', '<%= acc['PostalZipcode'] %>','<%= acc['Phone'] %>', '<%= acc['TypeCode'] %>', '<%= acc['Status'] %>',  '<%= acc['NumberOfContacts'] %>','<%= acc['parId'] %>','<%= acc['CompanyNumber'] %>');" >   more details </a> </td>
+    </tr>
+    
+  	<% this_acc_par_id = acc["parId"] %>
+  	<% if  (params[:par] == this_acc_par_id)  or (@contacts_hash[this_acc_par_id].blank? == false) %>
+  		<tr>
+  			<th> <%= check_box_tag 'contactsall' , 'toggle', false, :onclick => "toggleAll('contactselect');return true;" %></th>
+  		 	   
+    		<td>------</td>
+    		<th> Contacts Name</th>
+    		<th>Main Job Title</th>
+    		<th>Status</th>
+    		<th>Subscribed</th>
+			
+			
+	</tr>
+   		<% @contacts_hash[this_acc_par_id].each do |arr| %>
+  		 <% j= j+1 %>
+  		 <tr>
+  		 	<td> ------- </td>
+  		 	<% checked = false %>
+    		<% if session[:contact_selected][this_acc_par_id].blank? %> 
+    			<% checked = false %>
+    		<% elsif (session[:contact_selected][this_acc_par_id].include?("#{arr['parId']}")) %>
+     			<% checked = true %>
+    		<% end %>
+    		
+    		<% if "#{arr['parId']}".blank? == false %>
+    			<% value = "#{arr['parId']}" + " - " + "#{acc['parId']}"  %>
+    			<td><%= check_box_tag  "par_contactset[#{j}]" , value, checked, :id=>"par_contactset_#{j}", :class => 'contactselect' %>   </td>
+    		<% end %>
+    		<% if arr["LastName"] %>
+    			<% name = j.to_s + " " + arr["FirstName"] + "  " + arr["LastName"] %>
+    		<% else %>
+    			<% name = arr["FirstName"] %>
+    		<% end %>
+    		
+  			<td><%= name  %></td>
+  			
+    		<td><%= arr["MainJobTitle"]  %></td>
+    		<td><%= arr["Status"]  %></td>
+    		<td><%= arr["Subscribed"]  %></td>
+    		<% session[:accountPar] = "#{acc['parId']}" %>
+    		<td><%= check_box_tag 'ContactSubscribed', "#{arr['Subscribed']}", arr["Subscribed"] == "true" ? checked=true : checked= false ,  :disabled => true %></td>
+    		
+  		</tr>
+  			
+  		<% end %> 
+  		
+ 	<% end %>  
+  <% end %>
+</table>
+<% if session[:tot_pages].ceil ==  session[:page] or session[:tot_records] < session[:maxSize] %>
+<%= submit_tag "Add to SFDC" %>
+<% end %>
+<% end %>
+</body>

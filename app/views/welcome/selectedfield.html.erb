@@ -1,0 +1,20 @@
+<h1> Selected Account Fields for the OrgId <%= @orgId %></h1>
+<table>
+  <tr>
+    <th>SFDC Account Field</th>
+    <th>PAR Account Field</th>
+    <th>Orgid</th>
+  </tr>
+ 
+ 
+<% @selectedfields.each do |selectedfield| %>
+  <tr>
+    <td><%= selectedfield.sfdcfield %></td>
+    <td><%= selectedfield.parfield %></td>
+    <td><%= selectedfield.orgid %></td>
+    
+  </tr>
+<% end %>
+</table>
+<p><%= link_to 'Welcome Screen', :controller=> 'welcome', :action => 'index'%></p>
+
