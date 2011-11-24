@@ -22,8 +22,8 @@ class Register
   end
   
   def landline_xor_mobile
-    if !(landline.blank? ^ mobile.blank?)
-      errors.add_to_base("Enter either landline or mobile number or both")
+    if (landline.blank? and mobile.blank?)
+      errors.add(:base,"Enter either landline or mobile number or both")
     end
   end
 

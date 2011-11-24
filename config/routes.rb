@@ -1,7 +1,10 @@
 Bstream::Application.routes.draw do
  
+  get "sessions/create"
+
   resources :registers
-  
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure', :to => 'sessions#fail'
   
   match "registers/save_registration", :to => "registers#save_registration"
 #  post "/registers" , :to => "registers#save_registration"
