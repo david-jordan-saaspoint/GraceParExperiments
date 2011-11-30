@@ -1,0 +1,26 @@
+<h1>Listing sites</h1>
+
+<table>
+  <tr>
+    <th>Crn  c</th>
+    <th>Account  c</th>
+    <th>Name</th>
+    <th>Spid  c</th>
+  </tr>
+<% @salesforce_sites %>
+<% @salesforce_sites.each do |site| %>
+  <tr>
+    
+    
+    <td><%=h site.name %></td>
+    
+    <td><%= link_to 'Show', site %></td>
+    <td><%= link_to 'Edit', edit_salesforce_site_path(site) %></td>
+    <td><%= link_to 'Destroy', site, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New site', new_salesforce_site_path %>

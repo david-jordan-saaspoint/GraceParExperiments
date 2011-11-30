@@ -1,0 +1,2 @@
+module Salesforce::SitesHelper
+end

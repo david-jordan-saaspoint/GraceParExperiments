@@ -1,0 +1,27 @@
+development:
+    adapter: activesalesforce
+    url: https://www.salesforce.com
+    username: grace@par-dev.com
+    password: Saaspoint12VmnWWoESfynbRW4RqG754SXD
+    api_version: 20.0
+
+production:
+    adapter: activesalesforce
+    url: https://www.salesforce.com
+    username: grace@par-dev.com
+    password: Saaspoint12VmnWWoESfynbRW4RqG754SXD
+    api_version: 20.0
+    
+test:
+    adapter: activesalesforce
+    url: https://www.salesforce.com
+    username: grace@par-dev.com
+    password: Saaspoint12VmnWWoESfynbRW4RqG754SXD
+    api_version: 20.0
+  
+salesforce-default-realm:
+    adapter: activesalesforce
+    url: https://www.salesforce.com
+    username: grace@par-dev.com
+    password: Saaspoint12VmnWWoESfynbRW4RqG754SXD
+    api_version: 20.0

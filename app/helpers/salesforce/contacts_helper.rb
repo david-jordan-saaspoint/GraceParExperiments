@@ -1,0 +1,2 @@
+module Salesforce::ContactsHelper
+end

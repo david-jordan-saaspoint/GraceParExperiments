@@ -1,0 +1,28 @@
+<h1>Editing site</h1>
+
+<% form_for(@site) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :crn__c %><br />
+    <%= f.text_field :crn__c %>
+  </p>
+  <p>
+    <%= f.label :account__c %><br />
+    <%= f.text_field :account__c %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :spid__c %><br />
+    <%= f.text_field :spid__c %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @site %> |
+<%= link_to 'Back', salesforce_sites_path %>

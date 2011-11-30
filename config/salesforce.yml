@@ -1,0 +1,27 @@
+development:
+    adapter: activesalesforce
+    url: https://cs13.salesforce.com
+    username: grace.ramamoorthy@saaspoint.business-stream.com.regdev
+    password: Saaspoint12NQw97PFom0R27au2WHOEwST70
+    api_version: 20.0
+
+production:
+    adapter: activesalesforce
+    url: https://cs13.salesforce.com
+    username: grace.ramamoorthy@saaspoint.business-stream.com.regdev
+    password: Saaspoint12NQw97PFom0R27au2WHOEwST70
+    api_version: 20.0
+    
+test:
+    adapter: activesalesforce
+    url: https://cs13.salesforce.com
+    username: grace.ramamoorthy@saaspoint.business-stream.com.regdev
+    password: Saaspoint12NQw97PFom0R27au2WHOEwST70
+    api_version: 20.0
+  
+salesforce-default-realm:
+    adapter: activesalesforce
+    url: https://cs13.salesforce.com
+    username: grace.ramamoorthy@saaspoint.business-stream.com.regdev
+    password: Saaspoint12NQw97PFom0R27au2WHOEwST70
+    api_version: 20.0

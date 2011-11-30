@@ -1,0 +1,2 @@
+module Salesforce::AccountsHelper
+end

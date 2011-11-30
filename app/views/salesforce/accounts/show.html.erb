@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @account.name %>
+</p>
+
+<p>
+  <b>Account number:</b>
+  <%=h @account.account_number %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @account.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_salesforce_account_path(@account) %> |
+<%= link_to 'Back', salesforce_accounts_path %>

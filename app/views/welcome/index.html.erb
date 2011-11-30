@@ -1,0 +1,14 @@
+<h1>Salesforce | Heroku Demo</h1>
+<span id="link">Already have an account? <%= link_to "login", "https://ebilling.business-stream.co.uk/bstream/jsp/login.jsp" %> </span><p/>
+
+<p/>
+
+<%= render 'form' %>
+<div>
+  <ul>
+  	<li><%= link_to 'Users', salesforce_users_path %></li>
+  	<li><%= link_to 'Sites', salesforce_sites_path %></li>
+        <li><%= link_to 'Accounts', salesforce_accounts_path %></li>
+         <li><%= link_to 'Contacts', salesforce_contacts_path %></li>
+  </ul>
+</div>
