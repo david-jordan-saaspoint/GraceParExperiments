@@ -17,6 +17,7 @@ class RegistersController < ApplicationController
   end
   def reregister
   p  @mapped_hash = session[:mh]
+  flash[:notice] = ["Please enter a valid customer reference number and Supply point ID"]
      @title =  [["Please select...", ""] , "Mr", "Ms", "Miss", "Mrs", "Dr"] 
      @register = Register.new
      @register.title = @mapped_hash['title']
