@@ -1,0 +1,33 @@
+<h2>Your registration has been saved</h2>
+
+<%= render_flash %>
+
+<h3> All retrieved accounts from account </h3>
+
+<p> Records showing accountId  from site__c</p>
+<% if @res_hash %>
+<% @res_hash.each do |ele| %>
+    <% if ele["name"]  %>
+      <%= ele['name'] %> 
+      <% end %>   
+ <% end %>
+<% end %>
+<% if @result_hash %>
+<% @result_hash.each do |rec| %>
+<div>
+<%= rec.Name %>
+<%= rec.Account__c %>
+</div>
+<% end %>
+<% end %>
+<p> Records showing accountId  from user</p>
+<% if @user_hash %>
+<% @user_hash.each do |rec| %>
+<div>
+<%= rec.AccountId %>
+<%= rec.Name %>
+<%= rec.Email %>
+<%= rec.Username %>
+</div>
+<% end %>
+<% end %>

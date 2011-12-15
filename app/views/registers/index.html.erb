@@ -1,0 +1,31 @@
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Fname</th>
+    <th>Lname</th>
+    <th>Email</th>
+    <th>Landline</th>
+    <th>Mobile</th>
+    <th>Crn</th>
+    <th>Spid</th>
+  </tr>
+  <% for register in @registers %>
+    <tr>
+      <td><%= register.title %></td>
+      <td><%= register.fname %></td>
+      <td><%= register.lname %></td>
+      <td><%= register.email %></td>
+      <td><%= register.landline %></td>
+      <td><%= register.mobile %></td>
+      <td><%= register.crn %></td>
+      <td><%= register.spid %></td>
+      <td><%= link_to "Show", register %></td>
+      <td><%= link_to "Edit", edit_register_path(register) %></td>
+      <td><%= link_to "Destroy", register, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Register", new_register_path %></p>

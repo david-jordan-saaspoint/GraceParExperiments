@@ -1,0 +1,15 @@
+<h2>Thanks for registering with us. </h2> 
+<h2> Your registration has been saved</h2>
+<% flash[:notice].each do |notice| %>
+	<div><%= notice %></div>
+<% end %>
+<p> Hi <%= @mapped_hash["fname"] %>, </p>
+
+<p>You have successfully completed your registration in business-stream.co.uk.
+    Your username and password are given below:  </p> 
+<p> Username: <%= @mapped_hash["email"] %> </p>
+<p> Password: <%=@mapped_hash["passwd"] %></p>
+
+
+
+
