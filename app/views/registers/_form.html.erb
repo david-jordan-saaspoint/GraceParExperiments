@@ -3,6 +3,10 @@
 <tr id="label2" >Fields marked with (*) must be completed.</tr>
 
 <%= form_for @register do |f| %>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script src="/javascripts/checkboxchecked.js" type="text/javascript" charset="utf-8"></script>
   <%= f.error_messages %>
   <tr>
     <td id="label"><%= f.label :title, "Title *" %></td>
@@ -50,10 +54,12 @@
 		<td id="label" >We would like to keep you up-to-date with our services and offers. Please let us know how you want us to keep in touch *.</td>
 		
 		<td>
-		 <div id= "check">  <%= f.check_box :mail %>By mail</div>
+		 <div id= "check">  <%= f.check_box( :mail , :onclick => "cust_pref();" )%>By mail</div>
 		 <div id= "check">  <%= f.check_box :phone %>By phone</div>
 		 <div id= "check">  <%= f.check_box :email1 %>By email</div>
-		 <div id= "check">  <%= f.check_box :none %>Please DO NOT contact me</div>
+		     		 
+		 <div id= "check">  <%= f.check_box(:none, :disabled => false) %>Please DO NOT contact me</div>
+		 
 		 </td>
 	</tr>
 	<tr>
@@ -68,8 +74,8 @@
   </table>
   <table>
 	<tr>
-		 <td id = "button2"   align="center"><%= f.submit "Sign me up >>" %> </td>
-		 <td id="button"  align="center"><%= f.submit "Cancel" %> </td>		 
+		<td id="button"  align="center"><%= f.submit "Cancel" %> </td>	
+		<td id = "button2"   align="center"><%= f.submit "Sign me up >>" %> </td>
 	</tr>
 	<tr><td id="text2" > We will email you a password</td></tr>
 </table>

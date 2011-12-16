@@ -11,14 +11,14 @@ require 'soap/wsdlDriver'
 class RegistersController < ApplicationController
   
   def new
-    @title =  [["Please select...", ""] , "Mr", "Ms", "Miss", "Mrs", "Dr"]
+    @title =  [["Please select...", ""] , "Mr", "Ms", "Miss", "Mrs"]
     @register = Register.new
     
   end
   def reregister
   p  @mapped_hash = session[:mh]
-  flash[:notice] = ["Please enter a valid customer reference number and Supply point ID"]
-     @title =  [["Please select...", ""] , "Mr", "Ms", "Miss", "Mrs", "Dr"] 
+  flash[:notice] = ["Please enter a valid customer reference number and Supply point ID. The billing account cannot be identified. "]
+     @title =  [["Please select...", ""] , "Mr", "Ms", "Miss", "Mrs"] 
      @register = Register.new
      @register.title = @mapped_hash['title']
      @register.fname = @mapped_hash['fname']
@@ -36,16 +36,19 @@ class RegistersController < ApplicationController
   end
   
   def create
-    p "create"
-    flash[:notice] = ["Saving Registration "]
+    if params['commit'] == "Sign me up >>"
+      flash[:notice] = ["Saving Registration "]
      
-     @title = [["Please select...", ""] , "Mr", "Ms", "Miss", "Mrs", "Dr"]
-     @register = Register.new(params['register'])
-    if @register.valid?
-      # TODO send message here
-      save_registration
-    else
-      render :action => 'new'
+      @title = [["Please select...", ""] , "Mr", "Ms", "Miss", "Mrs"]
+      @register = Register.new(params['register'])
+      if @register.valid?
+        # TODO send message here
+        save_registration
+      else
+        render :action => 'new'
+     end
+    else # user clicks 'cancel'
+      redirect_to "http://www.business-stream.co.uk/"
     end
   end
   def save_registration
@@ -61,14 +64,14 @@ class RegistersController < ApplicationController
       p "client"
       get_account_number(@mapped_hash,client)
       get_account_number_user(@mapped_hash, client) if @result_hash.empty? ==false
-      compare_accountIds(@result_hash, @user_hash) if ((@user_hash.blank? == false) and (@result_hash.blank? == false))
+ #     compare_accountIds(@result_hash, @user_hash) if ((@user_hash.blank? == false) and (@result_hash.blank? == false))
       #   check_user(client)
       # create a new customer portal
       #create_new_cp_record(@mapped_hash, client)
       # email a new username and password
-      @mapped_hash['passwd'] = @newpasswd
-      UserMailer.deliver_registration_confirmation(@mapped_hash) if @result_hash.empty? == false
-      p "sent mail"
+ #     @mapped_hash['passwd'] = @newpasswd
+  #    UserMailer.deliver_registration_confirmation(@mapped_hash) if @result_hash.empty? == false
+  #    p "sent mail"
     else
       flash[:notice] << "database connection not established. Contact Administrator"
       redirect_to "/reg_failed"
@@ -85,13 +88,13 @@ class RegistersController < ApplicationController
       #sites = client.materialize("Site__c")
       #  @result_hash = client.query("SELECT id from Account")
       # @result_hash = d.query(:queryString => "SELECT account__c, name from Site__c where (crn__c = '#{mapped_hash["crn"]}' ) OR (SPID__c = '#{mapped_hash["spid"] }')")
-      @result_hash = client.query("SELECT account__c, name from Site__c where (crn__c = '#{mapped_hash["crn"]}' ) AND (SPID__c = '#{mapped_hash["spid"] }')")
+      @result_hash = client.query("SELECT account__c, name from Site__c where (name = '#{mapped_hash["crn"]}' ) AND ((Waste_Water_SPID__c = '#{mapped_hash["spid"] }') OR (Water_SPID__c = '#{mapped_hash["spid"] }' ))")
       @result_hash
       
      
       if @result_hash.empty? == true
         p " Please enter a valid customer reference number and Supply point ID"
-        flash[:message] = " Please enter a valid customer reference number and Supply point ID. Restart registration process"
+        flash[:message] = " Please enter a valid customer reference number and Supply point ID. The billing account cannot be identified. "
         session[:mh] = @mapped_hash
         redirect_to "/reg_failed"
       else
@@ -119,6 +122,9 @@ class RegistersController < ApplicationController
         @user_hash= client.query("SELECT Id, Name, AccountId, Email, UserName from User where username = '#{mapped_hash["email"] }' ")
       if @user_hash.empty?
        insert_contact_details(mapped_hash, client)
+      else # what to do if the user is already registered
+        compare_accountIds(@result_hash, @user_hash)
+        
       end
      rescue Exception => e
       p "rescue 3"
@@ -126,6 +132,16 @@ class RegistersController < ApplicationController
       # handle exception here if id not found in user by creating new user
       insert_contact_details(mapped_hash, client)
     end
+  end
+  
+  def user_exists
+    if session[:flag] == "R"
+      flash[:message] = "You are a registered User"
+    else
+      flash[:message] = "You are registered against incorrect Account"
+      p "Incorrect Account"
+    end 
+     
   end
  
   def get_accId(result_hash)
@@ -151,25 +167,47 @@ class RegistersController < ApplicationController
     if registered.empty?
       # handle user registered to different account
       p " user found but registered to different account"
+      session[:flag] = "I"
+      redirect_to "/user_exists"
       # need to capture contact Id for portal user registration
+      
     else
       # handle user exists
       p "user found and registered to correct account"
       # need to capture contact Id for portal user registration
+       session[:flag] = "R"
+      redirect_to "/user_exists"
     end
-    @contactId = contactId
+   # @contactId = contactId
   end
   def insert_contact_details(mapped_hash, client)
     flash[:notice] << "Inserting new Contact "
     p mapped_hash
     p "inserting contact"
+    # get contact preferences mapped
+    mapped_hash['phone'] =="1" ? phone_pref = true : phone_pref = false
+    mapped_hash['email1'] =="1" ? email_pref = true : email_pref = false
+    mapped_hash['mail'] =="1" ? mail_pref = true :  mail_pref = false
     contacts = client.materialize("Contact")
+  
     newrec = client.create("Contact", {"FirstName" => "#{mapped_hash['fname']}","LastName" => "#{mapped_hash['lname']}", 
             "Email" => "#{mapped_hash['email']}", "Salutation" => "#{mapped_hash['title']}",  
-            "Phone" => "#{mapped_hash['landline']}","AccountId" => "#{mapped_hash['accId']}" } )
+            "Phone" => "#{mapped_hash['landline']}","MobilePhone" => "#{mapped_hash['mobile']}","AccountId" => "#{mapped_hash['accId']}",
+            "By_Mail__c" => mail_pref  , "By_Phone__c" => phone_pref, "By_E_mail__c" => email_pref } )
     p "done"
     @contactId = newrec.Id
-    
+    # create a contact_terms_child record
+    create_contract_terms(@contactId, client)
+    # create a new customer portal
+    create_new_cp_record(@mapped_hash, client)
+  end
+  def create_contract_terms(contactId, client)
+    termsId = ""    
+    contract = client.materialize("Contact_terms__c")
+    cont = client.query(" select id, terms_text__c from terms_and_conditions__c order by lastModifiedDate desc limit 1")
+    cont.each {|rec| termsId = rec.Id }
+    newContact_terms = client.create("Contact_terms__c", {"Contact__c" => "#{contactId}", "Terms_and_conditions__c" =>"#{termsId}" })
+    p "done terms"
   end
   def create_new_cp_record(mapped_hash, client)
     flash[:notice] << "Inserting new Portal User"
@@ -193,6 +231,9 @@ class RegistersController < ApplicationController
     #userId = newUser.Id
     userId = "005W0000000Q8Sa"
     reset_password(userId)
+    @mapped_hash['passwd'] = @newpasswd
+    UserMailer.deliver_registration_confirmation(@mapped_hash) if @result_hash.empty? == false
+    p "sent mail"
   end
   
   def check_user(client)
