@@ -5,7 +5,7 @@ SortableLists::Application.routes.draw do
    match "user/index"
    get "user/search"
 
-  resources :tasks, :collection => {:complete => :put}
+  
 
  # get "welcome/index" => redirect("https://na12.salesforce.com/001/o")
   get "welcome/accountfieldlist"
@@ -32,7 +32,7 @@ SortableLists::Application.routes.draw do
   match "worksiteblock/handle_duplicate_records"
   match "worksiteblock/complete_contact_update"
   match "worksiteblock/updateFromContactPage"
-    
+ match "welcome/index"   
      match "welcome/contact_unsubscribe"
      match "welcome/account_unsubscribe"
 # match "/updated" => redirect("https://na12.salesforce.com/001/o"), :as => :update

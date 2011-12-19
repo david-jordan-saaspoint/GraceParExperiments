@@ -296,13 +296,15 @@ class WorksiteblockController < ApplicationController
        @contacts_selected = {}
        @accounts_selected = []
        store_selected_contacts
-  # inserts accounts and identifies duplicates
+      # inserts accounts and identifies duplicates
        query_selected_fields(client, "PAR121__parId__c", "upsert")
        if session[:dup_account].blank? == true
+         p session[:dup_account]
     # finds and inserts contacts for the accounts that were inserted
           complete_contact_update
       else
         p "deal with duplicates"
+        p session[:dup_account]
         redirect_to(:controller => 'worksiteblock', :action => "fetch_duplicate_account")
       end
     #    redirect_to(:controller => 'worksiteblock', :action => "find_by_wn")
@@ -349,9 +351,11 @@ class WorksiteblockController < ApplicationController
  
   def fetch_duplicate_account
   client = session[:client]
+  p client
 
  #   acc_id_string = session[:dup_account].values.flatten.map { |i| "'" + i + "'"}.join(",").gsub('"', "")
   par_id_string = session[:dup_account].map { |i| "'" + i + "'"}.join(",").gsub('"', "")
+  p par_id_string
        # fetch all relevant data from Account sobject
     ##@resp_acc = client.query("Select Id,Name,AccountNumber,PAR121__dbId__c, PAR121__parId__c,PAR121__Subscribed__c,PAR121__CompanyNumber__c,PAR121__Legalname__c, PAR121__Department__c,BillingStreet,BillingPostalCode,BillingCity,PAR121__Phone__c,PAR121__Type__c,PAR121__TypeCode__c,PAR121__Status__c, PAR121__StatusCode__c,ShippingStreet,ShippingPostalCode,ShippingCity from Account where id in (#{acc_id_string}) ")
     @resp_acc = client.query("Select Id,Name,AccountNumber,PAR121__dbId__c, PAR121__parId__c,PAR121__Subscribed__c,PAR121__CompanyNumber__c,PAR121__Legalname__c, PAR121__Department__c,BillingStreet,BillingPostalCode,BillingCity,PAR121__Phone__c,PAR121__Type__c,PAR121__TypeCode__c,PAR121__Status__c, PAR121__StatusCode__c,ShippingStreet,ShippingPostalCode,ShippingCity from Account where par121__parId__c in (#{par_id_string}) ")
@@ -448,11 +452,13 @@ class WorksiteblockController < ApplicationController
             end 
           end 
           @mapped_hash["PAR121__Subscribed__c"] = true
+          p @mapped_hash
           
       # call insertsobject.rb to insert the mapped hashes into the S Object
       #InsertSObject.createclientobject(@mapped_hash, selected_par)
       begin
           p "account insert"
+          p action
           if action == "insert"
             @mapped_hash["PAR121__parId__c"] = selected_par
             client = session[:client]
@@ -484,7 +490,6 @@ class WorksiteblockController < ApplicationController
   end
     
   def get_account_ids(par_id, client)
-    
     par_id_string = par_id.map { |i| "'" + i + "'" }.join(",")
     par_id_string.gsub('"', "")
 #    par_id_string = par_id.to_s.gsub!("[","'").gsub!("]","'")

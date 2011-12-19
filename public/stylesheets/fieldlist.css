@@ -82,7 +82,7 @@ h1, h2, h3, h4 {
   margin:22px;
   background: #aa7;
   width: 1080px;
-  height: 300px;
+  height: 350px;
   padding-right: 10px;
 }
 
@@ -133,7 +133,7 @@ h1, h2, h3, h4 {
 }
 #notDroppable div {
   margin-top: 0px;
-  width: 310px;
+  width: 350px;
   padding-bottom: 10px;
   margin-right: 20px;
   border: 1px solid #333;
