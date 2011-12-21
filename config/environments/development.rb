@@ -18,7 +18,7 @@ Bstream::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   
   # set delivery method to :smtp, :sendmail or :test
-  config.action_mailer.delivery_method = :sendmail
+#  config.action_mailer.delivery_method = :sendmail
 
   # these options are only needed if you choose smtp delivery
  # config.action_mailer.smtp_settings = {
@@ -30,6 +30,21 @@ Bstream::Application.configure do
    # :password       => 'secret'
 #}
 
+  
+  # set delivery method to :smtp, :sendmail or :test
+ # config.action_mailer.delivery_method = :sendmail
+  
+
+  # these options are only needed if you choose smtp delivery
+   config.action_mailer.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :domain         => 'heroku.com',
+    :authentication => :plain,
+    :user_name      => 'app1842188@heroku.com',
+    :password       => 's7byxmxq'
+}
+  config.action_mailer.delivery_method = :smtp
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 

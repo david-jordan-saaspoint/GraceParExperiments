@@ -2,6 +2,7 @@ Bstream::Application.routes.draw do
  
   get "sessions/create"
   match 'reg_failed' => "registers#registration_failed"
+  match 'user_exists' => "registers#user_exists"
   get "registers/reregister"
   resources :registers
   match '/auth/:provider/callback', :to => 'sessions#create'

@@ -1,12 +1,12 @@
 one:
-  title: MyString
-  fname: MyString
-  lname: MyString
-  email: MyString
-  landline: 1
-  mobile: 1
-  crn: MyString
-  spid: MyString
+  title: Mr
+  fname: Test
+  lname: Rails
+  email: Test.Rails@examle.com
+  landline: 12334567899
+  mobile: 
+  crn: 2123456
+  spid: 10022345678
 
 two:
   title: MyString

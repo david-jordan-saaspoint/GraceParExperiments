@@ -1,14 +1,13 @@
 require 'test_helper'
 
 class RegistersControllerTest < ActionController::TestCase
-  def test_index
-    get :index
-    assert_template 'index'
-  end
+  
 
-  def test_show
-    get :show, :id => Register.first
-    assert_template 'show'
+  def test_reregister
+    session[:mh] = {"title" => "Mr", "fname" => "Test" , "lname" => "rails" , "email" => "test@rail.com" , "crn" => "2088376", "spid" => "100125120100",
+    "landline" => "12123334231"}
+    get :reregister
+    assert_template 'reregister'
   end
 
   def test_new
@@ -17,38 +16,30 @@ class RegistersControllerTest < ActionController::TestCase
   end
 
   def test_create_invalid
+    @input_attrib = {
+    "title" => "Mr", "fname" => "Test", "lname" => "rails"
+  }
     Register.any_instance.stubs(:valid?).returns(false)
-    post :create
-    assert_template 'new'
+    post :create, :register => @input_attrib
+  #  assert_template 'create'
+  end
+  def test_create
+    @input_attrib = {
+    "title" => "Mr", "fname" => "Test", "lname" => "rails", "email" => "test@rails.com", "crn" => "2088376", "spid" => "100125120100",
+    "landline" => "12123334231"
+  }
+    post :create, :register => @input_attrib
+     assert_template 'new'
   end
 
   def test_create_valid
+    @input_attrib = {
+    "title" => "Mr", "fname" => "Test", "lname" => "rails", "email" => "test@rails.com", "crn" => "2088376", "spid" => "100125120100",
+    "landline" => "12123334231"
+  }
     Register.any_instance.stubs(:valid?).returns(true)
-    post :create
-    assert_redirected_to register_url(assigns(:register))
-  end
-
-  def test_edit
-    get :edit, :id => Register.first
-    assert_template 'edit'
-  end
-
-  def test_update_invalid
-    Register.any_instance.stubs(:valid?).returns(false)
-    put :update, :id => Register.first
-    assert_template 'edit'
-  end
-
-  def test_update_valid
-    Register.any_instance.stubs(:valid?).returns(true)
-    put :update, :id => Register.first
-    assert_redirected_to register_url(assigns(:register))
-  end
-
-  def test_destroy
-    register = Register.first
-    delete :destroy, :id => register
-    assert_redirected_to registers_url
-    assert !Register.exists?(register.id)
+    post :create, :register => @input_attrib
+    assert_template 'create'
+  #  assert_redirected_to register_url(assigns(:register))
   end
 end
