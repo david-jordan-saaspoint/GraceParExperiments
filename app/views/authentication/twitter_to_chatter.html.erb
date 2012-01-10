@@ -1,7 +1,10 @@
 <h1> Twitter feed as queried at <%= Time.now.inspect %> </h1>
   
- 
-    <%= @resp %>
+ <%  @messages.each do |feed| %>  
+    <%= feed %>
     <br>
- 
+<% end %> 
+    
+    
+<%= link_to "Main Menu", :controller => "authentication", :action => "main_menu" %> 
  

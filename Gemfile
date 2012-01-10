@@ -11,6 +11,7 @@ gem "databasedotcom"
 gem "databasedotcom-rails"
 
 gem 'multi_json'
+gem 'hpricot'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -4,6 +4,9 @@ TwitterAuth::Application.routes.draw do
    match '/auth/failure', :to => 'authentication#fail'
    get 'authentication/chatter_to_twitter'
    get 'authentication/twitter_to_chatter'
+   get 'authentication/main_menu'
+   post 'authentication/main_menu_choice'
+   get 'authentication/exit'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
