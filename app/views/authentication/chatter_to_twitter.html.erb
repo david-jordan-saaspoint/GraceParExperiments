@@ -1,0 +1,7 @@
+<h1> Chatter feed as queried at <%= Time.now.inspect %> </h1>
+  
+  <%  @chatter_hash.each do |feed| %>  
+    <%= feed[1] %>
+    <br>
+<% end %>  
+ 
