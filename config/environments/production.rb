@@ -11,6 +11,7 @@ Bstream::Application.configure do
 
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
+  config.action_mailer.raise_delivery_errors = true
 
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
@@ -30,6 +31,15 @@ Bstream::Application.configure do
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
   config.serve_static_assets = false
+    config.action_mailer.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :domain         => 'heroku.com',
+    :authentication => :plain,
+    :user_name      => 'app1842188@heroku.com',
+    :password       => 's7byxmxq'
+}
+  config.action_mailer.delivery_method = :smtp
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"

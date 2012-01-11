@@ -12,7 +12,8 @@ gem 'httparty'
 gem 'databasedotcom'
 gem 'thin'
 gem 'databasedotcom-rails'
-gem 'soap4r'
+gem 'soap4r', :git => 'git://github.com/felipec/soap4r.git'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

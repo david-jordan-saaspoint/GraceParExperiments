@@ -9,6 +9,7 @@ require 'soap/wsdlDriver'
 # require 'open-uri'
 #  require 'uri'
 class RegistersController < ApplicationController
+  
   def authenticate
     @username = "grace.ramamoorthy@saaspoint.business-stream.com.regdev"
     @password = 'Saaspoint12hUiejFhjFdoCAx5JWCObF3ZA'
@@ -16,10 +17,10 @@ class RegistersController < ApplicationController
       STDOUT.puts "establish connection to database.com from register ctlr"
   #     session[:token] = "00DW0000000D0Nv!ARsAQEFyUhh6GIl1VU9PSE.i.mnZrYhSR29wr6lnxO6q4xDWtZGBMu5ul34R22olDA8x8pYMYvtGEUcPpLd.MUmwTc9fcxpp"
   #     session[:uri] =  "https://cs13.salesforce.com"
-     client = Databasedotcom::Client.new :client_id => '3MVG982oBBDdwyHic7R4GTiYnUrkIqqoBvGXr1OemoKLddluZNlcHha6hn.pSpZekOyExAyL_sEabk2zcX2Y.', :client_secret => '4410159838050871484' 
-     #  client.authenticate :token => session[:token], :instance_url =>session[:uri] 
-     client.host = 'test.salesforce.com'
-     client.authenticate :username => @username, :password => @password
+     client = Databasedotcom::Client.new # :client_id => '3MVG982oBBDdwyHic7R4GTiYnUrkIqqoBvGXr1OemoKLddluZNlcHha6hn.pSpZekOyExAyL_sEabk2zcX2Y.', :client_secret => '4410159838050871484' 
+     client.authenticate :token => session[:token], :instance_url =>session[:uri] 
+   #  client.host = 'test.salesforce.com'
+    # client.authenticate :username => @username, :password => @password
       #check connection w. list_sobjects and cache result
       session[:client] =  client
       STDOUT.puts "connection established"
@@ -76,8 +77,8 @@ class RegistersController < ApplicationController
   def save_registration
     
    p "save"
-#   authenticate
-#   client = session[:client]
+   authenticate
+   client = session[:client]
     @mapped_hash = Hash.new
     @mapped_hash = params['register']
     @mapped_hash[:title] = "Mr" if @mapped_hash[:title] == "Please select..."
@@ -241,7 +242,7 @@ class RegistersController < ApplicationController
     fname = mapped_hash['fname']
     lname = mapped_hash['lname']
     #accId = "001W0000002SKmz"
-    al = fname[0]+lname[0..2]
+   p al = "#{fname[0]}#{lname[0..2]}"
     contactId = @contactId
     profiles = client.materialize("Profile")
     profile = client.query("select id from profile where name = 'Overage Customer Portal Manager Standard'")
@@ -268,8 +269,8 @@ class RegistersController < ApplicationController
     
   end
   def reset_password(userId)
-    user = 'grace.ramamoorthy@saaspoint.business-stream.com.regdev'
-    passwd = 'Saaspoint12hUiejFhjFdoCAx5JWCObF3ZA'
+    user = @username
+    passwd = @password
     d = Soap.new
     h = ClientAuthHeaderHandler.new          # Create a new handler
     l = d.login(:username => user, :password => passwd)
