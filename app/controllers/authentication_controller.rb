@@ -12,6 +12,9 @@ class AuthenticationController < ApplicationController
       session[:omniauth_secret] = omniauth["credentials"]["secret"]
       session[:consumer_key] = "eCaofvK84J9DfI9y57i12g"
       session[:consumer_secret] = "mwzS6SzXaIrdX2RdBjMQMK86wN9qnfO3IklBUrYLzw"
+      session[:last_id] = "156724341487304705"
+   # session[:consumer_key] = "kA3jexJuCNO3mwwJllhPCQ"
+   # session[:consumer_secret] = "s7Z9WrCANZ8cg22VSQtxVoz4HGWHW7BnCKPpPbxQM"
       
     #  chatter_to_twitter
     #  redirect_to  :controller => "authentication", :action => "chatter_to_twitter"
@@ -50,7 +53,7 @@ class AuthenticationController < ApplicationController
    def twitter_to_chatter
     @messages = Array.new
     access_token = access_twitter
-    last_id = "156724341487304705"
+    p  last_id = session[:last_id]
   #  while true do
       url = "http://twitter.com/statuses/friends_timeline.xml?since_id=#{last_id}"
       # url = "http://api.twitter.com/statuses/user_timeline.xml"
@@ -60,15 +63,18 @@ class AuthenticationController < ApplicationController
       response = Hpricot(res.body)
            
       if (response/'status').length > 0
-        last_id = (response/'status id').first.inner_html
+        session[:last_id] = (response/'status id').first.inner_html
        
         (response/'status').each do |st|
           user = (st/'user name').inner_html
           text = (st/'text').inner_html
           twit_tim = (st/'created_at').first.inner_html
           message = "#{user} said #{text} at #{twit_tim} "
-          post_to_chatter(message)
-          @messages.push(message)
+          if text.include?("Chatter posting")
+          else
+            post_to_chatter(message)
+            @messages.push(message)
+          end
          end
        end
   #     sleep 60
@@ -110,7 +116,7 @@ class AuthenticationController < ApplicationController
         # today_time = Time.now.strftime("%H:%M:%S")
         # p checkdate = rec["createdDate"].split("T")[0]
         # p checktime = rec["createdDate"].split("T")[1].split(".")[0]
-         if (Time.now - Time.parse(rec["createdDate"]))/3600 < 24
+         if (Time.now - Time.parse(rec["createdDate"]))/3600 < 24 and !rec["body"]["text"].include?("tweeted")
           post_in_twitter("Chatter posting by '#{rec['user']['name']}' at '#{rec['createdDate']}'.  Text as follows: '#{rec['body']['text']}' ")
           chatter_text.push("#{rec['body']['text']}")
           chatter_name.push("#{rec['user']['name']}")
