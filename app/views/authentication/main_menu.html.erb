@@ -1,0 +1,11 @@
+<h1>Welcome to Chatter and Twitter integration program using Ruby on Rails</h1>
+<h2> Choose the integration </h2>
+<%= form_tag :controller=> "authentication", :action => "main_menu_choice" do %>
+<h3>
+<div><%= radio_button_tag :integrate, 'Chatter to Twitter', :checked =>true %> Chatter to Twitter </div>
+<div> <%= radio_button_tag :integrate, 'Twitter to Chatter' %> Twitter to Chatter </div>
+<div> <%= radio_button_tag :integrate, 'Exit' %> Exit </div>
+</h3>
+<%= submit_tag "Integration" %>
+	
+<% end %>

@@ -12,6 +12,9 @@ gem "databasedotcom-rails"
 
 gem 'multi_json'
 gem 'hpricot'
+gem 'thin'
+gem 'omniauth'
+gem 'omniauth-salesforce'
 
 # Use unicorn as the web server
 # gem 'unicorn'

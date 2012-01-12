@@ -7,6 +7,7 @@ TwitterAuth::Application.routes.draw do
    get 'authentication/main_menu'
    post 'authentication/main_menu_choice'
    get 'authentication/exit'
+   match '/auth/twitter' => 'authentication#create1'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

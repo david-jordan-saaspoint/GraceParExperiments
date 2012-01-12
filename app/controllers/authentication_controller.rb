@@ -1,28 +1,41 @@
 require 'databasedotcom'
 require 'date'
 require 'hpricot'
+require 'omniauth'
+require 'omniauth-salesforce'
+
 class AuthenticationController < ApplicationController
   def index
     @authentications = current_user.authentications if current_user
   end
-  def create
-     omniauth = request.env["omniauth.auth"]
-   # render :text => request.env["rack.auth"].to_yaml
-      session[:omniauth_token] = omniauth["credentials"] ["token"]
-      session[:omniauth_secret] = omniauth["credentials"]["secret"]
-      session[:consumer_key] = "eCaofvK84J9DfI9y57i12g"
-      session[:consumer_secret] = "mwzS6SzXaIrdX2RdBjMQMK86wN9qnfO3IklBUrYLzw"
-      session[:last_id] = "156724341487304705"
-   # session[:consumer_key] = "kA3jexJuCNO3mwwJllhPCQ"
-   # session[:consumer_secret] = "s7Z9WrCANZ8cg22VSQtxVoz4HGWHW7BnCKPpPbxQM"
-      
-    #  chatter_to_twitter
-    #  redirect_to  :controller => "authentication", :action => "chatter_to_twitter"
-   # redirect_to  :controller => "authentication", :action => "twitter_to_chatter"
-   redirect_to :controller => "authentication", :action => "main_menu"
+  def create1    # creates authnetication for twitter using omniauth with users loginname and password
+    redirect_to :controller => "authentication", :action => "main_menu"
   # twitter_to_chatter
      # post_in_twitter
     # render :text => request.env["omniauth.auth"].to_yaml
+  end
+  
+  def create
+    sf_omniauth = request.env["omniauth.auth"]
+    p sf_omniauth
+    if  sf_omniauth["provider"] == "salesforce"
+        p sf_omniauth["credentials"]["token"]
+        p "sf uri", sf_omniauth["credentials"]["instance_url"]
+        session[:sf_token] = sf_omniauth["credentials"]["token"]
+        session[:sf_uri] = sf_omniauth["credentials"]["instance_url"]
+        # redirect_to :controller => "authentication", :action => "main_menu"
+        # redirect_to :controller => "authentication", :action => "create1"
+        redirect_to '/auth/twitter'
+     else
+        twitter_omniauth = request.env["omniauth.auth"]
+        session[:twitter_token] = twitter_omniauth["credentials"] ["token"]
+        session[:twitter_secret] = twitter_omniauth["credentials"]["secret"]
+        # developers consumer key and secret here
+        session[:consumer_key] = "eCaofvK84J9DfI9y57i12g"
+        session[:consumer_secret] = "mwzS6SzXaIrdX2RdBjMQMK86wN9qnfO3IklBUrYLzw"
+        session[:last_id] = "157424867292102000"
+        redirect_to :controller => "authentication", :action => "main_menu"
+      end
   end
   
   def access_twitter
@@ -32,12 +45,10 @@ class AuthenticationController < ApplicationController
       twitter_user = OAuth::Consumer.new(session[:consumer_key], session[:consumer_secret] )
    #   twitter_user.update("Test Twit") 
       p "^^^^^^^^^^^^^^^^^^^^" , twitter_user
-      token_hash = { :oauth_token => session[:omniauth_token],
-                 :oauth_token_secret => session[:omniauth_secret]
+      token_hash = { :oauth_token => session[:twitter_token],
+                 :oauth_token_secret => session[:twitter_secret]
                }
       access_token = OAuth::AccessToken.from_hash(twitter_user, token_hash )
-      
-      p "access_token" , access_token
     #  req = access_token.request(:get, "http://api.twitter.com/1/statuses/home_timeline.json")
  #  p   access_token.get('/account_verify_credentials.json') 
       access_token
@@ -69,7 +80,7 @@ class AuthenticationController < ApplicationController
           user = (st/'user name').inner_html
           text = (st/'text').inner_html
           twit_tim = (st/'created_at').first.inner_html
-          message = "#{user} said #{text} at #{twit_tim} "
+          message = "#{user} tweeted #{text} at #{twit_tim} "
           if text.include?("Chatter posting")
           else
             post_to_chatter(message)
@@ -82,8 +93,12 @@ class AuthenticationController < ApplicationController
        @messages
   end
   def login_chatter
-     client = Databasedotcom::Client.new :client_id => "3MVG9rFJvQRVOvk5eTewVNSba15aB9I57XFdt19BhMdsGpzLC18tLc2kPpF8B_WmNEjjyYQcNdxOieiVuzcPP", :client_secret => "4545502207043831670", :version => "23.0"
-     client.authenticate :username => "grace@developer.com", :password => "Saaspoint12jljdQI67xvlJ6suJPpfIdmdG"
+    #  client new without any paramaeters
+     client = Databasedotcom::Client.new :version =>23.0 # :client_id => "3MVG9rFJvQRVOvk5eTewVNSba15aB9I57XFdt19BhMdsGpzLC18tLc2kPpF8B_WmNEjjyYQcNdxOieiVuzcPP", :client_secret => "4545502207043831670", :version => "23.0"
+    # better to replae this with oauth authentication and use omniauth token in place of username and password
+     #client.authenticate request.env['omniauth.auth'] 
+    # client.authenticate :username => "grace@developer.com", :password => "Saaspoint12jljdQI67xvlJ6suJPpfIdmdG"
+  p   client.authenticate :token => session[:sf_token], :instance_url =>session[:sf_uri] 
      me = Databasedotcom::Chatter::UserProfileFeed.find(client)
      me
   end
@@ -117,7 +132,7 @@ class AuthenticationController < ApplicationController
         # p checkdate = rec["createdDate"].split("T")[0]
         # p checktime = rec["createdDate"].split("T")[1].split(".")[0]
          if (Time.now - Time.parse(rec["createdDate"]))/3600 < 24 and !rec["body"]["text"].include?("tweeted")
-          post_in_twitter("Chatter posting by '#{rec['user']['name']}' at '#{rec['createdDate']}'.  Text as follows: '#{rec['body']['text']}' ")
+          post_in_twitter(" '#{rec['body']['text']}' --Chatter posting by '#{rec['user']['name']}' on '#{rec['createdDate']}'. ")
           chatter_text.push("#{rec['body']['text']}")
           chatter_name.push("#{rec['user']['name']}")
           chatter_date.push("#{rec['createdDate']}")
